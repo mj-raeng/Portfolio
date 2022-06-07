@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="btn_close" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#222;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="ico_close" transform="translate(4 4)">
+        <path id="패스_116" d="M922.277 444.515l-12 12" class="cls-1" transform="translate(-910.277 -444.515)"/>
+        <path id="패스_117" d="M910.277 444.515l12 12" class="cls-1" transform="translate(-910.277 -444.515)"/>
+    </g>
+    <path id="area" fill="none" d="M0 0H20V20H0z"/>
+</svg>

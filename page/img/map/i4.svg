@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-5{fill:#fff}.cls-7{fill:none}.cls-5{stroke:#222}.cls-6{stroke:none}
+        </style>
+    </defs>
+    <g id="icon_반다이멤버십앱" transform="translate(-588.5 -8810.5)">
+        <path id="사각형_12075" fill="#fff" d="M0 0H40V40H0z" transform="translate(588.5 8810.5)"/>
+        <g id="그룹_3151" transform="translate(664.5 8964.491)">
+            <path id="패스_5363" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5px" d="M-62.016-115.461h-3.047A1.977 1.977 0 0 1-67-117.475v-29.011a1.977 1.977 0 0 1 1.937-2.014h3.047" transform="translate(-2 -1.765)"/>
+            <rect id="사각형_12744" width="21" height="38" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1.5px" rx="2" transform="translate(-64 -152.991)"/>
+            <rect id="사각형_12745" width="5" height="10" fill="none" stroke="#000" stroke-miterlimit="10" rx="1" transform="translate(-61 -149.491)"/>
+            <g id="그룹_3152" transform="translate(-1 -1)">
+                <g id="타원_141" class="cls-5" transform="translate(-58.25 -141.991)">
+                    <circle cx=".75" cy=".75" r=".75" class="cls-6"/>
+                    <circle cx=".75" cy=".75" r=".25" class="cls-7"/>
+                </g>
+                <g id="타원_140" class="cls-5" transform="translate(-58.25 -144.491)">
+                    <circle cx=".75" cy=".75" r=".75" class="cls-6"/>
+                    <circle cx=".75" cy=".75" r=".25" class="cls-7"/>
+                </g>
+                <g id="타원_139" class="cls-5" transform="translate(-58.25 -146.991)">
+                    <circle cx=".75" cy=".75" r=".75" class="cls-6"/>
+                    <circle cx=".75" cy=".75" r=".25" class="cls-7"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

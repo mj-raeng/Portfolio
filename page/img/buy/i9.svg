@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#222;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="ico_share" transform="translate(-1700 -193)">
+        <path id="사각형_343" fill="none" d="M0 0H24V24H0z" transform="translate(1700 193)"/>
+        <g id="share-2" transform="translate(1701 194)">
+            <ellipse id="타원_42" cx="2.667" cy="2.7" class="cls-2" rx="2.667" ry="2.7" transform="translate(13.667 2)"/>
+            <ellipse id="타원_43" cx="2.667" cy="2.7" class="cls-2" rx="2.667" ry="2.7" transform="translate(3 8.3)"/>
+            <ellipse id="타원_44" cx="2.667" cy="2.7" class="cls-2" rx="2.667" ry="2.7" transform="translate(13.667 14.6)"/>
+            <path id="선_13" d="M0 0L6.071 3.582" class="cls-2" transform="translate(7.969 12.359)"/>
+            <path id="선_14" d="M6.062 0L0 3.582" class="cls-2" transform="translate(7.969 6.059)"/>
+        </g>
+    </g>
+</svg>

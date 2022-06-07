@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2,.cls-5{fill:none}.cls-2{stroke:#222;stroke-width:1.5px}.cls-4{stroke:none}
+        </style>
+    </defs>
+    <g id="icon_반다이베네핏가이드" transform="translate(-1131 -8658)">
+        <g id="그룹_2893">
+            <g id="사각형_333" class="cls-2">
+                <path d="M6 0h20a1 1 0 0 1 1 1v35H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z" class="cls-4" transform="translate(1133 8660)"/>
+                <path d="M6 .75h20a.25.25 0 0 1 .25.25v33.5a.75.75 0 0 1-.75.75H6A5.25 5.25 0 0 1 .75 30V6A5.25 5.25 0 0 1 6 .75z" class="cls-5" transform="translate(1133 8660)"/>
+            </g>
+            <g id="사각형_334" class="cls-2">
+                <path d="M5.4 0H27v10.8H5.4A5.4 5.4 0 0 1 0 5.4 5.4 5.4 0 0 1 5.4 0z" class="cls-4" transform="translate(1133 8685.2)"/>
+                <path d="M5.4.75h20.186a.664.664 0 0 1 .664.664v7.972a.664.664 0 0 1-.664.664H5.4A4.65 4.65 0 0 1 .75 5.4 4.65 4.65 0 0 1 5.4.75z" class="cls-5" transform="translate(1133 8685.2)"/>
+            </g>
+            <g id="타원_29" fill="#fff" stroke="#222" stroke-width="1.5px" transform="translate(1151 8678)">
+                <circle cx="9" cy="9" r="9" class="cls-4"/>
+                <circle cx="9" cy="9" r="8.25" class="cls-5"/>
+            </g>
+            <path id="선_5" d="M0 0L0 4.5" class="cls-2" transform="translate(1160 8685.938)"/>
+            <path id="선_6" d="M0 0L0 1.8" class="cls-2" transform="translate(1160 8683.398)"/>
+        </g>
+    </g>
+</svg>

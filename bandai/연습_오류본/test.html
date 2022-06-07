@@ -1,0 +1,4215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+ <head>
+	<title>index</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+			*{margin:0;padding:0;}
+			li{list-style-type:none;}
+			img{border:none;}
+			a:link,a:visited{text-decoration:none;color:#000;}
+			header,nav,section,footer{display:block;}
+
+		/*################## wrap ################*/
+			#wrap{width:100%;}
+			#wrap .absolute{width:1px;height:1px;font-size:1px;line-height:0;position:absolute;left:-9999px;overflow:hidden;}
+
+		/*################## header ################*/
+			#header{width:100%;background-color:transparent;z-index:9999;position:absolute;top:0;}
+			#header_inn{width:100%;position:relative;}
+			#head_mob{display:none;width:100%;}
+
+			#topArea{padding:0 50px 0 3%;height:89px;border-bottom:1px solid #ccc;position:relative;}
+			#topArea li{display:inline-block;height:89px;line-height:89px;margin-left:10px;padding-right:5px;}
+			#topArea a{font-size:24px;font-weight:700;color:#fff;}
+			#topMenu{width:100%;height:100%;}
+			#topMenu .logo{width:7%;height:60px;padding-top:13px;float:left;text-align:center;}
+			#topMenu .logo img{width:64px;}
+			#topMenu:after{content:'';display:block;clear:both;}
+			#nav{width:48%;float:left;}
+			#nav ul{width:100%;height:100%;}
+
+			#uArea{width:45%;float:left;}
+			#uArea .utility{height:100%;}
+			#uArea .utility ul{text-align:right;}
+			#uArea .utility a{display:block;height:100%;font-size:14px;margin-right:10px;}
+			#uArea .utility a i{display:block;width:40px;height:100%;float:left;position:relative;}
+			#uArea .utility i img{display:block;width:26px;height:26px;position:absolute;left:0;top:30px;}
+			#uArea .utility i img:last-child{display:none;}
+
+			#gnb{padding-left:3%;height:58px;border-bottom:1px solid #ccc;}
+			#gnb_inn{width:86%;padding-left:7%;float:left;}
+			#gnb .gnb_list{width:100%;}
+			#gnb .gnb_list:after{content:'';display:block;clear:both;}
+			#gnb .bg{width:100%;height:560px;background-color:rgba(255,255,255,1);display:none;
+			position:absolute;left:0;top:148px;z-index:-9999;}
+			#gnb li{display:inline-block;padding-top:20px;margin-left:5px;padding-right:3px;float:left;}
+			#gnb li a{color:#fff;font-weight:700;
+			font-size:15px;}
+
+			#gnb .main_menu{padding-left:3px;float:left;height:100%;}
+			#gnb .menu{width:100%;}
+			#gnb .menu:after{content:'';display:block;clear:both;}
+			#gnb .etc_menu{padding-left:27px;float:left;height:100%;}
+			#search{width:7%;float:left;height:100%;position:relative;}
+			#search a{display:block;width:24px;height:24px;position:absolute;right:60px;top:17px;}
+			#search i{display:block;width:100%;height:100%;}
+			#search img{width:100%;position:absolute;display:block;}
+			#search img:last-child{display:none;}
+
+			#gnb .subArea{display:none;background-color:#fff;width:90%;height:560px;padding-left:10%;
+			position:absolute;top:149px;left:0;z-index:-9999;}
+			#gnb .on{z-index:1;}
+			#gnb .subArea a{color:#000;font-size:14px;font-weight:400;}
+			#gnb .s_depth{padding-right:50px;padding-top:20px;transition:all 0.3s linear;}
+			#gnb .s_depth:after{content:'';display:block;clear:both;}
+			
+			#gnb .s_menu{width:55%;float:left;}
+			#gnb .s_tit{width:20%;float:left;}
+			#gnb .s_tit p{width:100%;padding-top:15px;text-indent:5px;}
+			#gnb .s_tit p a{font-weight:700;font-size:20px;}
+			#gnb .s_list{float:left;padding-left:5%;}
+			#gnb .s_list dt{width:100%;padding:15px 0;font-size:20px;font-weight:700;border-bottom:1px solid #eee;}
+			#gnb .s_list dd{padding:10px 0;font-size:14px;letter-spacing:-1px;}
+			#gnb .brand{width:19%;}
+			#gnb .series{width:37%;}
+			#gnb .s_img{width:44%;float:left;}
+			#gnb .s_img ul{width:100%;padding-top:15px;text-align:right;}
+			#gnb .s_img ul:after{content:'';display:block;clear:both;}
+			#gnb .s_img li{width:40%;display:inline-block;padding-top:0;padding-left:3%;float:right;}
+			#gnb .s_img li a{display:block;width:100%;font-size:14px;}
+			#gnb .s_img li a span{display:block;width:100%;}
+			#gnb .s_img li img{width:100%;}
+			#gnb .s_img li a em{display:block;text-align:left;color:#555;font-style:normal;
+			font-size:14px;font-weight:700;letter-spacing:-2px;}
+
+			#gnb .s1 .s_img li{float:right;}
+			#gnb .s1 .brand{width:33%;}
+			#gnb .s1 .series{width:23%;}
+			
+			#gnb .s2 .s_menu{width:73%;}
+			#gnb .s2 .s_tit{width:18%;}
+			#gnb .s2 .brandArea{width:38%;float:left;margin-left:2%;}
+			#gnb .s2 .brandArea h3{width:100%;padding:15px 0;border-bottom:1px solid #eee;}
+			#gnb .s2 .brandArea dl{width:50%;padding:0;float:left;}
+			#gnb .s2 .brandArea dt{font-size:16px;border:none;}
+			#gnb .s2 .s_img{width:26%;}
+			#gnb .s2 .s_img li{width:60%;float:right;}
+			#gnb .s2 .s_img li{float:right;}
+
+			#gnb .s3 .s_menu{width:73%;}
+			#gnb .s3 .s_tit{width:18%;}
+			#gnb .s3 .brandArea{width:53%;height:100%;float:left;margin-left:2%;}
+			#gnb .s3 .brandArea h3{width:100%;font-size:19px;padding:15px 0;border-bottom:1px solid #eee;}
+			#gnb .s3 .brandArea dl{width:50%;padding:0;float:left;}
+			#gnb .s3 .brandArea dd{width:48%;font-size:15px;padding-right:2%;float:left;}
+			#gnb .s3 .brandArea dt{width:100%;font-size:16px;border:none;}
+			#gnb .s3 .brandArea dl:last-child{width:20%;padding-left:5%;}
+			#gnb .s3 .brandArea dl:last-child dd{width:100%;float:none;padding-right:0;}
+			#gnb .s3 .brand{width:16%;}
+			#gnb .s3 .s_img{width:26%;}
+			#gnb .s3 .s_img li{width:60%;float:right;}
+			
+			#gnb .s4 .s_menu{width:73%;}
+			#gnb .s4 .s_tit{width:14%;}
+			#gnb .s4 dl{width:19%;margin-left:2%;float:left;}
+			#gnb .s4 .s_img{width:26%;}
+			#gnb .s4 .s_img li{width:60%;float:right;}
+			#gnb .s4 .s_img li{float:right;}
+
+		/*################## container ################*/
+			#container{width:100%;overflow:hidden;}
+
+		/*################## visual ################*/
+			/*
+				1. list 이미지 영역만 만들어놓고 숨겨놓기
+				2. 안의 이미지들이 조금 더 확대가 되어있는데
+				우선 position으로 잡아 놓은 것 같아 img는 100%를 사용
+				3. txtBox 폰트와 사이즈만 수정하면 완료
+			*/
+			#visual{width:100%;}
+			#visual:after{content:'';display:block;clear:both;}
+			#visual .full_slide{width:100%;}
+			#visual ul{width:100%;overflow:hidden;}
+			#visual li{width:100%;float:left;}
+			#visual li a{width:100%;height:100%;display:block;}
+			#visual .imgBox{width:100%;height:100%;overflow:hidden;display:block;}
+			#visual .imgBox img{width:100%;}
+
+		/*################## section (담아주는 영역) ################*/
+			#main{width:100%;}
+
+		/*################## main_product ################*/
+			#main_product{width:100%;}
+			#main_product .main_area{padding:0 72px;}
+
+			#main_product .tab_menu{width:100%;padding:30px 0;}
+			#main_product .m_menu{display:none;}
+			#main_product .tab_menu .tab{width:100%;}
+			#main_product .tab_menu .tab:after{content:'';display:block;clear:both;}
+			#main_product .tab_menu .tab li{height:44px;padding-right:20px;;float:left;font-size:22px;font-weight:700;letter-spacing:-2px;}
+			#main_product .tab_menu .tab li a{width:100%;display:block;}
+			#main_product .tab_menu .tab span{display:block;width:100%;height:3px;margin-top:7px;text-indent:-9999px;}
+			#main_product .tab .on{color:#e60012;}
+			#main_product .tab .on span{background-color:#e60012;}
+			/*#main_product .slideBar{width:0;height:5px;margin-top:10px;background-color:#e60012;position:relative;}*/
+		
+		/*################## main_product .product_area ################*/
+			#main_product .product_area{width:100%;}
+			#main_product .product_area:after{content:'';display:block;clear:both;}
+			#main_product .product_area li{width:24%;padding-right:1%;float:left;}
+			#main_product .product_area a{display:block;}
+			#main_product .product_area span{display:block;}
+			#main_product li .img_area{width:100%;height:100%;position:relative;}
+
+			#main_product .img_area .imgBox{width:100%;position:relative;overflow:hidden;}
+			#main_product li .img_area .border{width:2px;height:2px;background-color:#f0f0f0;position:absolute;
+			transition:all 0.5s linear;}
+			#main_product li .img_area .b0{right:0;top:0;}
+			#main_product li .img_area .b1{right:0;top:0;}
+			#main_product li .img_area .b2{right:0;bottom:0;}
+			#main_product li .img_area .b3{left:0;top:0;}
+
+			#main_product .imgBox img{width:100%;transform:scale(1.1);transition:transform 0.7s linear;}
+			#main_product .product_desc{width:100%;}
+			#main_product .product_desc span{width:100%;padding-top:10px;}
+
+			#main_product .img_area a:hover img{transform:scale(1.2);}
+			#main_product .img_area a:hover .border{background-color:#00a0e9;}
+			#main_product .img_area a:hover .b0{width:100%;height:2px;}
+			#main_product .img_area a:hover .b1{width:2px;height:100%;}
+			#main_product .img_area a:hover .b2{width:100%;height:2px;transition-delay:0.5s;}
+			#main_product .img_area a:hover .b3{width:2px;height:100%;transition-delay:0.5s;}
+
+		/*################## main_product .product_desc 개별작업 ################*/
+			#main_product span.brand{padding-top:20px;font-size:12px;color:#888;}
+			#main_product .product{font-size:15px;letter-spacing:-1px;}
+			#main_product .price{padding-top:15px;font-size:15px;}
+			#main_product span.inline{font-weight:700;font-size:24px;display:inline;}
+
+		/*################## main_brand ################*/
+			/*
+				1. 현재 정사각형의 모양은 border-radius로 원모양 만들고 position 배치
+				2. ul은 너비 넓혀서 overflow:hidden으로 숨기고 list 사용할 영역 박스에
+				position으로 이동후 움직이는 기능 (position으로 스크롤 전체 떠 있음)
+				3. 움직일때 마다 아래 bar도 같이 이동하는 (border)기능 필요
+			*/
+			#main_brandArea{width:100%;padding:130px 0;}
+			#main_brand{width:100%;}
+			#main_brand .brand_slide{width:100%;}
+			#main_brand ul{width:3260px;padding-left:90px;}
+			#main_brand ul:after{content:'';display:block;clear:both;}
+			#main_brand li{width:9%;margin-left:1%;float:left;transform:rotatey(0deg);transition:all 1s ease-in-out;}
+			#main_brand li a{display:block;width:100%;height:100%;}
+			#main_brand .imgBox{display:block;width:100%;height:100%;border-radius:100%;position:relative;overflow:hidden;}
+			#main_brand .imgBox img{width:100%;transform:scale(1.1);transition:transform 0.5s linear;}
+			#main_brand .imgBox img:last-child{position:absolute;left:0;}
+			#main_brand .slide0 .imgBox img,#main_brand .slide1 .imgBox img:last-child{position:static;}
+
+			/*#main_brand li a:hover img:first-child{transform:scale(1.2);}*/
+			/*#main_brand:hover li{transform:translatey(0);opacity:1;}
+			#main_brand:hover .slide0{transition-delay:0.1s;}
+			#main_brand:hover .slide1{transition-delay:0.3s;}
+			#main_brand:hover .slide2{transition-delay:0.5s;}
+			#main_brand:hover .slide3{transition-delay:0.7s;}
+			#main_brand:hover .slide4{transition-delay:0.9s;}
+			#main_brand:hover .slide5{transition-delay:1.1s;}
+			#main_brand:hover .slide6{transition-delay:1.3s;}
+			#main_brand:hover .slide7{transition-delay:1.5s;}
+			#main_brand:hover .slide8{transition-delay:1.7s;}
+			#main_brand:hover .slide9{transition-delay:1.9s;}*/
+
+		/*################## slide_gunpla ################*/
+			/*
+				1. h3가 position으로 반쯤 영역과 붙어있는 모양이 나오기 위해 잠시 숨김
+				(정적인 페이지 구조상 붙여넣기 힘듬)
+				2. .txt_area도 기본 너비 800px이지만 position으로 붙일 수 없으니
+				임시 너비 지정해서 저장
+				3. .slide_img에 float:right을 주고 .txt_area에 float:left 회수하고
+				position으로 오른쪽 왼쪽 보내고 슬라이딩 윈도우 장착하기
+			*/
+			#slide_gunpla{width:100%;padding-top:220px;position:relative;}
+			#slide_gunpla .gp_area{width:100%;margin:0 auto;}
+			#slide_gunpla .gp_area:after{content:'';display:block;clear:both;}
+			#slide_gunpla .area_tit{font-size:100px;color:#e60012;position:absolute;right:5%;top:150px;z-index:1;
+			opacity:0;transition:opacity 0.5s linear;}
+			#slide_gunpla .textArea{width:35%;float:left;}
+			#slide_gunpla .txt{padding-left:15%;height:340px;padding-top:15%;font-weight:700;float:left;}
+			#slide_gunpla .slide_img{width:65%;float:left;}
+			#slide_gunpla .slide0{width:100%;}
+			#slide_gunpla .imgBox{width:100%;}
+			#slide_gunpla .imgBox img{width:100%;}
+
+			#slide_gunpla p{font-size:22px;}
+			#slide_gunpla h3{font-size:36px;padding-bottom:50px;}
+			#slide_gunpla .btn{width:192px;text-align:center;}
+			
+			#slide_gunpla .btn a{width:190px;height:50px;line-height:50px;border:2px solid #e60012;background-color:#e60012;color:#fff;display:block;}
+			#slide_gunpla .btn a:hover,#slide_gunpla .btn a:focus{background-color:#fff;color:#000;}
+			
+			#slide_gunpla .gp_area:hover .area_tit{opacity:1;}
+			#slide_gunpla .gp_area:hover .txt{opacity:1;transform:translatex(0);}
+			#slide_gunpla .gp_area:hover .slide_img{opacity:1;transform:translatex(0);}
+
+		/*################## week_best ################*/
+			/*
+				1. 1~5 순위 이미지는 포지션으로 이미지 위에 올리는 작업 할 것
+				2. 구조 한번 다시 생각해서 짜보기 (원본 사이트가 동일하지 않고 따로 작업이 되어 있음)
+				3. ul에 overflow:hidden 된 부분 높이 찾아서 제거하기
+			*/
+			#week_best{width:100%;padding-top:100px;}
+			#week_best .week_area{padding:100px 72px 0;margin:0 auto;}
+			#week_best .week_new{height:75px;}
+			#week_best h3{font-size:36px;float:left;}
+			#week_best .red{color:#e60012;}
+			#week_best .more{padding:20px;padding-bottom:0;font-size:18px;font-weight:bold;float:right;}
+
+			#week_best .week_list{width:100%;overflow:hidden;}
+			#week_best .week_list li{width:19%;padding-right:1%;float:left;transition:transform 2s ease-in-out;}
+			#week_best .week_list a{display:block;}
+			#week_best .week_list span{display:block;}
+			#week_best li .img_area{width:100%;height:100%;position:relative;}
+
+			#week_best .img_area .imgBox{width:100%;overflow:hidden;}
+			#week_best .imgBox img{width:100%;transform:scale(1.1);transition:all 1s linear;}
+			#week_best .product_desc{width:100%;}
+			#week_best .product_desc span{width:100%;padding-top:10px;}
+
+			#week_best li .img_area .border{width:2px;height:2px;background-color:#f0f0f0;position:absolute;
+			transition:all 0.5s linear;}
+			#week_best li .img_area .b0{right:0;top:0;}
+			#week_best li .img_area .b1{right:0;top:0;}
+			#week_best li .img_area .b2{right:0;bottom:0;}
+			#week_best li .img_area .b3{left:0;top:0;}
+
+			#week_best .img_area a:hover img{transform:scale(1.2);}
+			#week_best .img_area a:hover .border{background-color:#e60012;}
+			#week_best .img_area a:hover .b0{width:100%;height:2px;}
+			#week_best .img_area a:hover .b1{width:2px;height:100%;}
+			#week_best .img_area a:hover .b2{width:100%;height:2px;transition-delay:0.5s;}
+			#week_best .img_area a:hover .b3{width:2px;height:100%;transition-delay:0.5s;}
+
+		/*################## week_best 개별작업 ################*/
+			#week_best span.brand{padding-top:20px;font-size:12px;color:#888;}
+			#week_best .product{font-size:15px;letter-spacing:-1px;}
+			#week_best .price{padding-top:15px;font-size:15px;}
+			#week_best span.inline{font-weight:700;font-size:24px;display:inline;}
+
+		/*################## slide_toy ################*/
+			/*
+				1. h3가 position으로 반쯤 영역과 붙어있는 모양이 나오기 위해 잠시 숨김
+				(정적인 페이지 구조상 붙여넣기 힘듬)
+				2. .txt_area도 기본 너비 800px이지만 position으로 붙일 수 없으니
+				임시 너비 지정해서 저장
+				3. .slide_img에 float:left을 주고 .txt_area에 float:right 회수하고
+				position으로 오른쪽 왼쪽 보내고 슬라이딩 윈도우 장착하기
+			*/
+			#slide_toy{width:100%;padding-top:150px;position:relative;}
+			#slide_toy .toy_area{width:100%;text-align:right;}
+			#slide_toy .toy_area:after{content:'';display:block;clear:both;}
+			#slide_toy .area_tit{font-size:100px;color:#00a0e9;position:absolute;left:245px;top:75px;z-index:1;
+			opacity:0;transition:opacity 0.5s linear;}
+			#slide_toy .slide_img{width:65%;float:left;}
+			#slide_toy .textArea{width:35%;float:left;}
+			#slide_toy .txt{padding-left:25%;height:340px;padding-top:20%;font-weight:700;float:left;position:relative;}
+
+			#slide_toy .slide0{width:100%;}
+			#slide_toy .imgBox{width:100%;}
+			#slide_toy .imgBox img{width:100%;}
+
+			#slide_toy p{font-size:22px;}
+			#slide_toy h3{font-size:36px;padding-bottom:50px;}
+			#slide_toy .btn{width:192px;text-align:center;position:absolute;right:0;}
+			
+			#slide_toy .btn a{width:190px;height:50px;line-height:50px;background-color:#00a0e9;
+			border:2px solid #00a0e9;display:block;color:#fff;}
+			#slide_toy .btn a:hover,#slide_toy .btn a:focus{background-color:#fff;color:#000;}
+
+			#slide_toy .toy_area:hover .area_tit{opacity:1;}
+			#slide_toy .toy_area:hover .slide_img{opacity:1;transform:translatex(0);}
+			#slide_toy .toy_area:hover .txt{opacity:1;transform:translatex(0);}
+			
+
+		/*################## recommend ################*/
+			/*
+				1. 1~5 순위 이미지는 포지션으로 이미지 위에 올리는 작업 할 것
+				2. 구조 한번 다시 생각해서 짜보기 (원본 사이트가 동일하지 않고 따로 작업이 되어 있음)
+				3. ul에 overflow:hidden 된 부분 높이 찾아서 제거하기
+			*/
+			#recommend{width:100%;}
+			#recommend .recommend_area{padding:100px 72px 0;margin:0 auto;}
+			#recommend .recommend_new{height:75px;}
+			#recommend h3{font-size:36px;float:left;}
+			#recommend .blue{color:#00a0e9;}
+			#recommend .more{padding:20px 8px 0;font-size:18px;font-weight:bold;float:right;}
+
+			#recommend .recommend_list{width:100%;overflow:hidden;}
+			#recommend .recommend_list li{width:19%;padding-right:1%;float:left;transition:all 0.5s ease-in-out;}
+			#recommend .recommend_list a{display:block;}
+			#recommend .recommend_list span{display:block;}
+			#recommend li .img_area{width:100%;height:100%;position:relative;}
+
+			#recommend .img_area .imgBox{width:100%;overflow:hidden;}
+			#recommend .imgBox img{width:100%;transform:scale(1.1);transition:transform 0.5s linear;}
+			#recommend .product_desc{width:100%;transition:all 0.3s linear 0.5s;}
+			#recommend .product_desc span{width:100%;padding-top:10px;}
+
+			#recommend li .img_area .border{width:2px;height:2px;background-color:#f0f0f0;position:absolute;
+			transition:all 0.5s linear;}
+			#recommend li .img_area .b0{right:0;top:0;}
+			#recommend li .img_area .b1{right:0;top:0;}
+			#recommend li .img_area .b2{right:0;bottom:0;}
+			#recommend li .img_area .b3{left:0;top:0;}
+
+			#recommend .img_area a:hover img{transform:scale(1.2);}
+			#recommend .img_area a:hover .border{background-color:#00a0e9;}
+			#recommend .img_area a:hover .b0{width:100%;height:2px;}
+			#recommend .img_area a:hover .b1{width:2px;height:100%;}
+			#recommend .img_area a:hover .b2{width:100%;height:2px;transition-delay:0.5s;}
+			#recommend .img_area a:hover .b3{width:2px;height:100%;transition-delay:0.5s;}
+
+		/*################## recommend 개별작업 ################*/
+			#recommend span.brand{padding-top:20px;font-size:12px;color:#888;}
+			#recommend .product{font-size:15px;letter-spacing:-1px;}
+			#recommend .price{padding-top:15px;font-size:15px;}
+			#recommend span.inline{font-weight:700;font-size:24px;display:inline;}
+
+		/*################## premium ################*/
+			
+			#premium{width:100%;padding-top:100px;}
+			#premium .premium_area{padding:0 10%;background-color:#222222;overflow:hidden;}
+			#premium .premium_area:after{content:'';display:block;clear:both;}
+			/*#premium h3{font-size:42px;}*/
+			#premium .swiper_txt{width:50%;padding-top:10%;float:left;color:#fff;}
+			#premium .swiper_txt .btn{width:100%;height:58px;padding-top:80px;}
+			#premium .btn div{width:166px;margin-right:10px;text-align:center;font-weight:700;float:left;}
+			#premium .btn a{height:54px;line-height:54px;display:block;}
+
+			#premium .swiper_img{width:45%;margin-left:5%;padding:50px 0;float:left;}
+			#premium ul{width:200%;}
+			#premium li{width:50%;}
+			#premium li .imgBox{width:100%;}
+			#premium .imgBox img{width:100%;}
+
+		/*################## premium .swiper_txt 개별 작업 ################*/
+			#premium .swiper_txt .date{font-size:24px;font-weight:700;}
+			#premium .swiper_txt .gold{color:#fabe00;}
+			#premium .swiper_txt .title{font-size:48px;font-weight:700;}
+			#premium .btn .look a{border:2px solid #fabe00;background-color:#fabe00;color:#222;}
+			#premium .btn .sceduel a{border:2px solid #333;color:#fff;}
+			
+			#premium .btn .look a:hover,#premium .btn .look a:focus{background-color:#222;color:#fff;}
+			#premium .btn .sceduel a:hover,#premium .btn .sceduel a:focus{border:2px solid #fabe00;color:#fff;}
+
+		/*################## md_pick ################*/
+			/*
+				1. 이미지마다 마우스 올리면 다른 영역이 나와줌 (hover기능 영역)
+				2. 이미지를 500px로 줄인 이유는 원본이 세로형이기 때문에
+				   줄여서 확대해야 이미지의 비율이 깨지지 않아서 우선 설정
+				3. li상품들 중앙 글씨는 position으로 배치하고 a태그 들어가면 버튼 새로 수정하기
+				4. li상품들 margin에 딱 맞아떨어지게 설계하는걸 어떻게 할지 고민해보기
+				   (계산해서 할지 자동으로 할지 고민)
+			*/
+			#md_pick{width:100%;padding-top:200px;}
+			#md_pick .md_area{width:100%;}
+			#md_pick .md_title{width:100%;text-align:center;}
+		
+		/*################## md_pick .md_title ################*/
+			#md_pick h3{font-size:62px;padding:30px 0;}
+			#md_pick .gold{color:#fabe00;}
+			#md_pick .hash_tag{width:100%;font-size:28px;color:#888;}
+			#md_pick .hash_tag span{padding:0 20px;border-right:3px solid #e5e5e5;}
+			#md_pick .hash_tag .tab2{border:none;}
+		
+		/*################## md_pick .md_product ################*/
+			#md_pick .md_product{padding:0 50px;padding-top:40px;}
+			#md_pick ul{width:100%;}
+			#md_pick ul:after{content:'';display:block;clear:both;}
+			#md_pick li{width:24%;margin-bottom:1%;opacity:1;position:relative;
+			background-color:#f0f0f0;float:left;margin-left:1%;transition:all 0.5s ease-in;}
+			#md_pick li div{width:100%;height:100%;}
+			#md_pick li .product{width:100%;height:100%;position:relative;}
+			#md_pick .product .thumb{width:100%;text-align:center;}
+			#md_pick .thumb a{width:100%;display:block;}
+			#md_pick .thumb .imgBox{width:100%;display:block;}
+			#md_pick .thumb img{width:100%;}
+			#md_pick .inner_desc{width:100%;background-color:rgba(255,255,255,0.5);opacity:0;
+			transition:all 0.5s linear;position:absolute;top:0;text-align:center;overflow:hidden;}
+			#md_pick .inner_desc a{display:block;}
+			#md_pick .inner_desc span{display:block;}
+			#md_pick .inner_desc .desc{padding:0 10%;padding-top:40%;}
+			#md_pick .inner_desc .btn{width:168px;height:50px;padding:0;line-height:50px;border:2px solid #fff;
+			font-weight:700;background-color:#fff;margin:0 auto;}
+			#md_pick .inner_desc .product{padding-top:10%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+			#md_pick .inner_desc .bold{display:inline;font-weight:700;font-size:24px;}
+			
+
+			#md_pick .inner_desc .btn:hover{background-color:rgba(0,0,0,0);color:#fff;}	
+			#md_pick .product:hover .inner_desc{opacity:1;z-index:1;}
+			
+		/*################## md_pick .md_product (개별작업) ################*/
+			#md_pick .md_0{z-index:1;}
+			#md_pick .md_1{z-index:0;}
+			#md_pick .md_2{z-index:0;}
+			#md_pick .md_3{z-index:0;}
+			#md_pick .md_4{z-index:0;}
+			#md_pick .md_5{z-index:0;}
+			#md_pick .md_6{z-index:0;}
+			#md_pick .md_7{z-index:0;}
+			#md_pick .md_8{display:none;}
+
+			#md_pick .new_more{width:100%;background-color:#fff;text-align:center;}
+			#md_pick .new_more .text{width:100%;font-size:26px;padding-top:13%;
+			text-align:left;}
+			#md_pick .new_more .btn{padding-top:30px;}
+			#md_pick .new_more .btn a{width:196px;height:50px;line-height:50px;border:3px solid #000;
+			font-weight:700;display:block;}
+
+			#md_pick .new_more .btn a:hover,#md_pick .new_more .btn a:focus{background-color:#000;color:#fff;}
+
+		/*################## play_video ################*/
+			/*
+				1. 자세히 보기 버튼 a태그로 제작할때 padding으로 채워서 값 만들기
+				2. 썸네일 안에 제목 이미지는 position으로 제작
+				3. 영역 텍스트박스와 슬라이딩 윈도우 float:left 지우고 position으로 영역으로 보내기
+			*/
+			
+			#play_video{width:100%;padding-top:200px;}
+			#play_video .videoArea{width:100%;padding:40px 0;background-color:#141414;}
+			#play_video .videoArea:after{content:"";display:block;clear:both;}
+			#play_video .tv_title{width:30%;padding-left:10%;
+			height:100%;color:#fff;float:left;}
+			#play_video .slideArea{width:60%;float:left;overflow:hidden;}
+			#play_video ul{width:4560px;overflow:hidden;}
+			#play_video li{width:550px;margin-right:40px;float:left;}
+			#play_video li .imgBox{width:100%;}
+			#play_video .imgBox img{width:100%;}
+			#play_video .btn{width:184px;}
+
+		/*################## play_video .tv_title 개별작업 ################*/
+			#play_video .tv_title .title{font-size:54px;padding:50px 0 80px;}
+			#play_video .tv_title .gold{color:#fabe00;}
+			#play_video .btn a{width:180px;height:50px;line-height:50px;border:2px solid #fff;
+			text-align:center;display:block;font-weight:700;color:#fff;}
+
+			#play_video .btn a:hover,#play_video .btn a:focus{background-color:#fff;color:#000;}
+
+		/*################## magazine ################*/
+			/*
+				1. magazine 영역 list가 옆으로 더 늘어나야 해서 ul영역 너비를 더 길게 잡아줘야 함!
+				2. mag_head 부분이 h3와 .more를 float처리한 것 나중에 position으로 처리
+			*/
+			#magazine{width:100%;padding-top:100px;}
+			#magazine .mag_area{padding:0 72px;margin:0 auto;}
+			#magazine .mag_head{padding:0 12px;height:100px;}
+			#magazine h3{font-size:42px;float:left;}
+			#magazine .more{padding:20px 0;font-size:18px;font-weight:bold;float:right;}
+
+			#magazine .mag_slide{width:100%;overflow:hidden;}
+			#magazine ul{width:3600px;overflow:hidden;}
+			#magazine li{width:366px;padding:0 12px;float:left;}
+			#magazine li .img_area{width:100%;}
+			#magazine .img_btn{width:100%;}
+			#magazine li a{width:100%;display:block;}
+			#magazine li span{display:block;}
+			#magazine .imgBox{width:100%;overflow:hidden;}
+			#magazine .imgBox img{width:100%;transform:scale(1);transition:transform 0.5s linear;}
+
+			#magazine li:hover img{transform:scale(1.05);}
+
+			#magazine .product_desc{width:100%;}
+			#magazine .product_desc p{width:100%;padding-top:10px;}
+
+		/*################## magazine 개별작업 ################*/
+			#magazine .title{padding-top:20px;font-size:22px;font-weight:700;line-height:35px;
+			letter-spacing:-1px;}
+			#magazine .date{padding-top:10px;font-size:14px;}
+
+		/*################## footerWrap ################*/
+			#footer{width:100%;padding-top:100px;}
+		
+		/*################## footer ################*/
+			#footer_inn{width:100%;font-size:12px;}
+
+			#footer_inn .siteMap{padding:0 5%;background-color:#141414;}
+			#footer_inn .siteMap a{color:#fff;font-size:13px;}
+			#footer_inn .siteMap:after{content:'';display:block;clear:both;}
+
+			#footer_inn .site{width:60%;float:left;}
+			#footer_inn .social{width:40%;height:100%;float:left;}
+			#footer_inn .siteMap ul{height:100%;line-height:89px;}
+			#footer_inn .siteMap li{display:inline;padding-right:2%;}
+			
+			#footer_inn .social ul{width:60%;height:82px;padding-top:7px;text-align:right;
+			float:left;}
+			#footer_inn .social li{display:inline;}
+			#footer_inn .social a img{width:24px;}
+			#footer_inn .real_site{width:40%;padding-top:30px;float:left;text-align:right;}
+			#footer_inn #select{width:80%;padding:7px 16px 7px 10px;border:none;background-color:#141414;
+			color:#fff;border:1px solid #333;}
+
+			#footer_inn .infoArea{padding:30px 5% 100px;overflow:hidden;background-color:#222;
+			color:#ccc;}
+			#footer_inn .info{width:100%;}
+			#footer_inn .info:after{content:'';display:block;clear:both;}
+			#footer_inn .logo_info{width:57%;padding-right:3%;height:100%;float:left;}
+			#footer_inn .logo{width:14%;height:100%;float:left;}
+			#footer_inn .logo img{width:64px;}
+			#footer_inn .com_info .btn{display:none;width:100%;}
+			#footer_inn .com_info .btn span{transition:all 0.4s linear;}
+			#footer_inn .com_info{width:85%;padding-left:1%;line-height:20px;float:left;}
+			#footer_inn .service{width:40%;height:100%;float:left;text-align:right;}
+			#footer_inn .service h3{padding-bottom:20px;font-size:20px;}
+			#footer_inn .service .btnArea{width:100%;padding-top:20px;}
+			#footer_inn .btnArea .btn:after{content:'';display:block;clear:both;}
+			#footer_inn .btn a{display:block;float:right;color:#fff;
+			background-color:#434343;padding:8px 15px;margin-left:15px;}
+
+		@media all and (min-width:768px) and (max-width:1024px){
+			/*################## header ################*/
+			#header{width:100%;background-color:rgba(7,12,50,1);transition:none;}
+			#header_inn{display:none;}
+			#head_mob{display:block;width:100%;position:relative;}
+			#m_top{width:90%;padding:10px 5% 0;height:54px;}
+			#m_menu{width:100%;height:100%;}
+			#m_menu .logo{width:50%;float:left;}
+			#m_menu .logo img{width:58px;}
+			#m_menu .mArea{width:50%;height:100%;line-height:54px;float:left;}
+			#m_menu .mArea ul{width:100%;height:100%;text-align:right;}
+			#m_menu .mArea li{display:inline-block;width:24px;height:100%;padding-right:20px;}
+			#m_menu .mArea div{width:100%;height:100%;position:relative;}
+			#m_menu .mArea div i{font-style:normal;height:100%;}
+			#m_menu .mArea div i img{width:26px;position:absolute;left:0;top:15px;transition:all 1s linear;}
+			#m_menu .mArea div i img:last-child{opacity:0;}
+			#m_menu .mArea .search img{width:30px;}
+
+			#menu{width:50%;float:left;}
+			#menu a{display:block;width:40px;height:40px;padding-top:5px;padding-left:10px;}
+			#menu a span{display:block;text-indent:-9999px;border:none;width:45%;height:1px;margin-top:7px;background-color:#fff;}
+
+			#m_gnb{width:100%;}
+			#m_inn{width:90%;padding:0 5%;border-bottom:1px solid rgba(150,150,150,0.3);}
+			#m_inn .main{width:100%;padding:10px 0;overflow:hidden;}
+			#m_inn ul{width:3000px;}
+			#m_inn li{display:inline-block;padding:10px;}
+			#m_inn li a{color:#fff;font-weight:700;font-size:16px;}
+
+		/*################## main_product ################*/
+			#main_product{width:100%;}
+			#main_product .main_area{width:100%;padding:0;margin:0 auto;}
+
+			#main_product .tab_menu{width:100%;height:54px;padding:0;padding-top:30px;opacity:1;transition:none;}
+			#main_product .tab_menu .tab{width:100%;height:100%;}
+			#main_product .tab_menu .tab li{height:23%;padding:0 1%;
+			float:left;font-size:18px;font-weight:700;letter-spacing:-2px;}
+		
+		/*################## main_product .product_area ################*/
+			#main_product .product_area{width:100%;}
+			#main_product .product_area li{width:23%;padding:0 1%;float:left;
+			transform:translatey(0);opacity:1;transition:none;}
+
+			#main_product .img_area .imgBox{width:100%;position:relative;overflow:hidden;}
+			#main_product li .img_area .border{display:none;}
+			#main_product .imgBox img{width:100%;transform:scale(1.1);transition:none;}
+			#main_product .product_desc{width:100%;}
+			#main_product .product_desc span{width:100%;padding-top:10px;}
+			
+
+		/*################## main_product .product_desc 개별작업 ################*/
+			#main_product span.brand{padding-top:20px;font-size:12px;color:#888;}
+			#main_product .product{font-size:14px;letter-spacing:-1px;}
+			#main_product .price{padding-top:15px;font-size:14px;}
+			#main_product span.inline{font-weight:700;font-size:20px;display:inline;}
+
+
+		
+		/*################## main_brand ################*/
+			/*
+				1. 현재 정사각형의 모양은 border-radius로 원모양 만들고 position 배치
+				2. ul은 너비 넓혀서 overflow:hidden으로 숨기고 list 사용할 영역 박스에
+				position으로 이동후 움직이는 기능 (position으로 스크롤 전체 떠 있음)
+				3. 움직일때 마다 아래 bar도 같이 이동하는 (border)기능 필요
+			*/
+			#main_brandArea{width:100%;padding-top:130px;}
+			#main_brand{width:100%;}
+			#main_brand .brand_slide{width:100%;}
+			#main_brand ul{width:2400px;padding-left:5%;}
+			#main_brand ul:after{content:'';display:block;clear:both;}
+			#main_brand li{width:9%;opacity:1;margin-left:1%;float:left;}
+			#main_brand li a{display:block;width:100%;height:100%;}
+			#main_brand .imgBox{display:block;width:100%;height:100%;border-radius:100%;position:relative;overflow:hidden;}
+			#main_brand .imgBox img{width:100%;transform:scale(1.1);transition:transform 1s linear;}
+			#main_brand .imgBox img:last-child{position:absolute;left:0;}
+			#main_brand .slide0 .imgBox img,#main_brand .slide1 .imgBox img:last-child{position:static;}
+		
+			
+			/*################## slide_gunpla ################*/
+			#slide_gunpla{width:100%;padding-top:150px;position:relative;}
+			#slide_gunpla .gp_area{width:100%;margin:0 auto;}
+			#slide_gunpla .gp_area:after{content:'';display:block;clear:both;}
+			#slide_gunpla .area_tit{font-size:80px;color:#e60012;position:absolute;right:5%;top:17%;z-index:1;
+			opacity:1;}
+			#slide_gunpla .textArea{width:35%;float:left;}
+			#slide_gunpla .txt{padding-left:10%;height:340px;padding-top:15%;font-weight:700;float:left;
+			opacity:1;transform:translatex(0);}
+			#slide_gunpla .slide_img{width:65%;float:left;opacity:1;transform:translatex(0);}
+			#slide_gunpla .slide0{width:100%;}
+			#slide_gunpla .imgBox{width:100%;}
+			#slide_gunpla .imgBox img{width:100%;}
+
+			#slide_gunpla p{font-size:18px;}
+			#slide_gunpla h3{font-size:26px;padding-bottom:50px;}
+			#slide_gunpla .btn{width:192px;text-align:center;}
+			
+			#slide_gunpla .btn a{width:190px;height:50px;line-height:50px;border:2px solid #e60012;background-color:#e60012;color:#fff;display:block;}
+			#slide_gunpla .btn a:hover,#slide_gunpla .btn a:focus{background-color:#fff;color:#000;}
+
+			/*################## week_best ################*/
+			#week_best{width:100%;padding-top:0;}
+			#week_best .week_area{padding:0 1%;}
+			#week_best .week_new{height:50px;}
+			#week_best h3{font-size:24px;float:left;}
+			#week_best .red{color:#e60012;}
+			#week_best .more{padding:15px;padding-bottom:0;font-size:14px;font-weight:bold;float:right;}
+
+			#week_best .week_list{width:100%;overflow:hidden;}
+			#week_best .week_list li{width:19%;padding-right:1%;float:left;}
+			#week_best .week_list a{display:block;}
+			#week_best .week_list span{display:block;}
+			#week_best li .img_area{width:100%;height:100%;position:relative;}
+
+			#week_best .img_area .imgBox{width:100%;overflow:hidden;}
+			#week_best .imgBox img{width:100%;transform:scale(1.1);transition:transform 0.5s linear;}
+			#week_best .product_desc{width:100%;}
+			#week_best .product_desc span{width:100%;padding-top:10px;}
+
+			#week_best li .img_area .border{display:none;}
+
+			/*################## week_best 개별작업 ################*/
+			#week_best span.brand{padding-top:20px;font-size:12px;color:#888;}
+			#week_best .product{font-size:13px;letter-spacing:-1px;}
+			#week_best .price{padding-top:15px;font-size:13px;}
+			#week_best span.inline{font-weight:700;font-size:18px;display:inline;}
+
+			/*################## slide_toy ################*/
+			#slide_toy{width:100%;padding-top:130px;position:relative;}
+			#slide_toy .toy_area{width:100%;text-align:right;}
+			#slide_toy .toy_area:after{content:'';display:block;clear:both;}
+			#slide_toy .area_tit{font-size:80px;color:#00a0e9;position:absolute;left:15%;top:13%;z-index:1;
+			opacity:1;transition:opacity 0.5s linear;}
+			#slide_toy .slide_img{width:65%;float:left;opacity:1;transform:translatex(0);}
+			#slide_toy .textArea{width:35%;float:left;}
+			#slide_toy .txt{padding-left:15%;height:340px;padding-top:20%;font-weight:700;float:left;
+			opacity:1;transform:translatex(0);position:relative;}
+
+			#slide_toy .slide0{width:100%;}
+			#slide_toy .imgBox{width:100%;}
+			#slide_toy .imgBox img{width:100%;}
+
+			#slide_toy p{font-size:20px;}
+			#slide_toy h3{font-size:26px;padding-bottom:50px;}
+			#slide_toy .btn{width:192px;text-align:center;position:absolute;right:0;}
+			
+			/*################## recommend ################*/
+			#recommend{width:100%;}
+			#recommend .recommend_area{padding:0 1%;margin:0 auto;}
+			#recommend .recommend_new{height:50px;}
+			#recommend h3{font-size:24px;float:left;}
+			#recommend .blue{color:#00d324/*#00a0e9*/;}
+			#recommend .more{padding:15px;font-size:14px;font-weight:bold;float:right;}
+
+			#recommend .recommend_list{width:100%;overflow:hidden;}
+			#recommend .recommend_list li{width:19%;padding-right:1%;float:left;}
+			#recommend .recommend_list a{display:block;}
+			#recommend .recommend_list span{display:block;}
+			#recommend li .img_area{width:100%;height:100%;position:relative;}
+
+			#recommend .img_area .imgBox{width:100%;overflow:hidden;}
+			#recommend .imgBox img{width:100%;transform:scale(1.1);transition:transform 0.5s linear;}
+			#recommend .product_desc{width:100%;}
+			#recommend .product_desc span{width:100%;padding-top:10px;}
+
+			#recommend li .img_area .border{display:none;}
+
+			/*################## recommend 개별작업 ################*/
+			#recommend span.brand{padding-top:20px;font-size:12px;color:#888;}
+			#recommend .product{font-size:13px;letter-spacing:-1px;}
+			#recommend .price{padding-top:15px;font-size:13px;}
+			#recommend span.inline{font-weight:700;font-size:18px;display:inline;}
+
+			/*################## premium ################*/
+			
+			#premium{width:100%;padding-top:100px;}
+			#premium .premium_area{padding:0 10%;background-color:#222222;overflow:hidden;}
+			#premium .premium_area:after{content:'';display:block;clear:both;}
+			/*#premium h3{font-size:42px;}*/
+			#premium .swiper_txt{width:50%;padding-top:10%;float:left;color:#fff;}
+			#premium .swiper_txt .btn{width:100%;height:42px;padding-top:80px;}
+			#premium .btn div{width:140px;margin-right:10px;text-align:center;font-weight:700;float:left;}
+			#premium .btn a{height:42px;line-height:42px;display:block;font-size:14px;}
+
+			#premium .swiper_img{width:45%;margin-left:5%;padding:50px 0;float:left;}
+			#premium ul{width:200%;}
+			#premium li{width:50%;}
+			#premium li .imgBox{width:100%;}
+			#premium .imgBox img{width:100%;}
+
+			/*################## premium .swiper_txt 개별 작업 ################*/
+			#premium .swiper_txt .date{font-size:16px;font-weight:700;}
+			#premium .swiper_txt .title{font-size:36px;font-weight:700;}
+
+		/*################## md_pick ################*/
+		
+			#md_pick{width:100%;padding-top:150px;}
+			#md_pick .md_area{width:100%;}
+			#md_pick .md_title{width:100%;text-align:center;}
+		
+		/*################## md_pick .md_title ################*/
+			#md_pick h3{font-size:48px;padding:30px 0;}
+			#md_pick .gold{color:#fabe00;}
+			#md_pick .hash_tag{width:100%;font-size:24px;color:#888;}
+			#md_pick .hash_tag span{padding:0 20px;border-right:3px solid #e5e5e5;}
+			#md_pick .hash_tag .tab2{border:none;}
+		
+		/*################## md_pick .md_product ################*/
+			#md_pick .md_product{padding:0 50px;padding-top:40px;}
+			#md_pick ul{width:100%;}
+			#md_pick ul:after{content:'';display:block;clear:both;}
+			#md_pick li{width:24%;margin-bottom:1%;opacity:1;position:relative;
+			background-color:#f0f0f0;float:left;margin-left:1%;transition:all 0.5s ease-in;}
+			#md_pick li div{width:100%;height:100%;}
+			#md_pick li .product{width:100%;height:100%;position:relative;}
+			#md_pick .product .thumb{width:100%;text-align:center;}
+			#md_pick .thumb a{width:100%;display:block;}
+			#md_pick .thumb .imgBox{width:100%;display:block;}
+			#md_pick .thumb img{width:100%;}
+			#md_pick .inner_desc{width:100%;background-color:rgba(255,255,255,0.5);opacity:0;
+			transition:all 0.5s linear;position:absolute;top:0;text-align:center;overflow:hidden;}
+			#md_pick .inner_desc a{display:block;}
+			#md_pick .inner_desc span{display:block;}
+			#md_pick .inner_desc .desc{padding:0 10%;padding-top:35%;}
+			#md_pick .inner_desc .btn{width:95%;height:40px;padding:0;line-height:40px;border:2px solid #fff;
+			font-weight:700;background-color:#fff;font-size:14px;margin:0 auto;}
+			#md_pick .inner_desc .product{padding-top:10%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;}
+			#md_pick .inner_desc .bold{display:inline;font-weight:700;font-size:18px;}
+			
+
+			#md_pick .inner_desc .btn:hover{background-color:rgba(0,0,0,0);color:#fff;}	
+			#md_pick .product:hover .inner_desc{opacity:1;z-index:1;}
+			
+		/*################## md_pick .md_product (개별작업) ################*/
+			#md_pick .new_more{width:100%;background-color:#fff;text-align:center;}
+			#md_pick .new_more .text{width:100%;font-size:18px;padding-top:13%;
+			text-align:left;}
+			#md_pick .new_more .btn{padding-top:30px;}
+			#md_pick .new_more .btn a{width:135px;height:36px;line-height:36px;border:3px solid #000;
+			font-weight:700;font-size:14px;display:block;}
+
+			#md_pick .new_more .btn a:hover,#md_pick .new_more .btn a:focus{background-color:#000;color:#fff;}
+
+			/*################## play_video ################*/
+			
+			#play_video{width:100%;padding-top:100px;}
+			#play_video .videoArea{width:100%;padding:40px 0;background-color:#141414;}
+			#play_video .tv_title{width:30%;padding-left:10%;
+			height:100%;color:#fff;float:left;}
+			#play_video .slideArea{width:60%;padding-top:3%;float:left;overflow:hidden;}
+			#play_video ul{width:4560px;overflow:hidden;}
+			#play_video li{width:320px;margin-right:40px;float:left;}
+			#play_video li .imgBox{width:100%;}
+			#play_video .imgBox img{width:100%;}
+			#play_video .btn{width:184px;}
+
+		/*################## play_video .tv_title 개별작업 ################*/
+			#play_video .tv_title .title{font-size:38px;padding:30px 0 50px;}
+			#play_video .tv_title .gold{color:#fabe00;}
+			#play_video .btn a{width:180px;height:50px;line-height:50px;border:2px solid #fff;
+			text-align:center;display:block;font-weight:700;color:#fff;}
+
+			#play_video .btn a:hover,#play_video .btn a:focus{background-color:#fff;color:#000;}
+
+		/*################## magazine ################*/
+			/*
+				1. magazine 영역 list가 옆으로 더 늘어나야 해서 ul영역 너비를 더 길게 잡아줘야 함!
+				2. mag_head 부분이 h3와 .more를 float처리한 것 나중에 position으로 처리
+			*/
+			#magazine{width:100%;padding-top:100px;}
+			#magazine .mag_area{padding:0 72px;margin:0 auto;}
+			#magazine .mag_head{padding:0 12px;height:100px;}
+			#magazine h3{font-size:36px;float:left;}
+			#magazine .more{padding:20px 0;font-size:14px;font-weight:bold;float:right;}
+
+			#magazine .mag_slide{width:100%;overflow:hidden;}
+			#magazine ul{width:3600px;overflow:hidden;}
+			#magazine li{width:240px;padding:0 12px;float:left;}
+			#magazine li .img_area{width:100%;}
+			#magazine .img_btn{width:100%;}
+			#magazine li a{width:100%;display:block;}
+			#magazine li span{display:block;}
+			#magazine .imgBox{width:100%;overflow:hidden;}
+			#magazine .imgBox img{width:100%;transform:scale(1);transition:transform 0.5s linear;}
+
+			#magazine li:hover img{transform:scale(1.05);}
+
+			#magazine .product_desc{width:100%;}
+			#magazine .product_desc p{width:100%;padding-top:10px;}
+
+		/*################## magazine 개별작업 ################*/
+			#magazine .title{padding-top:20px;font-size:18px;font-weight:700;line-height:24px;
+			letter-spacing:-1px;}
+			#magazine .date{padding-top:10px;font-size:14px;}
+
+			/*################## footerWrap ################*/
+				#footer{min-width:0;width:100%;padding-top:100px;}
+			
+			/*################## footer ################*/
+				#footer_inn{width:100%;}
+
+				#footer_inn .siteMap{padding:0;background-color:#141414;}
+				#footer_inn .siteMap a{font-size:12px;}
+
+				#footer_inn .site{width:100%;float:none;padding:0;}
+				#footer_inn .social{width:100%;padding-bottom:30px;float:none;border-top:1px solid #222;}
+				#footer_inn .siteMap ul{width:100%;line-height:0;text-align:center;}
+				#footer_inn .siteMap li{display:inline-block;padding:0 6px;}
+				#footer_inn .site li{line-height:48px;}
+				
+				#footer_inn .social ul{width:100%;height:30px;line-height:30px;padding-top:20px;text-align:center;
+				float:none;}
+				#footer_inn .social li{display:inline;}
+				#footer_inn .social a img{width:24px;}
+				#footer_inn .real_site{width:100%;padding-top:10px;float:none;text-align:center;}
+				#footer_inn #select{width:204px;padding:7px 16px 7px 10px;border:none;background-color:#141414;
+				color:#fff;border:1px solid #333;}
+
+				#footer_inn .infoArea{padding:0;color:#ccc;}
+				#footer_inn .info{width:100%;text-align:center;}
+				#footer_inn .logo_info{width:100%;;float:none;background-color:#222;}
+				#footer_inn .logo{width:100%;height:60px;padding:15px 0;float:none;}
+				#footer_inn .com_info{width:100%;padding-left:0;line-height:20px;float:none;text-align:center;}
+				#footer_inn .com_info .btn{display:block;padding:5px 0;border-top:1px solid #595959;border-bottom:1px solid #595959;cursor:pointer;}
+				#footer_inn .com_info .copy{display:none;margin-left:0;padding:15px;}
+
+				#footer_inn .service{width:100%;padding:30px 0;float:none;text-align:center;background-color:#141414;}
+				#footer_inn .service h3{width:100%;padding-bottom:20px;font-size:20px;}
+				#footer_inn .service .desc{padding:0 30px;}
+				#footer_inn .service .btnArea{width:277px;height:50px;margin:0 auto;padding-top:20px;position:static;}
+				#footer_inn .btnArea .btn{width:100%;height:100%;position:static;}
+				#footer_inn .btn a{margin-left:0;margin-right:10px;}
+		}
+
+		@media all and (min-width:481px) and (max-width:767px){
+			/*################## header ################*/
+				#header{width:100%;}
+				#header_inn{display:none;}
+				#head_mob{display:block;width:100%;position:relative;}
+				#m_top{width:90%;padding:10px 5% 0;height:54px;}
+				#m_menu{width:100%;height:100%;}
+				#m_menu .logo{width:50%;float:left;}
+				#m_menu .logo img{width:50px;}
+				#m_menu .mArea{width:50%;height:100%;line-height:54px;float:left;}
+				#m_menu .mArea ul{width:100%;height:100%;text-align:right;}
+				#m_menu .mArea li{display:inline-block;width:24px;height:100%;padding-right:9px;}
+				#m_menu .mArea div{width:100%;height:100%;position:relative;}
+				#m_menu .mArea div i{font-style:normal;height:100%;}
+				#m_menu .mArea div i img{width:23px;position:absolute;left:0;top:12px;transition:all 1s linear;}
+				#m_menu .mArea div i img:last-child{opacity:0;}
+				#m_menu .mArea .search img{width:27px;}
+
+				#menu{width:50%;float:left;}
+				#menu a{display:block;width:40px;height:40px;padding-top:5px;padding-left:10px;}
+				#menu a span{display:block;text-indent:-9999px;border:none;width:45%;height:1px;margin-top:7px;background-color:#fff;}
+
+				#m_gnb{width:100%;}
+				#m_inn{width:90%;padding:0 5%;border-bottom:1px solid rgba(150,150,150,0.3);}
+				#m_inn .main{width:100%;padding:10px 0;overflow:hidden;}
+				#m_inn ul{width:3000px;}
+				#m_inn li{display:inline;padding-right:10px;}
+				#m_inn li a{color:#fff;font-weight:700;font-size:14px;}
+				
+			/*################## visual ################*/
+				#visual .imgBox img{width:150%;position:relative;left:-159px;}
+				
+
+			/*################## main_product ################*/
+				#main_product{width:100%;height:1000px;}
+				#main_product .main_area{width:461px;margin:0 auto;padding:0;}
+
+				#main_product .tab_menu{display:none;}
+				#main_product .m_menu{display:block;width:100%;padding:0;padding-top:40px;}
+				#main_product .m_menu .tab{width:100%;}
+				#main_product .m_menu .tab li{display:inline-block;padding-right:10px;font-weight:700;}
+				#main_product .m_menu .tab .on{display:block;padding:10px;background-color:#e60012;border-radius:30px;
+				color:#fff;}
+			
+			/*################## main_product .product_area ################*/
+				#main_product .product_area{width:100%;}
+				#main_product .product_area li{width:225px;padding:0;padding-left:11px;padding-top:30px;float:left;
+				transform:translatey(0);opacity:1;transition:none;}
+				#main_product .product_area .p0,#main_product .product_area .p2{padding-left:0;}
+				#main_product .img_area .imgBox{width:100%;position:relative;overflow:hidden;}
+				#main_product li .img_area .border{display:none;}
+
+				#main_product .imgBox img{width:100%;transform:scale(1.1);}
+
+				/*################## main_product .product_desc 개별작업 ################*/
+				#main_product span.brand{padding-top:10px;font-size:12px;}
+				#main_product .product{font-size:14px;letter-spacing:-1px;}
+				#main_product .price{padding-top:5px;font-size:15px;}
+				#main_product span.inline{font-size:16px;}
+
+			/*################## main_brand ################*/
+				#main_brandArea{width:100%;height:400px;padding-top:0;}
+				#main_brand .brand_slide{width:100%;height:100%;overflow:hidden;transform:translatey(0);}
+				#main_brand ul{width:3000px;height:100%;padding-left:0;}
+				#main_brand li{width:241px;height:241px;overflow:hidden;opacity:1;
+				margin-left:15px;float:left;transform:translatey(0);}
+
+			/*################## slide_gunpla ################*/
+				#slide_gunpla{width:100%;padding-top:0;position:static;}
+				#slide_gunpla .gp_area{width:100%;position:static;}
+				#slide_gunpla .gp_area:after{content:'';display:block;clear:both;}
+				#slide_gunpla .area_tit{display:none;}
+				#slide_gunpla .textArea{width:100%;float:none;}
+				#slide_gunpla .txt{width:461px;height:200px;padding-left:0;padding-top:0;font-weight:700;float:none;
+				opacity:1;transform:translatex(0);margin:0 auto;text-align:center;}
+				#slide_gunpla .slide_img{width:100%;float:none;opacity:1;transform:translatex(0);}
+				#slide_gunpla .slide0{width:100%;}
+				#slide_gunpla .imgBox{width:100%;height:100%;overflow:hidden;}
+				#slide_gunpla .imgBox img{width:100%;}
+
+				#slide_gunpla p{font-size:20px;}
+				#slide_gunpla h3{font-size:32px;padding-bottom:20px;}
+				#slide_gunpla .btn{width:192px;margin:0 auto;text-align:center;}
+				
+				#slide_gunpla .btn a{width:190px;height:50px;line-height:50px;border:2px solid #e60012;background-color:#e60012;color:#fff;display:block;}
+				#slide_gunpla .btn a:hover,#slide_gunpla .btn a:focus{background-color:#fff;color:#000;}
+
+			/*################## week_best ################*/
+				#week_best{width:100%;height:535px;padding-top:50px;}
+				#week_best .week_area{width:100%;padding:0;margin:0 auto;}
+				#week_best .week_new{width:100%;padding:0;height:50px;text-indent:12px;}
+				#week_best h3{font-size:24px;float:none;}
+				#week_best .red{color:#e60012;}
+				#week_best .more{display:none;}
+
+				#week_best .week_list{width:500%;height:100%;overflow:hidden;}
+				#week_best .week_list li{width:276px;padding:0 12px;float:left;}
+				#week_best .week_list a{display:block;}
+				#week_best .week_list span{display:block;}
+				#week_best li .img_area{width:100%;height:100%;position:relative;}
+
+				#week_best .img_area .imgBox{width:276px;overflow:hidden;}
+				#week_best .imgBox img{width:100%;transform:scale(1.1);}
+				#week_best .product_desc{width:100%;}
+				#week_best .product_desc span{width:100%;padding-top:10px;}
+
+				#week_best li .img_area .border{display:none;}
+
+			/*################## week_best 개별작업 ################*/
+				#week_best span.inline{font-weight:700;font-size:18px;display:inline;}
+
+			/*################## slide_toy ################*/
+				#slide_toy{width:100%;padding-top:50px;position:static;}
+				#slide_toy .toy_area{width:100%;position:static;}
+				#slide_toy .toy_area:after{content:'';display:block;clear:both;}
+				#slide_toy .area_tit{display:none;}
+				#slide_toy .textArea{width:100%;float:none;}
+				#slide_toy .txt{width:461px;height:140px;padding-left:0;padding-top:20px;font-weight:700;float:none;
+				opacity:1;transform:translatex(0);margin:0 auto;text-align:center;}
+				#slide_toy .slide_img{width:100%;float:none;opacity:1;transform:translatex(0);}
+				#slide_toy .slide0{width:100%;}
+				#slide_toy .imgBox{width:100%;overflow:hidden;}
+				#slide_toy .imgBox img{width:100%;}
+
+				#slide_toy p{font-size:18px;}
+				#slide_toy h3{font-size:32px;padding-bottom:20px;}
+				#slide_toy .btn{width:192px;float:none;position:static;margin:0 auto;text-align:center;}
+				
+				#slide_toy .btn a{width:190px;height:50px;line-height:50px;background-color:#00a0e9;
+				border:2px solid #00a0e9;display:block;color:#fff;}
+				#slide_toy .btn a:hover,#slide_toy .btn a:focus{background-color:#fff;color:#000;}
+			
+			/*################## recommend ################*/
+				#recommend{display:none;}
+				
+			/*################## premium ################*/			
+				#premium{display:none;}
+
+			/*################## md_pick ################*/
+				#md_pick{width:100%;padding-top:50px;}
+				#md_pick .md_area{width:100%;height:100%;}
+				#md_pick .md_title{width:100%;text-align:center;}
+			
+			/*################## md_pick .md_title ################*/
+				#md_pick h3{font-size:32px;padding:0;}
+				#md_pick .gold{display:inline-block;color:#fabe00;}
+				#md_pick .hash_tag{width:100%;padding-top:30px;font-size:16px;color:#888;}
+				#md_pick .hash_tag span{padding:0 10px;border-right:2px solid #e5e5e5;}
+				#md_pick .hash_tag .tab2{border:none;}
+			
+			/*################## md_pick .md_product ################*/
+				#md_pick .md_product{width:100%;padding:0;padding-top:30px;}
+				#md_pick ul{width:932px;height:461px;margin:0 auto;position:relative;}
+				/*#md_pick ul:after{content:'';display:block;clear:both;}*/
+				#md_pick li{width:230px;height:230px;margin-bottom:3px;opacity:1;
+				background-color:#f0f0f0;float:left;margin-left:0;margin-right:3px;position:static;
+				transform:translate(0,0);}
+				#md_pick li div{width:100%;height:100%;}
+				#md_pick li .product{width:100%;height:100%;position:relative;}
+				#md_pick .product div{position:absolute;}
+				#md_pick .product .thumb{width:100%;height:100%;text-align:center;}
+				#md_pick .thumb a{width:100%;height:100%;display:block;}
+				#md_pick .thumb .imgBox{width:100%;height:100%;display:block;overflow:hidden;}
+				#md_pick .thumb img{width:210px;}
+				#md_pick .inner_desc{width:100%;background-color:rgba(255,255,255,0.3);opacity:0;
+				transition:all 0.5s linear;}
+				#md_pick .inner_desc a{display:block;}
+				#md_pick .inner_desc span{display:block;}
+				#md_pick .inner_desc .desc{width:150px;margin:0 auto;padding:0;padding-top:110px;}
+				#md_pick .inner_desc .btn{width:124px;height:35px;line-height:35px;border:2px solid #fff;
+				font-weight:700;background-color:#fff;text-align:center;font-size:13px;margin:0 auto;}
+				#md_pick .inner_desc .product{display:none;}
+				#md_pick .inner_desc .price{display:none;}
+				#md_pick .inner_desc .bold{display:inline;font-weight:700;font-size:24px;}
+				
+
+				#md_pick .inner_desc .btn:hover{background-color:rgba(0,0,0,0);color:#fff;}	
+				#md_pick .product:hover .inner_desc{opacity:1;}
+				
+				#md_pick .md_0{display:none;}
+				#md_pick .new_more{width:100%;height:100%;background-color:#fff;}
+				#md_pick .new_more .text{width:100%;height:80px;font-size:24px;padding-top:40px;text-align:center;}
+				#md_pick .new_more .btn a{width:156px;height:40px;line-height:40px;border:2px solid #000;margin:0 auto;
+				font-weight:700;font-size:14px;display:block;}
+
+				#md_pick .new_more .btn a:hover,#md_pick .new_more .btn a:focus{background-color:#000;color:#fff;}
+
+				/*################# 해제하는 속성 ####################*/
+				#md_pick:hover .md_1{transform:translate(0,0);}
+				#md_pick:hover .md_2{transform:translate(0,0);}
+				#md_pick:hover .md_3{transform:translate(0,0);}
+				#md_pick:hover .md_7{transform:translate(0,0);}
+				#md_pick:hover .md_4{transform:translate(0,0);}
+				#md_pick:hover .md_5{transform:translate(0,0);}
+				#md_pick:hover .md_6{transform:translate(0,0);}
+				#md_pick:hover .md_7{transform:translate(0,0);}
+				#md_pick .md_8{display:block;}
+
+				/*################## play_video ################*/
+				/*
+					1. 자세히 보기 버튼 a태그로 제작할때 padding으로 채워서 값 만들기
+					2. 썸네일 안에 제목 이미지는 position으로 제작
+					3. 영역 텍스트박스와 슬라이딩 윈도우 float:left 지우고 position으로 영역으로 보내기
+				*/
+				
+				#play_video{width:100%;padding-top:50px;height:400px;text-align:center;}
+				#play_video .videoArea{width:100%;height:100%;padding:0;}
+				#play_video .tv_title{width:100%;height:210px;padding-left:0;color:#fff;float:none;}
+				#play_video .slideArea{width:100%;overflow:hidden;float:none;}
+				#play_video ul{width:1000%;padding-left:0;overflow:hidden;}
+				#play_video li{width:280px;margin-right:10px;float:left;}
+				#play_video li .imgBox{width:100%;}
+				#play_video .imgBox img{width:100%;}
+				#play_video .btn{width:184px;margin:0 auto;}
+
+				/*################## play_video .tv_title 개별작업 ################*/
+				#play_video .tv_title .title{font-size:36px;padding:50px 0 10px;}
+				#play_video .tv_title .gold{color:#fabe00;}
+				#play_video .btn a{width:180px;height:50px;line-height:50px;border:2px solid #fff;
+				text-align:center;display:block;font-weight:700;color:#fff;}
+
+				#play_video .btn a:hover,#play_video .btn a:focus{background-color:#fff;color:#000;}
+
+				/*################## magazine ################*/
+				#magazine{width:100%;height:500px;padding-top:50px;}
+				#magazine .mag_area{width:100%;padding:0;margin:0 auto;}
+				#magazine .mag_head{width:100%;padding:0;height:70px;}
+				#magazine h3{font-size:30px;float:left;}
+				#magazine .more{padding:13px 0;font-size:14px;font-weight:bold;float:right;}
+
+				#magazine .mag_slide{width:100%;overflow:hidden;}
+				#magazine ul{width:3600px;overflow:hidden;}
+				#magazine li{width:230px;padding:0;padding-right:12px;float:left;}
+				#magazine li .img_area{width:100%;}
+				#magazine .img_btn{width:100%;}
+				#magazine li a{width:100%;display:block;}
+				#magazine li span{display:block;}
+				#magazine .imgBox{width:100%;overflow:hidden;}
+				#magazine .imgBox img{width:100%;transform:scale(1);transition:transform 0.5s linear;}
+
+				#magazine li:hover img{transform:scale(1);}
+
+				#magazine .product_desc{width:100%;}
+				#magazine .product_desc p{width:100%;padding-top:10px;}
+
+			/*################## magazine 개별작업 ################*/
+				#magazine .title{padding-top:10px;font-size:14px;font-weight:700;line-height:18px;
+				letter-spacing:-1px;}
+				#magazine .date{padding-top:10px;font-size:14px;}
+
+			/*################## footerWrap ################*/
+				#footer{min-width:0;width:100%;padding:0;background-color:#141414;}
+			
+			/*################## footer ################*/
+				#footer_inn{width:100%;}
+
+				#footer_inn .siteMap{padding:0;background-color:#141414;}
+				#footer_inn .siteMap a{font-size:12px;}
+
+				#footer_inn .site{width:100%;float:none;padding:0;}
+				#footer_inn .social{width:100%;padding-bottom:30px;float:none;border-top:1px solid #222;}
+				#footer_inn .siteMap ul{width:100%;line-height:0;text-align:center;}
+				#footer_inn .siteMap li{display:inline-block;padding:0 6px;}
+				#footer_inn .site li{line-height:48px;}
+				
+				#footer_inn .social ul{width:100%;height:30px;line-height:30px;padding-top:20px;text-align:center;
+				float:none;}
+				#footer_inn .social li{display:inline;}
+				#footer_inn .social a img{width:24px;}
+				#footer_inn .real_site{width:100%;padding-top:10px;float:none;text-align:center;}
+				#footer_inn #select{width:204px;padding:7px 16px 7px 10px;border:none;background-color:#141414;
+				color:#fff;border:1px solid #333;}
+
+				#footer_inn .infoArea{padding:0;color:#ccc;}
+				#footer_inn .info{width:100%;text-align:center;}
+				#footer_inn .logo_info{width:100%;;float:none;background-color:#222;}
+				#footer_inn .logo{width:100%;height:60px;padding:15px 0;float:none;}
+				#footer_inn .com_info{width:100%;padding-left:0;line-height:20px;float:none;text-align:center;}
+				#footer_inn .com_info .btn{display:block;padding:5px 0;border-top:1px solid #595959;border-bottom:1px solid #595959;cursor:pointer;}
+				#footer_inn .com_info .copy{display:none;margin-left:0;padding:20px;}
+
+				#footer_inn .service{width:100%;padding:30px 0;float:none;text-align:center;background-color:#141414;}
+				#footer_inn .service h3{width:100%;padding-bottom:20px;font-size:20px;}
+				#footer_inn .service .desc{padding:0 30px;}
+				#footer_inn .service .btnArea{width:292px;height:50px;margin:0 auto;padding-top:20px;position:static;}
+				#footer_inn .btnArea .btn{width:100%;height:100%;position:static;}
+				#footer_inn .btnArea .btn a{margin-left:0;margin-right:15px;}
+				#footer_inn .btnArea .btn a:first-child{margin-right:20px;}
+
+		
+		}
+		@media all and (min-width:320px) and (max-width:480px){
+				#wrap{overflow:hidden;}
+			/*################## header ################*/
+				#header{width:100%;}
+				#header_inn{display:none;}
+				#head_mob{display:block;width:100%;position:relative;}
+				#m_top{width:90%;padding:10px 5% 0;height:54px;}
+				#m_menu{width:100%;height:100%;}
+				#m_menu .logo{width:40%;float:left;}
+				#m_menu .logo img{width:50px;}
+				#m_menu .mArea{width:60%;height:100%;line-height:54px;float:left;}
+				#m_menu .mArea ul{width:100%;height:100%;text-align:right;}
+				#m_menu .mArea li{display:inline-block;width:24px;height:100%;padding-right:9px;}
+				#m_menu .mArea div{width:100%;height:100%;position:relative;}
+				#m_menu .mArea div i{font-style:normal;height:100%;}
+				#m_menu .mArea div i img{width:23px;position:absolute;left:0;top:12px;transition:all 1s linear;}
+				#m_menu .mArea div i img:last-child{opacity:0;}
+				#m_menu .mArea .search img{width:27px;}
+
+				#menu{width:50%;float:left;}
+				#menu a{display:block;width:40px;height:40px;padding-top:5px;padding-left:10px;}
+				#menu a span{display:block;text-indent:-9999px;border:none;width:45%;height:1px;margin-top:7px;background-color:#fff;}
+
+				#m_gnb{width:100%;}
+				#m_inn{width:90%;padding:0 5%;border-bottom:1px solid rgba(150,150,150,0.3);}
+				#m_inn .main{width:100%;padding:10px 0;overflow:hidden;}
+				#m_inn ul{width:3000px;}
+				#m_inn li{display:inline;padding-right:10px;}
+				#m_inn li a{color:#fff;font-weight:700;font-size:14px;}
+				
+			/*################## visual ################*/
+				#visual .imgBox img{width:400%;position:relative;left:-450px;}
+				
+
+			/*################## main_product ################*/
+				#main_product{width:100%;}
+				#main_product .main_area{width:300px;padding:0;margin:0 auto;}
+
+				#main_product .tab_menu{display:none;}
+				#main_product .m_menu{display:block;width:100%;height:27px;padding:0;padding-top:40px;}
+				#main_product .m_menu .tab{width:100%;}
+				#main_product .m_menu .tab li{display:inline-block;padding-right:5px;font-weight:700;}
+				#main_product .m_menu .tab li a{font-size:14px;}
+				#main_product .m_menu .tab .on{display:block;padding:5px;background-color:#e60012;border-radius:30px;
+				color:#fff;font-size:14px;}
+			
+			/*################## main_product .product_area ################*/
+				#main_product .product_area{width:100%;}
+				#main_product .product_area li{width:145px;padding:0;padding-left:10px;padding-top:30px;float:left;
+				transform:translatey(0);opacity:1;}
+				#main_product .product_area .p0,#main_product .product_area .p2{padding-left:0;}
+				#main_product .img_area .imgBox{width:100%;position:relative;overflow:hidden;}
+				#main_product li .img_area .border{display:none;}
+
+				#main_product .imgBox img{width:100%;transform:scale(1.1);}
+
+				/*################## main_product .product_desc 개별작업 ################*/
+				#main_product span.brand{padding-top:10px;font-size:12px;letter-spacing:-1px;}
+				#main_product .product{font-size:13px;letter-spacing:-1px;}
+				#main_product .p0 .product{width:100%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;} 
+				#main_product .price{padding-top:5px;font-size:15px;}
+				#main_product span.inline{font-size:16px;}
+
+			/*################## main_brand ################*/
+				#main_brandArea{width:100%;height:200px;padding-top:70px;}
+				#main_brand .brand_slide{width:100%;height:100%;overflow:hidden;transform:translatey(0);}
+				#main_brand ul{width:1800px;height:100%;padding-left:0;}
+				#main_brand li{width:120px;height:120px;overflow:hidden;opacity:1;
+				margin-left:15px;float:left;transform:translatey(0);}
+
+			/*################## slide_gunpla ################*/
+				#slide_gunpla{width:100%;padding-top:0;position:static;}
+				#slide_gunpla .gp_area{width:100%;position:static;}
+				#slide_gunpla .gp_area:after{content:'';display:block;clear:both;}
+				#slide_gunpla .area_tit{display:none;}
+				#slide_gunpla .textArea{width:100%;height:168px;padding-bottom:15px;float:none;}
+				#slide_gunpla .txt{width:300px;padding:0;height:100%;font-weight:700;float:none;
+				opacity:1;transform:translatex(0);text-align:center;margin:0 auto;}
+				#slide_gunpla .slide_img{width:100%;float:none;opacity:1;transform:translatex(0);}
+				#slide_gunpla .slide0{width:100%;}
+				#slide_gunpla .imgBox{width:100%;}
+				#slide_gunpla .imgBox img{width:100%;}
+
+				#slide_gunpla p{font-size:16px;}
+				#slide_gunpla h3{font-size:24px;padding-bottom:30px;}
+				#slide_gunpla .btn{width:192px;margin:0 auto;text-align:center;}
+				
+				#slide_gunpla .btn a{width:190px;height:50px;line-height:50px;border:2px solid #e60012;background-color:#e60012;color:#fff;display:block;}
+				#slide_gunpla .btn a:hover,#slide_gunpla .btn a:focus{background-color:#fff;color:#000;}
+
+			/*################## week_best ################*/
+				#week_best{width:100%;height:535px;padding-top:30px;}
+				#week_best .week_area{width:100%;padding:0;margin:0 auto;}
+				#week_best .week_new{width:100%;padding:0;height:50px;text-indent:12px;}
+				#week_best h3{font-size:24px;float:none;}
+				#week_best .red{color:#e60012;}
+				#week_best .more{display:none;}
+
+				#week_best .week_list{width:500%;height:100%;overflow:hidden;}
+				#week_best .week_list li{width:276px;padding:0 12px;float:left;}
+				#week_best .week_list a{display:block;}
+				#week_best .week_list span{display:block;}
+				#week_best li .img_area{width:100%;height:100%;position:relative;}
+
+				#week_best .img_area .imgBox{width:276px;overflow:hidden;}
+				#week_best .imgBox img{width:100%;transform:scale(1.1);}
+				#week_best .product_desc{width:100%;}
+				#week_best .product_desc span{width:100%;padding-top:10px;}
+
+				#week_best li .img_area .border{display:none;}
+
+			/*################## week_best 개별작업 ################*/
+				#week_best span.inline{font-weight:700;font-size:18px;display:inline;}
+
+			/*################## slide_toy ################*/
+				#slide_toy{width:100%;padding-top:0;position:static;}
+				#slide_toy .toy_area{width:100%;position:static;}
+				#slide_toy .toy_area:after{content:'';display:block;clear:both;}
+				#slide_toy .area_tit{display:none;}
+				#slide_toy .textArea{width:100%;height:160px;float:none;}
+				#slide_toy .txt{width:300px;padding-left:0;height:100%;padding-top:20px;font-weight:700;float:none;
+				opacity:1;transform:translatex(0);text-align:center; margin:0 auto; }
+				#slide_toy .slide_img{width:100%;float:none;opacity:1;transform:translatex(0);}
+				#slide_toy .slide0{width:100%;}
+				#slide_toy .imgBox{width:100%;}
+				#slide_toy .imgBox img{width:100%;}
+
+				#slide_toy p{font-size:16px;}
+				#slide_toy h3{font-size:24px;padding-bottom:20px;}
+				#slide_toy .btn{width:192px;float:none;text-align:center; position:static; margin:0 auto;}
+				
+				#slide_toy .btn a{width:190px;height:50px;line-height:50px;background-color:#00a0e9;
+				border:2px solid #00a0e9;display:block;color:#fff;}
+				#slide_toy .btn a:hover,#slide_toy .btn a:focus{background-color:#fff;color:#000;}
+			
+			/*################## recommend ################*/
+				#recommend{display:none;}
+				
+			/*################## premium ################*/			
+				#premium{display:none;}
+
+			/*################## md_pick ################*/
+				#md_pick{width:100%;padding-top:50px;}
+				#md_pick .md_area{width:100%;height:100%;}
+				#md_pick .md_title{width:100%;text-align:center;}
+			
+			/*################## md_pick .md_title ################*/
+				#md_pick h3{font-size:24px;padding:0;}
+				#md_pick .gold{display:inline-block;color:#fabe00;}
+				#md_pick .hash_tag{width:100%;padding-top:30px;font-size:14px;color:#888;}
+				#md_pick .hash_tag span{padding:0 10px;border-right:2px solid #e5e5e5;}
+				#md_pick .hash_tag .tab2{border:none;}
+			
+			/*################## md_pick .md_product ################*/
+				#md_pick .md_product{width:100%;padding:0;padding-top:30px;}
+				#md_pick ul{width:612px;height:310px;margin:0 auto;position:relative;}
+				/*#md_pick ul:after{content:'';display:block;clear:both;}*/
+				#md_pick li{width:150px;height:150px;margin-bottom:3px;opacity:1;
+				background-color:#f0f0f0;float:left;margin-left:0;margin-right:3px;position:static;
+				transform:translate(0,0);}
+				#md_pick li div{width:100%;height:100%;}
+				#md_pick li .product{width:100%;height:100%;position:relative;}
+				#md_pick .product div{position:absolute;}
+				#md_pick .product .thumb{width:100%;height:100%;text-align:center;}
+				#md_pick .thumb a{width:100%;height:100%;display:block;}
+				#md_pick .thumb .imgBox{width:100%;height:100%;display:block;overflow:hidden;}
+				#md_pick .thumb img{width:150px;}
+				#md_pick .inner_desc{width:100%;background-color:rgba(255,255,255,0.3);opacity:0;
+				transition:all 0.5s linear;}
+				#md_pick .inner_desc a{display:block;}
+				#md_pick .inner_desc span{display:block;}
+				#md_pick .inner_desc .desc{width:150px;margin:0 auto;padding:0;padding-top:60px;}
+				#md_pick .inner_desc .btn{width:124px;height:35px;line-height:35px;border:2px solid #fff;
+				font-weight:700;background-color:#fff;text-align:center;font-size:13px;margin:0 auto;}
+				#md_pick .inner_desc .product{display:none;}
+				#md_pick .inner_desc .price{display:none;}
+				#md_pick .inner_desc .bold{display:inline;font-weight:700;font-size:24px;}
+				
+
+				#md_pick .inner_desc .btn:hover{background-color:rgba(0,0,0,0);color:#fff;}	
+				#md_pick .product:hover .inner_desc{opacity:1;}
+				
+				#md_pick .md_0{display:none;}
+				#md_pick .new_more{width:100%;height:100%;background-color:#fff;}
+				#md_pick .new_more .text{width:100%;height:80px;font-size:18px;padding-top:40px;text-align:center;}
+				#md_pick .new_more .btn a{width:156px;height:40px;line-height:40px;border:2px solid #000;margin:0 auto;
+				font-weight:700;font-size:14px;display:block;}
+
+				#md_pick .new_more .btn a:hover,#md_pick .new_more .btn a:focus{background-color:#000;color:#fff;}
+
+				/*################# 해제하는 속성 ####################*/
+				#md_pick:hover .md_1{transform:translate(0,0);}
+				#md_pick:hover .md_2{transform:translate(0,0);}
+				#md_pick:hover .md_3{transform:translate(0,0);}
+				#md_pick:hover .md_7{transform:translate(0,0);}
+				#md_pick:hover .md_4{transform:translate(0,0);}
+				#md_pick:hover .md_5{transform:translate(0,0);}
+				#md_pick:hover .md_6{transform:translate(0,0);}
+				#md_pick:hover .md_7{transform:translate(0,0);}
+				#md_pick .md_8{display:block;}
+
+				/*################## play_video ################*/
+				/*
+					1. 자세히 보기 버튼 a태그로 제작할때 padding으로 채워서 값 만들기
+					2. 썸네일 안에 제목 이미지는 position으로 제작
+					3. 영역 텍스트박스와 슬라이딩 윈도우 float:left 지우고 position으로 영역으로 보내기
+				*/
+				
+				#play_video{width:100%;padding-top:70px;height:400px;text-align:center;}
+				#play_video .videoArea{width:100%;height:100%;padding:0;}
+				#play_video .tv_title{width:100%;height:210px;padding-left:0;color:#fff;float:none;}
+				#play_video .slideArea{width:100%;overflow:hidden;float:none;}
+				#play_video ul{width:1000%;padding-left:0;overflow:hidden;}
+				#play_video li{width:280px;margin-right:10px;float:left;}
+				#play_video li .imgBox{width:100%;}
+				#play_video .imgBox img{width:100%;}
+				#play_video .btn{width:184px;margin:0 auto;}
+
+				/*################## play_video .tv_title 개별작업 ################*/
+				#play_video .tv_title .title{font-size:36px;padding:50px 0 10px;}
+				#play_video .tv_title .gold{color:#fabe00;}
+				#play_video .btn a{width:180px;height:50px;line-height:50px;border:2px solid #fff;
+				text-align:center;display:block;font-weight:700;color:#fff;}
+
+				#play_video .btn a:hover,#play_video .btn a:focus{background-color:#fff;color:#000;}
+
+				/*################## magazine ################*/
+				#magazine{width:100%;height:430px;padding-top:50px;}
+				#magazine .mag_area{width:100%;padding:0;margin:0 auto;}
+				#magazine .mag_head{width:100%;padding:0;height:70px;}
+				#magazine h3{font-size:30px;float:left;}
+				#magazine .more{padding:13px 0;font-size:14px;font-weight:bold;float:right;}
+
+				#magazine .mag_slide{width:100%;overflow:hidden;}
+				#magazine ul{width:3600px;overflow:hidden;}
+				#magazine li{width:150px;padding:0;padding-right:12px;float:left;}
+				#magazine li .img_area{width:100%;}
+				#magazine .img_btn{width:100%;}
+				#magazine li a{width:100%;display:block;}
+				#magazine li span{display:block;}
+				#magazine .imgBox{width:100%;overflow:hidden;}
+				#magazine .imgBox img{width:100%;transform:scale(1);transition:transform 0.5s linear;}
+
+				#magazine li:hover img{transform:scale(1);}
+
+				#magazine .product_desc{width:100%;}
+				#magazine .product_desc p{width:100%;padding-top:10px;}
+
+			/*################## magazine 개별작업 ################*/
+				#magazine .title{padding-top:10px;font-size:12px;font-weight:700;line-height:18px;
+				letter-spacing:-1px;}
+				#magazine .date{padding-top:10px;font-size:12px;}
+
+			/*################## footerWrap ################*/
+				#footer{min-width:0;width:100%;padding:0;background-color:#141414;}
+			
+			/*################## footer ################*/
+				#footer_inn{width:100%;font-size:12px;}
+
+				#footer_inn .siteMap{padding:0;background-color:#141414;}
+				#footer_inn .siteMap a{font-size:12px;}
+
+				#footer_inn .site{width:100%;padding:0;float:none;}
+				#footer_inn .social{width:100%;padding-bottom:30px;border-top:1px solid #222;float:none;}
+				#footer_inn .siteMap ul{width:100%;line-height:0;text-align:center;}
+				#footer_inn .siteMap li{display:inline-block;padding:0 6px;}
+				#footer_inn .site li{line-height:36px;}
+				
+				#footer_inn .social ul{width:100%;height:30px;line-height:30px;padding-top:20px;text-align:center;
+				float:none;}
+				#footer_inn .social li{display:inline;}
+				#footer_inn .social a img{width:24px;}
+				#footer_inn .real_site{width:100%;padding-top:10px;float:none;text-align:center;}
+				#footer_inn #select{width:204px;padding:7px 16px 7px 10px;border:none;background-color:#141414;
+				color:#fff;border:1px solid #333;}
+
+				#footer_inn .infoArea{padding:0;background-color:#222;color:#ccc;}
+				#footer_inn .info{width:100%;text-align:center;}
+				#footer_inn .logo_info{width:100%;padding-right:0;background-color:#222;float:none;}
+				#footer_inn .logo{width:100%;height:60px;padding:15px 0;float:none;}
+				#footer_inn .com_info{width:100%;padding-left:0;line-height:20px;float:none;text-align:center;}
+				#footer_inn .com_info .btn{display:block;padding:5px 0;border-top:1px solid #595959;border-bottom:1px solid #595959;cursor:pointer;}
+				#footer_inn .com_info .copy{display:none;margin-left:0;padding:10px;}
+
+				#footer_inn .service{width:100%;padding:30px 0;float:none;text-align:center;background-color:#141414;}
+				#footer_inn .service h3{width:100%;padding-bottom:20px;font-size:20px;}
+				#footer_inn .service .desc{padding:0 30px;}
+				#footer_inn .service .btnArea{width:292px;height:50px;margin:0 auto;padding-top:20px;position:static;}
+				#footer_inn .btnArea .btn{width:100%;height:100%;position:static;}
+				#footer_inn .btnArea .btn a{margin-left:0;margin-right:15px;}
+				#footer_inn .btnArea .btn a:first-child{margin-right:20px;}
+		}
+		
+	</style>
+	<script>
+		$(document).ready(function(){
+			/*
+				대상:			#gnb .menu li a(태그)
+				이벤트:		mouseenter , focusin
+				이벤트 핸들러:	#gnb .menu li a 의 다음요소 .subArea가 마우스 올리면 slideDown 내려오기
+
+				대상:			#gnb(id값)
+				이벤트:		mouseleave , focusout
+				이벤트 핸들러:	#gnb .subArea(class명) 마우스가 #gnb 영역 바깥으로 나가면 .subArea slideUp 하기.
+
+				문제점 : 처음에 마우스가 .subArea가 나갔을 때 slideUp을 설정함
+						그렇게 했을 때 .subArea만 벗어났을 경우라 #gnb의 영역 바깥을 나가도 slideUp을 설정함
+						slideUp을 두개나 잡아서 영역 중간에서도 올라가는 현상 발생
+						#gnb li a 로 mouseenter를 했을 때 removeClass를 적용하니
+						손자요소에 있는 a까지 영향을 받아 removeClass가 되어 자녀요소에 a는 class를 달아줌
+				
+				해결방법 : .subArea가 position:absolute로 #header_inn의 영향을 받고 있지만
+							.subArea가 #gnb의 자녀요소 이므로
+							#gnb만 벗어나도 .subArea가 사라지게 설정함.
+			*/
+			// header_gnb 메뉴 슬라이딩
+			$("#gnb .menu li .a_menu").mouseenter(function(){
+				$("#gnb .subArea").removeClass("on");
+				$(this).next().addClass("on");
+				$("#header").css({"backgroundColor":"rgba(255,255,255,1)"});
+				$("#header a").css({"color":"rgba(0,0,0,1)"});
+				$("#header i img:first-child").css({"display":"none"});
+				$("#header i img:last-child").css({"display":"block"});
+				$("#gnb .#gnb .subArea").stop().slideDown(500);
+				$(this).next(".on").stop().delay(500).fadeIn(300);	
+				
+			});
+
+			$("#gnb").mouseleave(function(){
+				$("#gnb .subArea").removeClass("on");
+				$("#header").animate({"backgroundColor":"transparent"},1000,function(){
+					$("#header").css({"backgroundColor":"transparent"});
+				});
+				$("#header a").animate({"color":"rgba(255,255,255,1)"},1000,function(){
+					$("#header a").css({"color":"rgba(255,255,255,1)"});
+				});
+				$("#header i img:last-child").animate({"display":"none"},1000,function(){
+					$("#header i img:last-child").css({"display":"none"});
+				});
+				$("#header i img:first-child").animate({"display":"block"},1000,function(){
+					$("#header i img:first-child").css({"display":"block"});
+				});
+				$("#gnb .bg").stop().delay(500).slideUp(300);
+				$(".subArea").stop().delay(0).fadeOut(300);				
+			});
+
+			// #main_product 영역 (텝 베이직)
+			/*
+				대상:			#main_product .tab li a
+				이벤트:		mouseenter focusin
+				이벤트 핸들러: .product_area는 display:none 하면서 #main_product .tab li a 와 같은 href(값)을 가진 대상만
+							display:block 시키기
+							.tab li a는 나머지는 removeClass
+							올린 대상만 addClass하기
+			*/
+			$("#main_product .product_area").css({"display":"none"});
+			$("#main_product .product_area:eq(0)").css({"display":"block"});
+			$("#main_product .tab li a").bind("mouseenter focusin",function(){
+				$("#main_product .product_area").css({"display":"none"});
+				$($(this).attr("href")).css({"display":"block"});
+				$("#main_product .tab li a").removeClass("on");
+				$(this).addClass("on");
+
+				return false;
+			});
+			// #main_brand 영역
+			/*
+				대상:			#main_brand li
+				이벤트:		mouseenter
+				이벤트 핸들러:	li들 transform:rotatex(360deg) 적용하기
+			*/
+			$("#main_brand li").mouseenter(function(){
+				$("#main_brand li").css({"transform":"translatey(50px)"});
+				$(this).css({"transform":"rotatey(-360deg)"});				
+			}).mouseleave(function(){
+				$("#main_brand li").css({"transform":"rotatey(0deg)","transform":"translatey(0)"});
+				$(this).css({"transform":"rotatey(0deg)"});
+			});
+
+			// #week_best 영역
+			/*
+				대상:			#week_best
+				이벤트:		mouseenter
+				이벤트 핸들러:	#week_best li가 오른쪽에서 하나씩 왼쪽으로 이동하는 기능
+			*/
+			$("#week_best li").css({"transform":"translatex(3000px)"});
+			$("#week_best").mouseenter(function(){
+				$("#week_best li").css({"transform":"translatex(0)"});
+				$("#week_best li:eq(1)").css({"transitionDelay":"0.2s"});
+				$("#week_best li:eq(2)").css({"transitionDelay":"0.3s"});
+				$("#week_best li:eq(3)").css({"transitionDelay":"0.4s"});
+				$("#week_best li:last").css({"transitionDelay":"0.5s"});
+			
+			});
+
+			// #recommend 영역
+			/*
+				대상:			#recommend .recommend_list li 
+				이벤트:		mouseenter
+				이벤트 핸들러:	.recommend_list li가 위로 올라면서 .product_desc opacity:1 되게 만들기
+			
+			*/
+			$("#recommend .product_desc").css({"opacity":"0"});
+			$("#recommend .recommend_list li").css({"transform":"translatey(50px)"});
+			$("#recommend .recommend_list li").mouseenter(function(){
+				$(this).css({"transform":"translatey(0)"});
+				$(this).children($("#recommend .product_desc")).css({"opacity":"1"});
+			});
+
+			/*
+				대상:			#footer_inn .com_info .btn(class명) (p태그)
+				이벤트:		click
+				이벤트 핸들러:	.btn 클릭시 .copy 부분 내려오기
+			
+			*/
+			var foot = true;
+			$("#footer_inn .com_info .btn").click(function(){
+				if(foot==true){
+					$("#footer_inn .btn span").css({"display":"block","transform":"rotatex(180deg)"});
+					$("#footer_inn .copy").slideDown(500,"linear");
+					foot = false;
+				}
+				else{
+					$("#footer_inn .btn span").css({"display":"block","transform":"rotatex(0deg)"});
+					$("#footer_inn .copy").slideUp(500,"linear");
+					foot = true;
+				}
+			});
+		});
+	</script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<header id="header">
+			<div id="header_inn">
+				<div id="topArea">
+					<h1 class="absolute">
+						반다이몰 코리아
+					</h1>
+					<div id="topMenu">
+						<h2 class="absolute">브랜드 매체 정보</h2>
+						<div class="logo">
+							<a href="#" title="반다이_코리아">
+								<img src="header/logo.png" alt="로고_이미지0"/>
+							</a>
+						</div>
+						<nav id="nav">
+							<ul>
+								<li>
+									<a href="#" title="마블_링크_바로가기">
+										MARVEL
+									</a>
+								</li>
+								<li>
+									<a href="#" title="tv_링크_바로가기">
+										TV
+									</a>
+								</li>
+								<li>
+									<a href="#" title="매거진_링크_바로가기">
+										매거진
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건담인포_링크_바로가기">
+										건담인포
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div id="uArea">
+							<div class="utility">
+								<ul>
+									<li>
+										<a href="#" title="로그인_바로가기">
+											<i class="icon">
+												<img src="header/login_w.png" alt="아이콘_이미지0"/>
+												<img src="header/login.png" alt="아이콘_이미지0"/>
+											</i>
+											<span>로그인</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="마이페이지_바로가기">
+											<i class="icon">
+												<img class="on" src="header/user_w.png" alt="아이콘_이미지1"/>
+												<img src="header/user.png" alt="아이콘_이미지1"/>
+											</i>
+											<span>마이페이지</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="장바구니_바로가기">
+											<i class="icon">
+												<img class="on" src="header/cart_w.png" alt="아이콘_이미지2"/>
+												<img src="header/cart.png" alt="아이콘_이미지2"/>
+											</i>
+											<span>장바구니</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="gnb">
+					<h2 class="absolute">네비게이션 영역</h2>
+					<div id="gnb_inn">
+						<div class="gnb_list">
+							<div class="main_menu">
+								<div class="bg"></div>
+								<ul class="menu">
+									<li>
+										<a class="a_menu" href="#" title="건프라">
+											건프라
+										</a>
+										<div class="subArea s0">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="런너구매_바로가기">
+																런너구매
+															</a>
+														</p>
+													</div>
+													<dl class="brand s_list">
+														<dt>브랜드별</dt>
+														<dd>
+															<a href="#none" title="HG_바로가기">
+																HG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="RG_바로가기">
+																RG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="MG_바로가기">
+																MG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="PG_바로가기">
+																PG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="RE_100_바로가기">
+																RE/100
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="메가사이즈 모델_바로가기">
+																메가사이즈 모델
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="SDCS_SDEX_바로가기">
+																SDCS/SDEX
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="SD_바로가기">
+																SD
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="옵션파츠_바로가기">
+																옵션 파츠
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="series s_list">
+														<dt>작품별</dt>
+														<dd>
+															<a href="#none" title="기동전사 건담_바로가기">
+																기동전사 건담
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 역습의 샤아_바로가기">
+																기동전사 건담 역습의 샤아
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 UC_바로가기">
+																기동전사 건담 UC
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 섬광의 하사웨이_바로가기">
+																기동전사 건담 섬광의 하사웨이
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 SEED_바로가기">
+																기동전사 건담 SEED
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 OO_바로가기">
+																기동전사 건담 OO
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 철혈의 오펀스_바로가기">
+																기동전사 건담 철혈의 오펀스
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="건담 빌드 다이버스_바로가기">
+																건담 빌드 다이버스
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="삼국창걸전/SD건담 월드 히어로즈_바로가기">
+																삼국창걸전/SD건담 월드 히어로즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="HG_건담_이미지0">
+																<span><img src="header/sub_menu/guide.png" alt="건담_가이드"/></span>
+																<em>건프라 가이드 바로가기 &gt;</em>
+															</a>
+														</li>
+														<li>
+															<a href="#none" title="HG_건담_이미지0">
+																<span><img src="header/sub_menu/i0.jpg" alt="HG_건담_이미지0"/></span>
+																<em>HG 건담 엑시아 리페어 II &gt;</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="애니프라_바로가기">
+											애니프라
+										</a>
+										<div class="subArea s1">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+													</div>
+													<dl class="brand s_list">
+														<dt>브랜드별</dt>
+														<dd>
+															<a href="#none" title="엔트리 그레이드_바로가기">
+																엔트리 그레이드
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="HG_바로가기">
+																HG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="RG_바로가기">
+																RG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="Figure-rise 시리즈_바로가기">
+																Figure-rise 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="Figure-rise LABO_바로가기">
+																Figure-rise LABO
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="포켓프라">
+																포켓프라
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="30 MINUTES MISSIONS_바로가기">
+																30 MINUTES MISSIONS
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="series s_list">
+														<dt>작품별</dt>
+														<dd>
+															<a href="#none" title="드래곤볼_바로가기">
+																드래곤볼
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="원피스_바로가기">
+																원피스
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="에반게리온_바로가기">
+																에반게리온
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="다이나믹 캐릭터즈_바로가기">
+																다이나믹 캐릭터즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="가면라이더_바로가기">
+																가면라이더
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="울트라맨_바로가기">
+																울트라맨
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="카카오프렌즈_바로가기">
+																카카오프렌즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="포켓몬스터_바로가기">
+																포켓몬스터
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="피규어라이즈_이미지0">
+																<span><img src="header/sub_menu/a0.jpg" alt="HG_건담_이미지0"/></span>
+																<em>피규어라이즈 스탠다드 초사이어인 3 손오공&gt;</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="피규어">
+											피규어
+										</a>
+										<div class="subArea s2">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+													</div>
+													<div class="brandArea">
+														<h3>타마시이네이션즈</h3>
+														<dl class="brand s_list">
+															<dt>브랜드별</dt>
+															<dd>
+																<a href="#none" title="ROBOT혼 시리즈_바로가기">
+																	ROBOT혼 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="S.H.Figuarts 시리즈_바로가기">
+																	S.H.Figuarts 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="Figuarts ZERO_바로가기">
+																	Figuarts ZERO
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="피규아트 미니_바로가기">
+																	피규아트 미니
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="초합금 시리즈_바로가기">
+																	초합금 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="NXEDGE STYLE_바로가기">
+																	NXEDGE STYLE
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+														<dl class="brand s_list">
+															<dt>작품별</dt>
+															<dd>
+																<a href="#none" title="MARVEL_바로가기">
+																	MARVEL
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="에반게리온_바로가기">
+																	에반게리온
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="드래곤볼_바로가기">
+																	드래곤볼
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="원피스_바로가기">
+																	원피스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="귀멸의 칼날_바로가기">
+																	귀멸의 칼날
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="세인트세이야_바로가기">
+																	세인트세이야
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+													</div>
+													<div class="brandArea">
+														<h3>반프레스토</h3>
+														<dl class="brand s_list">
+															<dt>브랜드별</dt>
+															<dd>
+																<a href="#none" title="BANPRESTO_바로가기">
+																	BANPRESTO
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="EXQ_바로가기">
+																	EXQ
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="GLITTER&GLAMOURS_바로가기">
+																	GLITTER &amp;GLAMOURS
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="GRANDISTA_바로가기">
+																	GRANDISTA
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="KING OF ARTIST_바로가기">
+																	KING OF ARTIST
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="Q POSKET_바로가기">
+																	Q POSKET
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+														<dl class="brand s_list">
+															<dt>작품별</dt>
+															<dd>
+																<a href="#none" title="드래곤볼_바로가기">
+																	드래곤볼
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="원피스_바로가기">
+																	원피스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="귀멸의 칼날_바로가기">
+																	귀멸의 칼날
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="나루토_바로가기">
+																	나루토
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="나의 히어로 아카데미아_바로가기">
+																	나의 히어로 아카데미아
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="피규어라이즈_이미지0">
+																<span><img src="header/sub_menu/f0.jpg" alt="피규아트_나루토_이미지"/></span>
+																<em>S.H.피규아트 우즈마키 나루토</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="토이">
+											토이
+										</a>
+										<div class="subArea s3">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+													</div>
+													<div class="brandArea">
+														<h3>작품별</h3>
+														<dl class="brand s_list">
+															<dt>캐릭터토이</dt>
+															<dd>
+																<a href="#none" title="파워레인저 돈브라더즈_바로가기">
+																	파워레인저 돈브라더즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="파워레인저 젠카이저_바로가기">
+																	파워레인저 젠카이저
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="파워레인저 애니멀포스_바로가기">
+																	파워레인저 애니멀포스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 리바이스_바로가기">
+																	가면라이더 리바이스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 이그제이드_바로가기">
+																	가면라이더 이그제이드
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 세이버_바로가기">
+																	가면라이더 세이버
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="파워레인저 시리즈_바로가기">
+																	파워레인저 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 시리즈_바로가기">
+																	가면라이더 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="디지몬 시리즈_바로가기">
+																	디지몬 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="다마고치_바로가기">
+																	다마고치
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+														<dl class="brand s_list">
+															<dt>하비토이</dt>
+															<dd>
+																<a href="#none" title="나노블록_바로가기">
+																	나노블록
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="해체퍼즐_바로가기">
+																	해체퍼즐
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="믹스워치_바로가기">
+																	믹스워치
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="오델로_바로가기">
+																	오델로
+																</a>
+															</dd>
+														</dl>
+													</div>
+													<dl class="brand s_list">
+														<dt>카테고리별</dt>
+														<dd>
+															<a href="#none" title="나노블록_바로가기">
+																로봇
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="해체퍼즐_바로가기">
+																변신
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="믹스워치_바로가기">
+																인형
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="오델로_바로가기">
+																퍼즐 &amp; 보드게임
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="악세서리_바로가기">
+																악세서리
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="라이프_바로가기">
+																라이프
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<!--<dl class="brand s_list">
+														<dt>나이대별</dt>
+														<dd>
+															<a href="#none" title="0~2세">
+																0 ~ 2세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="3~5세">
+																3 ~ 5세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="6~8세">
+																6 ~ 8세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="9~13세">
+																9 ~ 13세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="14세이상">
+																14세 이상
+															</a>
+														</dd>
+													</dl>-->
+												</div>					
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="DX 성검 소드라이버">
+																<span><img src="header/sub_menu/t0.jpg" alt="DX 성검 소드라이버_이미지"/></span>
+																<em>DX 성검 소드라이버</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="기타">
+											기타
+										</a>
+										<div class="subArea s4">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="캔디예약_바로가기">
+																캔디예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="캡슐예약_바로가기">
+																캡슐예약
+															</a>
+														</p>
+													</div>
+													<dl class="brand s_list">
+														<dt>공구/서적</dt>
+														<dd>
+															<a href="#none" title="프라모델 제작 공구_바로가기">
+																프라모델 제작 공구
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="건담데칼_바로가기">
+																건담데칼
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="프라모델 서적_바로가기">
+																프라모델 서적
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="코믹 소설_바로가기">
+																코믹 소설
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="brand s_list">
+														<dt>캔디</dt>
+														<dd>
+															<a href="#none" title="포켓몬 스케일 월드_바로가기">
+																포켓몬 스케일 월드
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="쿠너츠_바로가기">
+																쿠너츠
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="슈퍼 미니프라_바로가기">
+																슈퍼 미니프라
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="컨버지 시리즈_바로가기">
+																컨버지 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="애드버지 시리즈_바로가기">
+																애드버지 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="G프레임 시리즈_바로가기">
+																G프레임 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="brand s_list">
+														<dt>캡슐</dt>
+														<dd>
+															<a href="#none" title="MOBILE SUIT ENSEMBLE_바로가기">
+																MOBILE SUIT ENSEMBLE
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="가샤폰 전사_바로가기">
+																가샤폰 전사
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="허그코트_바로가기">
+																허그코트
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="DX 성검 소드라이버">
+																<span><img src="header/sub_menu/e0.jpg" alt="DX 성검 소드라이버_이미지"/></span>
+																<em>컵캐릭 디즈니 프랜즈3 &gt;</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="프리미엄반다이">
+											프리미엄반다이
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="etc_menu">
+								<ul>
+									<li>
+										<a href="#" title="브랜드_바로가기">
+											브랜드
+										</a>
+									</li>
+									<li>
+										<a href="#" title="기획전_이벤트_바로가기">
+											기획전/이벤트
+										</a>
+									</li>
+									<li>
+										<a href="#" title="멤버십_쿠폰_바로가기">
+											멤버십/쿠폰
+										</a>
+									</li>
+									<li>
+										<a href="#" title="건담베이스_바로가기">
+											건담베이스
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="search">
+						<a href="#" title="검색창">
+							<i>
+								<img src="header/ico-search-white.svg" alt="아이콘_이미지"/>
+								<img src="header/ico-search-white.png" alt="아이콘_이미지"/>
+							</i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="head_mob">
+				<div id="m_top">
+					<div id="m_menu">
+						<div class="logo">
+							<a href="#" title="반다이_코리아">
+								<img src="header/logo.png" alt="로고_이미지0"/>
+							</a>
+						</div>
+						<div class="mArea">
+							<ul>
+								<li id="m_login">
+									<div class="login">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/login_w.png" alt="아이콘_이미지0"/>
+												<img src="header/login.png" alt="아이콘_이미지0"/>
+											</i>
+										</a>
+									</div>
+								</li>
+								<li id="m_page">
+									<div class="mypage">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/user_w.png" alt="아이콘_이미지1"/>
+												<img src="header/user.png" alt="아이콘_이미지1"/>
+											</i>
+										</a>
+									</div>
+								</li>
+								<li id="m_shop">
+									<div class="shop">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/cart_w.png" alt="아이콘_이미지2"/>
+												<img src="header/cart.png" alt="아이콘_이미지2"/>
+											</i>
+										</a>
+									</div>
+								</li>
+								<li id="m_search">
+									<div class="search">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/ico-search-white.svg" alt="아이콘_이미지"/>
+												<img src="header/ico-search-white.png" alt="아이콘_이미지"/>
+											</i>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="m_gnb">
+					<div id="m_inn">
+						<div class="main">
+							<ul>
+								<li>
+									<a href="#" title="홈">
+										홈
+									</a>
+								</li>
+								<li>
+									<a href="#" title="신제품">
+										신제품
+									</a>
+								</li>
+								<li>
+									<a href="#" title="TV">
+										TV
+									</a>
+								</li>
+								<li>
+									<a href="#" title="매거진">
+										매거진
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건담인포">
+										건담인포
+									</a>
+								</li>
+								<li>
+									<a href="#" title="프리미엄반다이">
+										프리미엄반다이
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건프라">
+										건프라
+									</a>
+								</li>
+								<li>
+									<a href="#" title="애니프라">
+										애니프라
+									</a>
+								</li>
+								<li>
+									<a href="#" title="피규어">
+										피규어
+									</a>
+								</li>
+								<li>
+									<a href="#" title="토이">
+										토이
+									</a>
+								</li>
+								<li>
+									<a href="#" title="기타">
+										기타
+									</a>
+								</li>
+								<li>
+									<a href="#" title="브랜드">
+										브랜드
+									</a>
+								</li>
+								<li>
+									<a href="#" title="기획전_이벤트">
+										기획전/이벤트
+									</a>
+								</li>
+								<li>
+									<a href="#" title="멤버십_쿠폰">
+										멤버십/쿠폰
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건담베이스">
+										건담베이스
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="container">
+			<div id="visual">
+				<h2 class="absolute">브랜드 별 상품 및 이벤트 홍보, 광고</h2>
+				<div class="full_slide">
+					<ul>
+						<li>
+							<a href="#" title="경계전기_프라모델">
+								<span class="imgBox">
+									<img src="visual/m2.jpg" alt="경계전기_프라모델_이미지"/>
+								</span>
+							</a>
+						</li>
+						<!--position으로 이동할 것 li영역만 추가 
+							<div class="txtBox">
+								<p class="desc">신 로봇 애니메이션 프로젝트 시동!!</p>
+								<p class="title">경계전기 프라모델 발매 중</p>
+							</div>
+							<span class="copyright">©2021 SUNRISE BEYOND INC.</span>
+						<li>
+							<p class="imgBox">
+								<img src="visual/m2.jpg" alt="경계전기_프라모델_이미지"/>
+							</p>
+							<div class="txtBox">
+								<p class="desc">신 로봇 애니메이션 프로젝트 시동!!</p>
+								<p class="title">경계전기 프라모델 발매 중</p>
+							</div>
+							
+						</li>
+						<li>
+							<p class="imgBox">
+								<img src="visual/m2.jpg" alt="경계전기_프라모델_이미지"/>
+							</p>
+							<div class="txtBox">
+								<p class="desc">신 로봇 애니메이션 프로젝트 시동!!</p>
+								<p class="title">경계전기 프라모델 발매 중</p>
+							</div>
+							
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+			<div id="main">
+				<section id="main_product">
+					<h2 class="absolute">주력 4가지 카테고리 별 상품들</h2>
+					<div class="main_area">
+						<div class="tab_menu">
+							<ul class="tab">
+								<li>
+									<a class="on" href="#no0" title="예약상품"># 실시간 오픈중인 예약상품<span>기능선</span></a>	
+								</li>
+								<li>
+									<a href="#no1" title="프라모델"># 인기 프라모델 상품<span>기능선</span></a>
+								</li>
+								<li>
+									<a href="#no2" title="피규어"># HOT한 피규어 총집합<span>기능선</span></a>
+								</li>
+								<li>
+									<a href="#no3" title="토이_4대장"># 토이 4대장<span>기능선</span></a>
+								</li>
+							</ul>
+							<div class="slideBar">
+							</div>
+						</div>
+						<div class="m_menu">
+							<ul class="tab">
+								<li>
+									<a class="on" href="#no0" title="예약상품">예약상품</a>	
+								</li>
+								<li>
+									<a href="#no1" title="프라모델">프라모델</a>
+								</li>
+								<li>
+									<a href="#no2" title="피규어">피규어</a>
+								</li>
+								<li>
+									<a href="#no3" title="토이_4대장">토이 4대장</a>
+								</li>
+							</ul>
+						</div>
+						<ul id="no0" class="product_area">
+							<li class="p0">
+								<div class="img_area">
+									<a href="#" title="30MM 가르도노바 [브라운]">
+										<span class="imgBox">
+											<img src="main_product/book/b0.jpg" alt="예약상품_이미지0"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="30MM 가르도노바 [브라운]">
+										<span class="brand">30MM 가르도노바 [브라운]</span>
+										<span class="product">30MM 가르도노바 [브라운]</span>
+										<span class="price"><span class="inline">16,600</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p1">
+								<div class="img_area">
+									<a href="#" title="HG 슈발베 커스텀 시클라제 기">
+										<span class="imgBox">
+											<img src="main_product/book/b1.jpg" alt="예약상품_이미지1"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="HG 슈발베 커스텀 시클라제 기">
+										<span class="brand">기동전사 건담 철혈의 오펀스</span>
+										<span class="product">HG 슈발베 커스텀 시클라제 기</span>
+										<span class="price"><span class="inline">19,200</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p2">
+								<div class="img_area">
+									<a href="#" title="포켓프라 콜렉션 QUICK 10 나몰빼미">
+										<span class="imgBox">
+											<img src="main_product/book/b2.jpg" alt="예약상품_이미지2"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="포켓몬스터">
+										<span class="brand">포켓몬스터</span>
+										<span class="product">포켓프라 콜렉션 QUICK!! 10 나몰빼미</span>
+										<span class="price"><span class="inline">7,800</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p3">
+								<div class="img_area">
+									<a href="#" title="가면라이더 쿠우가_타이탄">
+										<span class="imgBox">
+											<img src="main_product/book/b3.jpg" alt="예약상품_이미지3"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="가면라이더 쿠우가">
+										<span class="brand">가면라이더 쿠우가</span>
+										<span class="product">피규어라이즈 스탠다드 가면라이더 쿠우가 타이탄 폼 / 라이징 타이탄</span>
+										<span class="price"><span class="inline">43,200</span>원</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<ul id="no1" class="product_area">
+							<li class="p0">
+								<div class="img_area">
+									<a href="#" title="HG_건담_헬리오스">
+										<span class="imgBox">
+											<img src="main_product/gunpla/g0.jpg" alt="HG_건담_헬리오스"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="HG_건담_헬리오스">
+										<span class="brand">건담 브레이커 배틀로그</span>
+										<span class="product">HG 건담 헬리오스</span>
+										<span class="price"><span class="inline">27,600</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p1">
+								<div class="img_area">
+									<a href="#" title="RG_윙_건담_(EW)">
+										<span class="imgBox">
+											<img src="main_product/gunpla/g2.jpg" alt="RG_윙_건담_(EW)"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="RG_윙_건담_(EW)">
+										<span class="brand">신기동전기 건담 W</span>
+										<span class="product">RG 윙 건담 (EW)</span>
+										<span class="price"><span class="inline">30,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p2">
+								<div class="img_area">
+									<a href="#" title="MG_더블오라이저">
+										<span class="imgBox">
+											<img src="main_product/gunpla/g1.jpg" alt="MG_더블오라이저"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="MG_더블오라이저">
+										<span class="brand">기동전사 건담 OO</span>
+										<span class="product">MG 더블오라이저</span>
+										<span class="price"><span class="inline">78,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p3">
+								<div class="img_area">
+									<a href="#" title="MG_건담_Ver_3.0">
+										<span class="imgBox">
+											<img src="main_product/gunpla/g3.jpg" alt="MG_건담_Ver_3.0"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="MG_건담_Ver_3.0">
+										<span class="brand">기동전사 건담</span>
+										<span class="product">MG 건담 Ver. 3.0</span>
+										<span class="price"><span class="inline">54,000</span>원</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<ul id="no2" class="product_area">
+							<li class="p0">
+								<div class="img_area">
+									<a href="#" title="우즈마키 나루토">
+										<span class="imgBox">
+											<img src="main_product/figure/f0.jpg" alt="피규어_이미지0"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="우즈마키 나루토">
+										<span class="brand">나루토</span>
+										<span class="product">나루토 질풍전 VIBRATION STARS 가아라&amp;우즈마키 나루토 (우즈마키 나루토)</span>
+										<span class="price"><span class="inline">22,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p1">
+								<div class="img_area">
+									<a href="#" title="드래곤볼 슈퍼 초사이어인 오지터">
+										<span class="imgBox">
+											<img src="main_product/figure/f1.jpg" alt="피규어_이미지1"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="드래곤볼 슈퍼">
+										<span class="brand">드래곤볼 슈퍼</span>
+										<span class="product">드래곤볼 슈퍼 초전사열전 Vol.8 (초사이어인 오지터)</span>
+										<span class="price"><span class="inline">22,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p2">
+								<div class="img_area">
+									<a href="#" title="S.H.피규아트 엘샤 린">
+										<span class="imgBox">
+											<img src="main_product/figure/f2.jpg" alt="피규어_이미지2"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="백 애로우">
+										<span class="brand">백 애로우</span>
+										<span class="product">S.H.피규아트 엘샤 린</span>
+										<span class="price"><span class="inline">66,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p3">
+								<div class="img_area">
+									<a href="#" title="울트라맨">
+										<span class="imgBox">
+											<img src="main_product/figure/f3.jpg" alt="피규어_이미지3"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="울트라맨">
+										<span class="brand">울트라맨</span>
+										<span class="product">울트라맨 영웅전 울트라맨 긴가 나타쿠 아머</span>
+										<span class="price"><span class="inline">9,400</span>원</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<ul id="no3" class="product_area">
+							<li class="p0">
+								<div class="img_area">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="imgBox">
+											<img src="main_product/toy/t0.jpg" alt="토이_이미지0"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 애니멀 체인저</span>
+										<span class="price"><span class="inline">38,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p1">
+								<div class="img_area">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="imgBox">
+											<img src="main_product/toy/t1.jpg" alt="토이_이미지1"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 라이드킹</span>
+										<span class="price"><span class="inline">72,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p2">
+								<div class="img_area">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="imgBox">
+											<img src="main_product/toy/t2.jpg" alt="토이_이미지2"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 오션엠페러</span>
+										<span class="price"><span class="inline">75,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li class="p3">
+								<div class="img_area">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="imgBox">
+											<img src="main_product/toy/t3.jpg" alt="토이_이미지3"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									
+									<!-- 버튼 기능 예정
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 와일드킹</span>
+										<span class="price"><span class="inline">63,000</span>원</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section id="main_brandArea">
+					<h2 class="absolute">메인 브랜드 나열</h2>
+					<div id="main_brand">
+						<div class="brand_slide">
+							<ul>
+								<li class="slide0">
+									<a href="#" title="파워레인저_젠카이저">
+										<span class="imgBox">
+											<img src="main_brand/b0.jpg" alt="파워레인저_젠카이저"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide1">
+									<a href="#" title="가면라이더_세이버">
+										<span class="imgBox">
+											<img src="main_brand/b1.jpg" alt="가면라이더_세이버"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide2">
+									<a href="#" title="귀멸의_칼날">
+										<span class="imgBox">
+											<img src="main_brand/b2.jpg" alt="귀멸의_칼날"/>
+											<img src="main_brand/b2_0.png" alt="귀멸의_칼날"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide3">
+									<a href="#" title="nanoblock">
+										<span class="imgBox">
+											<img src="main_brand/b3.jpg" alt="nanoblock"/>
+											<img src="main_brand/b3_0.png" alt="nanoblock"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide4">
+									<a href="#" title="tamagotachi">
+										<span class="imgBox">
+											<img src="main_brand/b4.jpg" alt="tamagotachi"/>
+											<img src="main_brand/b4_0.png" alt="tamagotachi"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide5">
+									<a href="#" title="mg">
+										<span class="imgBox">
+											<img src="main_brand/b5.jpg" alt="mg"/>
+											<img src="main_brand/b5_0.png" alt="mg"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide6">
+									<a href="#" title="건담_월드_히어로">
+										<span class="imgBox">
+											<img src="main_brand/b6.jpg" alt="건담_월드_히어로"/>
+											<img src="main_brand/b6_0.png" alt="건담_월드_히어로"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide7">
+									<a href="#" title="피규아트_제로">
+										<span class="imgBox">
+											<img src="main_brand/b7.jpg" alt="피규아트_제로"/>
+											<img src="main_brand/b7_0.png" alt="피규아트_제로"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide8">
+									<a href="#" title="가면라이더_이그제이드">
+										<span class="imgBox">
+											<img src="main_brand/b8.jpg" alt="가면라이더_이그제이드"/>
+											<img src="main_brand/b8_0.png" alt="가면라이더_이그제이드"/>
+										</span>
+									</a>
+								</li>
+								<li class="slide9">
+									<a href="#" title="파워레인져_애니멀포스">
+										<span class="imgBox">
+											<img src="main_brand/b9.jpg" alt="파워레인져_애니멀포스"/>
+											<img src="main_brand/b9_0.png" alt="파워레인져_애니멀포스"/>
+										</span>
+									</a>
+								</li>
+							</ul>
+							<!-- 스크롤 바 기능!
+							<div class="bar">
+
+							</div>
+							-->
+						</div>
+					</div>
+				</section>
+				<section id="slide_gunpla">
+					<h2 class="absolute">건담 시리즈 홍보</h2>
+					<div class="gp_area">
+						<h2 class="area_tit">GUNPLA</h2>
+						<!-- 추후 사용할 슬라이딩 이미지에 대한 txtBox
+						<h3>GUNPLA</h3>
+						<div class="txt_area">
+							<p>건담 SEED MG 시리즈</p>
+							<h4>
+								「GUNDAM SEED PROJECT ignited」시동!
+							</h4>
+							<div class="strong_btn">
+								자세히 보기
+							</div>
+						</div>
+						-->
+						<div class="textArea">
+							<div class="txt on">
+								<p>SD건담 월드 히어로즈 소개</p>
+								<h3>
+									새로 시작된<br/>영웅들의 이야기
+								</h3>
+								<div class="btn">
+									<a href="#" title="자세히_보기_버튼">
+										자세히 보기
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="slide_img">
+							<div class="slide0">
+								<p class="imgBox">
+									<img src="slide_gunpla/g0.jpg" alt="건담 SEED MG 시리즈 이미지"/>
+								</p>
+							</div>
+							<!-- 추후 사용할 슬라이딩 이미지
+							<div class="slide1">
+								<img src="slide_gunpla/g1.jpg" alt="「GUNDAM SEED PROJECT ignited」시동! 이미지"/>
+							</div>
+							-->
+						</div>
+					</div>
+				</section>
+				<section id="week_best">
+					<h2 class="absolute">주간 신상품</h2>
+					<div class="week_area">
+						<div class="week_new">
+							<h3>NEW! 화제의 <span class="red">신상품</span></h3>
+							<div class="more">
+								<a href="#" title="상품_더보기">
+									<span>상품 더보기 &gt;</span>
+								</a>
+							</div>
+						</div>
+						<ul class="week_list">
+							<li>
+								<div class="img_area">
+									<a href="#" title="메일레스_켄부">
+										<span class="imgBox">
+											<img src="week_new/n0.jpg" alt="풀메카닉스 1/48 메일레스 켄부_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="HG_건담_헬리오스">
+										<span class="brand">경계전기</span>
+										<span class="product">풀메카닉스 1/48 메일레스 켄부</span>
+										<span class="price"><span class="inline">57,600</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="MG_돔_이미지">
+										<span class="imgBox">
+											<img src="week_new/n1.jpg" alt="MG_돔_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="MG_돔">
+										<span class="brand">기동전사 건담</span>
+										<span class="product">MG 돔</span>
+										<span class="price"><span class="inline">60,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="AMPLIFIED_이미지">
+										<span class="imgBox">
+											<img src="week_new/n2.jpg" alt="피규어라이즈 스탠다드 AMPLIFIED 황제드라몬 팔라딘 모드_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="MG_돔">
+										<span class="brand">디지몬 시리즈</span>
+										<span class="product">피규어라이즈 스탠다드 AMPLIFIED 황제드라몬 팔라딘 모드</span>
+										<span class="price"><span class="inline">66,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="AMPLIFIED_이미지">
+										<span class="imgBox">
+											<img src="week_new/n3.jpg" alt="HG_건담"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="MG_돔">
+										<span class="brand">건담 브레이커 배틀로그</span>
+										<span class="product">HG 건담 발바타우러스</span>
+										<span class="price"><span class="inline">26,400</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="AMPLIFIED_이미지">
+										<span class="imgBox">
+											<img src="week_new/n4.jpg" alt="피규어라이즈 스탠다드 AMPLIFIED 베르제브몬_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="MG_돔">
+										<span class="brand">디지몬 시리즈</span>
+										<span class="product">피규어라이즈 스탠다드 AMPLIFIED 베르제브몬</span>
+										<span class="price"><span class="inline">54,000</span>원</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section id="slide_toy">
+					<h2 class="absolute">장난감 시리즈 홍보</h2>
+					<div class="toy_area">
+						<h2 class="area_tit">TOY</h2>
+						<div class="slide_img">
+							<div class="slide0">
+								<p class="imgBox">
+									<img src="slide_toy/t0.jpg" alt="아바타로전대 이미지"/>
+								</p>
+							</div>
+							<!-- 추후 사용할 슬라이딩 이미지
+							<div class="slide1">
+								<img src="slide_toy/t1.jpg" alt="나노블럭미니 이미지"/>
+							</div>
+							<div class="slide2">
+								<img src="slide_toy/t2.jpg" alt="파워레인저 애니멀포스 이미지"/>
+							</div>
+							-->
+						</div>
+						<!-- 추후 사용할 슬라이딩 이미지에 대한 txtBox
+							<div class="txt_area on">
+								<p>다양한 캐릭터 총출동, 나노블럭미니!</p>
+								<h3>
+									짱구는 못말려 판매 개시!
+								</h3>
+								<div class="more_btn">
+									자세히 보기
+								</div>
+							</div>
+							<div class="txt_area on">
+								<p>파워레인저 애니멀포스</p>
+								<h3>
+									큐브를 모아 동물합체!
+								</h3>
+								<div class="more_btn">
+									자세히 보기
+								</div>
+							</div>
+						-->
+						<div class="textArea">
+							<div class="txt">
+								<p>아바타로전대</p>
+								<h3>
+									돈브라더즈 등장!
+								</h3>
+								<div class="btn">
+									<a href="#" title="자세히_보기">
+										<span>자세히 보기</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="recommend">
+					<h2 class="absolute">추천 신상품</h2>
+					<div class="recommend_area">
+						<div class="recommend_new">
+							<h3>더욱 생생하게! <span class="blue">360° VIEW</span></h3>
+							<div class="more">
+								<a href="#" title="상품_더보기">
+									<span>상품 더보기 &gt;</span>
+								</a>
+							</div>
+						</div>
+						<ul class="recommend_list">
+							<li>
+								<div class="img_area">
+									<a href="#" title="DX_쥬라식킹_구매페이지">
+										<span class="imgBox">
+											<img src="recommend_best/b0.jpg" alt="DX 쥬라식킹_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="DX 쥬라식킹">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 쥬라식킹</span>
+										<span class="price"><span class="inline">72,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="../subpage/sell.html" title="[RG]_건담_어스트레이_레드_프레임_구매페이지_링크">
+										<span class="imgBox">
+											<img src="recommend_best/b1.jpg" alt="[RG] 건담 어스트레이 레드 프레임_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="기동전사 건담 SEED">
+										<span class="brand">기동전사 건담 SEED</span>
+										<span class="product">[RG] 건담 어스트레이 레드 프레임</span>
+										<span class="price"><span class="inline">30,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="MG_건담_큐리오스_구매페이지">
+										<span class="imgBox">
+											<img src="recommend_best/b2.jpg" alt="MG 건담 큐리오스_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="기동전사 건담 OO">
+										<span class="brand">기동전사 건담 OO</span>
+										<span class="product">MG 건담 큐리오스</span>
+										<span class="price"><span class="inline">60,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="DX_오션엠페러_구매페이지">
+										<span class="imgBox">
+											<img src="recommend_best/b3.jpg" alt="DX 오션엠페러_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="파워레인저 애니멀포스">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 오션엠페러</span>
+										<span class="price"><span class="inline">75,000</span>원</span>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="img_area">
+									<a href="#" title="DX 와일드킹_구매페이지">
+										<span class="imgBox">
+											<img src="recommend_best/b4.jpg" alt="DX 와일드킹_이미지"/>
+										</span>
+										<span class="border b0">
+										</span>
+										<span class="border b1">
+										</span>
+										<span class="border b2">
+										</span>
+										<span class="border b3">
+										</span>
+									</a>
+									<!-- 마우스 올리면 찜하기, 구매 버튼 등장
+										 가상객체로 이미지에 background-image로 순위 매기기
+									<div class="btn">
+									</div>
+									-->
+								</div>
+								<div class="product_desc">
+									<a href="#" title="DX_네오_밧타_바이_스탬프">
+										<span class="brand">파워레인저 애니멀포스</span>
+										<span class="product">DX 와일드킹</span>
+										<span class="price"><span class="inline">63,000</span>원</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section id="premium">
+					<h2 class="absolute">프리미엄 상품</h2>
+					<div class="premium_area">
+						<!-- position으로 공중에 띄울것임
+						<h3>PREMIUM BANDAI</h3>
+						-->
+						<div class="swiper_txt">
+							<p class="date">1월 21일 예약 <span class="gold">OPEN!</span></p>
+							<p class="title">SHODO 디지몬<br/>알파몬(왕룡검)</p>
+							<div class="btn">
+								<div class="look"><a href="#" title="자세히_보기">자세히 보기</a></div>
+								<div class="sceduel"><a href="#" title="예약">예약 스케쥴</a></div>
+							</div>
+						</div>
+						<div class="swiper_img">
+							<ul>
+								<li>
+									<p class="imgBox">
+										<img src="premium/p1.jpg" alt="SHODO 디지몬 알파몬(왕룡검)_이미지"/>
+									</p>
+								</li>
+							</ul>
+						</div>
+						<!--
+						<div class="lt">
+						</div>
+						<div class="gt">
+						</div>
+						-->
+					</div>
+				</section>
+				<section id="md_pick">
+					<h2 class="absolute">md's pick</h2>
+					<div class="md_area">
+						<div class="md_title">
+							<h3>새로운 변신을 기념한 <span class="gold">MD’s Pick!</span></h3>
+							<p class="hash_tag">
+								<span class="tab0">#새로운변신</span><span class="tab1">#두근두근</span><span class="tab2">#핫템</span>
+							</p>
+						</div>
+						<div class="md_product">
+							<ul>
+								<li class="md_0">
+									<div class="new_more">
+										<div class="text">
+											지금 핫한 신제품
+											<p><strong>더 구경하기!</strong></p>
+										</div>
+										<p class="btn">
+											<a href="#" title="신제품_더보기">
+												신제품 더보기 &gt;
+											</a>
+										</p>
+									</div>
+								</li>
+								<li class="md_1">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image0">
+												<span class="imgBox">
+													<img src="md_pick/md_00.jpg" alt ="건담X헬로키티 건담베이스 유니폼_이미지"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image0">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">건담 X 헬로키티 건담베이스 유니폼 ver. (그레이)</span>
+													<span class="price"><span class="bold">23,900</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_2">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image1">
+												<span class="imgBox">
+													<img src="md_pick/md_01.jpg" alt ="건담 X 헬로키티 건담베이스 유니폼 ver. (그레이)_이미지"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">건담 X 헬로키티 건담베이스 유니폼 ver. (그레이)</span>
+													<span class="price"><span class="bold">23,900</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_3">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image2">
+												<span class="imgBox">
+													<img src="md_pick/md_02.jpg" alt ="피규아트 미니 귀멸의 칼날 카마도 탄지로_이미지"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">피규아트 미니 귀멸의 칼날 카마도 탄지로</span>
+													<span class="price"><span class="bold">32,400</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_4">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image3">
+												<span class="imgBox">
+													<img src="md_pick/md_03.jpg" alt ="피규아트 제로 카마도 탄지로 전집중_이미지"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">피규아트 제로 카마도 탄지로 전집중</span>
+													<span class="price"><span class="bold">81,600</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_5">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image4">
+												<span class="imgBox">
+													<img src="md_pick/md_04.jpg" alt ="HG 1/72 메일레스 켄부_이미지"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">HG 1/72 메일레스 켄부</span>
+													<span class="price"><span class="bold">28,800</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_6">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image5">
+												<span class="imgBox">
+													<img src="md_pick/md_05.jpg" alt ="피규어라이즈 스탠다드 AMPLIFIED 듀크몬"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">피규어라이즈 스탠다드 AMPLIFIED 듀크몬</span>
+													<span class="price"><span class="bold">54,000</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_7">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image6">
+												<span class="imgBox">
+													<img src="md_pick/md_06.jpg" alt ="HG 건담 헬리오스"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">HG 건담 헬리오스</span>
+													<span class="price"><span class="bold">27,600</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="md_8">
+									<div class="product">
+										<div class="thumb">
+											<a href="#" title="md_image7">
+												<span class="imgBox">
+													<img src="md_pick/md_07.jpg" alt ="[가면라이더 이그제이드] DX 버글 드라이버 II &amp; 가면라이더 크로니클 가샤트"/>
+												</span>
+											</a>
+										</div>
+										<div class="inner_desc">
+											<a href="#" title="md_image1">
+												<span class="desc">
+													<span class="btn">제품 자세히보기</span>
+													<span class="product">[가면라이더 이그제이드] DX 버글 드라이버 II &amp; 가면라이더 크로니클 가샤트</span>
+													<span class="price"><span class="bold">62,000</span>원</span>
+												</span>
+											</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section id="play_video">
+					<h2 class="absolute">제품 홍보 및 소개 영상</h2>
+					<div class="videoArea">
+						<div class="tv_title">
+							<h3 class="title">PLAY<span class="gold"> TV</span></h3>
+							<div class="btn">
+								<a href="#" title="영상_시청">더 많은 영상 보기</a>
+							</div>
+						</div>
+						<div class="slideArea">
+							<ul class="slide">
+								<li>
+									<p class="imgBox">
+										<img src="play_video/v0.jpg" alt="건담 X 헬로키티 건담베이스 유니폼 ver. 소개 영상 썸네일"/>
+									</p>
+									<!--
+									<div class="cont">
+										<p>
+											건담 X 헬로키티 건담베이스 유니폼 ver. 소개 영상
+										</p>
+									</div>
+									<div class="more">
+									</div>
+									-->
+								</li>
+								<li>
+									<p class="imgBox">
+										<img src="play_video/v1.png" alt="포켓몬스터 PV 썸네일"/>
+									</p>	
+									<div class="cont">
+										<p>
+											포켓몬스터 PV
+										</p>
+									</div>
+									<div class="more">
+									</div>
+								</li>
+								<li>
+									<p class="imgBox">
+										<img src="play_video/v1.png" alt="포켓몬스터 PV 썸네일"/>
+									</p>	
+									<div class="cont">
+										<p>
+											포켓몬스터 PV
+										</p>
+									</div>
+									<div class="more">
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section id="magazine">
+					<h2 class="absolute">제품 및 피규어 잡지</h2>
+					<div class="mag_area">
+						<div class="mag_head">
+							<h3>매거진</h3>
+							<div class="more">
+								<a href="#" title="뉴스_더보기">뉴스 더보기 &gt;</a>
+							</div>
+						</div>
+						<div class="mag_slide">
+							<ul>
+								<li>
+									<div class="img_area">
+										<a href="#" title="잡지_링크0">
+											<span class="imgBox">
+												<img src="magazine/mag0.jpg" alt="TAMASHII FIGURE FES KOREA 2021 특설페이지"/>
+											</span>
+										</a>
+									</div>
+									<div class="cont">
+										<a href="#" title="잡지_링크0">
+											<span class="title">TAMASHII FIGURE FES KOREA 2021 특설페이지</span>
+											<span class="date">2021. 12. 14</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="img_area">
+										<a href="#" title="잡지_링크1">
+											<span class="imgBox">
+												<img src="magazine/mag1.jpg" alt="귀멸의 칼날 특설페이지"/>
+											</span>
+										</a>
+									</div>
+									<div class="cont">
+										<a href="#" title="잡지_링크1">
+											<span class="title">귀멸의 칼날 특설페이지</span>
+											<span class="date">2021. 10. 22</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="img_area">
+										<a href="#" title="잡지_링크2">
+											<span class="imgBox">
+												<img src="magazine/mag2.png" alt="프로트타입 가샤트 소개  -토이 리뷰-"/>
+											</span>
+										</a>
+									</div>
+									<div class="cont">
+										<a href="#" title="잡지_링크2">
+											<span class="title">프로트타입 가샤트 소개  -토이 리뷰-</span>
+											<span class="date">2021. 10. 08</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="img_area">
+										<a href="#" title="잡지_링크3">
+											<span class="imgBox">
+												<img src="magazine/mag3.jpg" alt="신 로봇 애니메이션 프로젝트, 시동!"/>
+											</span>
+										</a>
+									</div>
+									<div class="cont">
+										<a href="#" title="잡지_링크3">
+											<span class="title">신 로봇 애니메이션 프로젝트, 시동!</span>
+											<span class="date">2021. 10. 06</span>
+										</a>
+									</div>
+								</li>
+							</ul>					
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<footer id="footer">
+			<div id="footer_inn">
+				<div class="siteMap">
+					<h2 class="absolute">중요사항 및 소셜미디어</h2>
+					<div class="site">
+						<ul>
+							<li>
+								<a href="#" title="공지사항">
+									공지사항
+								</a>
+							</li>
+							<li>
+								<a href="#" title="회사소개">
+									회사소개
+								</a>
+							</li>
+							<li>
+								<a href="#" title="인재채용">
+									인재채용
+								</a>
+							</li>
+							<li>
+								<a href="#" title="매장안내">
+									매장안내
+								</a>
+							</li>
+							<li>
+								<a href="#" title="이용약관">
+									이용약관
+								</a>
+							</li>
+							<li>
+								<a href="#" title="개인정보처리방침">
+									개인정보처리방침
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="social">
+						<ul>
+							<li>
+								<a href="#" title="페이스북">
+									<img src="header/i0.svg" alt="아이콘_이미지0"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="유튜브">
+									<img src="header/i1.svg" alt="아이콘_이미지1"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="인스타그램">
+									<img src="header/i2.svg" alt="아이콘_이미지2"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="트위터">
+									<img src="header/i3.svg" alt="아이콘_이미지3"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="카카오플러스">
+									<img src="header/i4.png" alt="아이콘_이미지1"/>
+								</a>
+							</li>
+							<!-- select 리스트
+							<li class="select">
+								Related Sites
+							</li>
+							-->
+						</ul>
+						<div class="real_site">
+							<select id="select">
+								<option value="Related Sites">Related Sites</option>
+								<option value="반다이남코코리아 회사소개">반다이남코코리아 회사소개</option>
+								<option value="반다이남코코리아 맴버십 APP(iOS)">반다이남코코리아 맴버십 APP(iOS)</option>
+								<option value="반다이남코코리아 맴버십 APP(Android)">반다이남코코리아 맴버십 APP(Android)</option>
+								<option value="건담인포">건담인포</option>
+								<option value="건담베이스 코리아 공식카페">건담베이스 코리아 공식카페</option>
+								<option value="건담베이스 매장안내">건담베이스 매장안내</option>
+								<option value="반다이남코코리아 네이버 브랜드스토어">반다이남코코리아 네이버 브랜드스토어 </option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="infoArea">
+					<h2 class="absolute">저작권 및 회사정보</h2>
+					<div class="info">
+						<div class="logo_info">
+							<div class="logo">
+								<a href="#" title="반다이몰_홈페이지">
+									<img src="header/logo.png" alt="로고_이미지"/>
+								</a>
+							</div>
+							<div class="com_info">
+								<p class="btn">
+									<span>▼</span>
+								</p>
+								<p class="copy">
+									법인명: 반다이남코코리아주식회사 | 주소: (04516) 서울 중구 서소문로 89 (순화동, 순화빌딩) 5층<br/>
+									대표이사: 야마미치후미아키 | 사업자등록번호: 106-81-86950 | 통신판매업신고: 제2010-서울중구-1720호<br/>
+									이메일문의: ascenter@bandainamcoasia.com | 반다이남코코리아몰: mall@bandainamcoasia.com<br/>
+									반다이남코코리아몰의 모든 콘텐츠는 무단 도용 시 법적인 제재를 받을 수 있습니다.<br/><br/>
+									Bandainamcokorea ALL RIGHTS RESERVED.	
+								</p>
+								<!--
+								클릭하면 아래 copyright 스크롤 내려가는 기능
+								-->
+							</div>
+						</div>
+						<div class="service">
+							<h3>고객센터 : 1544-4607</h3>
+							<p class="desc">
+								전화문의 - 평일 9:00 ~ 18:00 / 점심시간 12:30 ~ 13:30 ( 토,일및법정공휴일휴무 )
+							</p>
+							<div class="btnArea">
+								<div class="btn">
+									<a href="#" title="고객센터">
+										고객센터 바로가기
+									</a>
+									<a href="#" title="1:1문의">
+										1:1 문의 바로가기
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+ </body>
+</html>

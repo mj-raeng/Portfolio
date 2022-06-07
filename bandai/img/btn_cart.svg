@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="btn_cart" width="44" height="44" viewBox="0 0 44 44">
+    <defs>
+        <style>
+            .cls-2{fill:#fff;stroke:#000;stroke-width:1.5px}.cls-3{fill:none}.cls-4{stroke:none}
+        </style>
+    </defs>
+    <circle id="타원_10" cx="22" cy="22" r="22" fill="#fff"/>
+    <g id="ico_cart" transform="translate(12 12)">
+        <g id="그룹_571" transform="translate(3 1)">
+            <g id="사각형_306" class="cls-2">
+                <path d="M3 0h4a3 3 0 0 1 3 3v3H0V3a3 3 0 0 1 3-3z" class="cls-4" transform="translate(2)"/>
+                <path d="M3 .75h4A2.25 2.25 0 0 1 9.25 3v1.5a.75.75 0 0 1-.75.75h-7a.75.75 0 0 1-.75-.75V3A2.25 2.25 0 0 1 3 .75z" class="cls-3" transform="translate(2)"/>
+            </g>
+            <g id="사각형_305" class="cls-2">
+                <path d="M0 0H14V13H0z" class="cls-4" transform="translate(0 4)"/>
+                <path d="M0.75 0.75H13.25V12.25H0.75z" class="cls-3" transform="translate(0 4)"/>
+            </g>
+        </g>
+        <path id="사각형_12068" d="M0 0H20V20H0z" class="cls-3"/>
+    </g>
+</svg>

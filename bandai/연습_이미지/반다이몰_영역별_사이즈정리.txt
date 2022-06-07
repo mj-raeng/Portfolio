@@ -1,0 +1,57 @@
+visaul : 높이:850px (와이드형)
+
+main_product : 높이:865px
+	main_product 메뉴 : 54px(위:46px / 아래 :48px)
+	main_product ul: 높이 : 615px 너비 : 1560px
+	main_product img : 높이 : 457px
+ 	main_product desc :  높이 : 158px
+
+brand_slide : 높이 410px
+	brand_slide ul : width: 1536px
+	brand_slide img : 326 * 326px
+	
+recommend0 : 높이 622px (위로 패딩값으로 떨어트리기)
+	recommend img : 너비:1175px 높이 : 622px
+	txtBox : 800 * 336px (position 작업 해야 함)
+
+week_new : 1680 * 630px
+	week_new ul : 1560 * 518px
+	week_new img : 288 * 360px
+	(순위표시는 가장객체로 표시됨)
+
+recommend1 : 높이 622px (위로 패딩값으로 떨어트리기)
+	recommend img : 너비:1175px 높이 : 622px
+	txtBox : 800 * 336px (position 작업 해야 함)
+
+brand_best : 1680 * 630px
+	brand_best ul : 1560 * 522px
+	brand_best img : 288 * 360px
+	(순위표시는 가장객체로 표시됨) , (아래 NEW BEST 표시됨)
+
+premium : 높이 850px
+	premium ul li img : 612 * 612px
+	premium txtBox : 높이 410px 
+	(positon으로 똑같이 작업해야함)
+	(배경으로 뒤에 premium bandai 계속 돌아감)
+
+md_pick : 계속 늘어날수도 있어서 전체는 높이지정 x
+	title : 높이 160px
+	ul : 1903 * 1903
+	li : 633 * 633 / margin으로 보이는 값 2px
+
+video : 높이 : 406px (패딩 마진으로 위 아래 떨어트려서 총 586px)
+	실제사용영역이 : 높이 406px
+	타이틀 1/10 영역 :  233 * 324px
+	영상 리스트(보이는 구간): 1075 * 406px
+	썸네일 : 720 * 405px
+
+magazine : 높이 746px (아래 옆 패딩으로 늘렸음)
+	잡지 슬라이딩 : 1536 * 634px 
+	li 개당 너비 : 366
+	작은 li : 366 * 360
+	큰 이미지 높이 : 508px
+	작은 이미지 높이 : 269px
+	중간 이미지 높이 : 369px
+
+
+

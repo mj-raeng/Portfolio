@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#e60012;stroke-width:1.5px;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="ico_package" transform="translate(-810 -2636)">
+        <g id="그룹_2657" transform="translate(811.624 2643.5)">
+            <g id="타원_133" transform="translate(0 23.805)">
+                <path id="패스_45151" d="M1397.4 362.43c5.87 1.777 9.578 4.39 9.578 7.3 0 4.9-10.5 8.957-24.139 9.6" class="cls-1" transform="translate(-1351.055 -362.307)"/>
+                <path id="패스_45151-2" d="M1372.981 379.34c-13.686-.63-24.244-4.693-24.244-9.609 0-2.982 3.883-5.65 9.994-7.427" class="cls-1" transform="translate(-1348.737 -362.303)"/>
+                <path id="패스_45152" d="M1371.46 375.67l3.893 4.049-3.893 4.049" class="cls-1" transform="translate(-1350.364 -362.883)"/>
+            </g>
+            <g id="그룹_3180" fill="none" transform="translate(12.917)">
+                <g id="패스_4352" stroke="none" stroke-linejoin="round">
+                    <path d="M882 518l-15 7.365v18.412l15 7.365 15-7.365v-18.412z" transform="translate(-867 -518)"/>
+                    <path fill="#e60012" d="M882 519.671l-13.5 6.629v16.543l13.5 6.628 13.5-6.628V526.3L882 519.67m0-1.67l15 7.364v18.412l-15 7.365-15-7.365v-18.412L882 518z" transform="translate(-867 -518)"/>
+                </g>
+                <path id="패스_4353" stroke="#e60012" stroke-linejoin="round" stroke-width="1.5px" d="M867.6 524.256l14.36 7.051 14.208-6.976" transform="translate(-866.956 -516.577)"/>
+                <path id="패스_45348" stroke="#e60012" stroke-width="1.5px" d="M881.07 530.06v17.731" transform="translate(-866.07 -515.973)"/>
+            </g>
+        </g>
+        <path id="사각형_12244" fill="none" d="M0 0H60V60H0z" transform="translate(810 2636)"/>
+    </g>
+</svg>

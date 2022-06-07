@@ -1,0 +1,125 @@
+<svg id="bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="빼기_13" data-name="빼기 13" d="M5053,11752H3173v-440l20-14.545v-130.907L3173,11152v-440H5053v440l-20,14.547v130.907l20,14.546Z" transform="translate(-3153 -10692)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="1.038" y1="0.589" x2="0" y2="0.588" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#141414" stop-opacity="0"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.038" y1="0.589" x2="1" y2="0.588" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-0.038" y1="0.411" x2="1" y2="0.412" xlink:href="#linear-gradient"/>
+  </defs>
+  <rect id="bg-2" data-name="bg" width="1920" height="1080" fill="#141414"/>
+  <g id="grid" clip-path="url(#clip-path)">
+    <g id="그룹_3202" data-name="그룹 3202" transform="translate(0 -3336)">
+      <rect id="사각형_12731" data-name="사각형 12731" width="1" height="1040" transform="translate(767 3356)" fill="#222"/>
+      <rect id="사각형_12731-2" data-name="사각형 12731" width="1" height="1040" transform="translate(788 3356)" fill="#222"/>
+      <rect id="사각형_12731-3" data-name="사각형 12731" width="1" height="1040" transform="translate(809 3356)" fill="#222"/>
+      <rect id="사각형_12731-4" data-name="사각형 12731" width="1" height="1040" transform="translate(830 3356)" fill="#222"/>
+      <rect id="사각형_12731-5" data-name="사각형 12731" width="1" height="1040" transform="translate(851 3356)" fill="#222"/>
+      <rect id="사각형_12731-6" data-name="사각형 12731" width="1" height="1040" transform="translate(872 3356)" fill="#222"/>
+      <rect id="사각형_12731-7" data-name="사각형 12731" width="1" height="1040" transform="translate(893 3356)" fill="#222"/>
+      <rect id="사각형_12731-8" data-name="사각형 12731" width="1" height="1040" transform="translate(914 3356)" fill="#222"/>
+      <rect id="사각형_12731-9" data-name="사각형 12731" width="1" height="1040" transform="translate(935 3356)" fill="#222"/>
+      <rect id="사각형_12731-10" data-name="사각형 12731" width="1" height="1040" transform="translate(956 3356)" fill="#222"/>
+      <rect id="사각형_12731-11" data-name="사각형 12731" width="1" height="1040" transform="translate(977 3356)" fill="#222"/>
+      <rect id="사각형_12731-12" data-name="사각형 12731" width="1" height="1040" transform="translate(998 3356)" fill="#222"/>
+      <rect id="사각형_12731-13" data-name="사각형 12731" width="1" height="1040" transform="translate(1019 3356)" fill="#222"/>
+      <rect id="사각형_12731-14" data-name="사각형 12731" width="1" height="1040" transform="translate(1040 3356)" fill="#222"/>
+      <rect id="사각형_12731-15" data-name="사각형 12731" width="1" height="1040" transform="translate(1061 3356)" fill="#222"/>
+      <rect id="사각형_12731-16" data-name="사각형 12731" width="1" height="1040" transform="translate(1082 3356)" fill="#222"/>
+      <rect id="사각형_12731-17" data-name="사각형 12731" width="1" height="1040" transform="translate(1103 3356)" fill="#222"/>
+      <rect id="사각형_12731-18" data-name="사각형 12731" width="1" height="1040" transform="translate(1124 3356)" fill="#222"/>
+      <rect id="사각형_12731-19" data-name="사각형 12731" width="1" height="1040" transform="translate(1145 3356)" fill="#222"/>
+      <rect id="사각형_12731-20" data-name="사각형 12731" width="1" height="1040" transform="translate(1166 3356)" fill="#222"/>
+      <rect id="사각형_12731-21" data-name="사각형 12731" width="1" height="1040" transform="translate(1187 3356)" fill="#222"/>
+      <rect id="사각형_12731-22" data-name="사각형 12731" width="1" height="1040" transform="translate(1208 3356)" fill="#222"/>
+      <rect id="사각형_12731-23" data-name="사각형 12731" width="1" height="1040" transform="translate(1229 3356)" fill="#222"/>
+      <rect id="사각형_12731-24" data-name="사각형 12731" width="1" height="1040" transform="translate(1250 3356)" fill="#222"/>
+      <rect id="사각형_12731-25" data-name="사각형 12731" width="1" height="1040" transform="translate(1271 3356)" fill="#222"/>
+      <rect id="사각형_12731-26" data-name="사각형 12731" width="1" height="1040" transform="translate(1292 3356)" fill="#222"/>
+      <rect id="사각형_12731-27" data-name="사각형 12731" width="1" height="1040" transform="translate(1313 3356)" fill="#222"/>
+      <rect id="사각형_12731-28" data-name="사각형 12731" width="1" height="1040" transform="translate(1334 3356)" fill="#222"/>
+      <rect id="사각형_12731-29" data-name="사각형 12731" width="1" height="1040" transform="translate(1355 3356)" fill="#222"/>
+      <rect id="사각형_12731-30" data-name="사각형 12731" width="1" height="1040" transform="translate(1376 3356)" fill="#222"/>
+      <rect id="사각형_12731-31" data-name="사각형 12731" width="1" height="1040" transform="translate(1397 3356)" fill="#222"/>
+      <rect id="사각형_12731-32" data-name="사각형 12731" width="1" height="1040" transform="translate(1418 3356)" fill="#222"/>
+      <rect id="사각형_12731-33" data-name="사각형 12731" width="1" height="1040" transform="translate(1439 3356)" fill="#222"/>
+      <rect id="사각형_12731-34" data-name="사각형 12731" width="1" height="1040" transform="translate(1460 3356)" fill="#222"/>
+      <rect id="사각형_12731-35" data-name="사각형 12731" width="1" height="1040" transform="translate(1481 3356)" fill="#222"/>
+      <rect id="사각형_12731-36" data-name="사각형 12731" width="1" height="1040" transform="translate(1502 3356)" fill="#222"/>
+      <rect id="사각형_12731-37" data-name="사각형 12731" width="1" height="1040" transform="translate(1523 3356)" fill="#222"/>
+      <rect id="사각형_12731-38" data-name="사각형 12731" width="1" height="1040" transform="translate(1544 3356)" fill="#222"/>
+      <rect id="사각형_12731-39" data-name="사각형 12731" width="1" height="1040" transform="translate(1565 3356)" fill="#222"/>
+      <rect id="사각형_12731-40" data-name="사각형 12731" width="1" height="1040" transform="translate(1586 3356)" fill="#222"/>
+      <rect id="사각형_12731-41" data-name="사각형 12731" width="1" height="1040" transform="translate(1607 3356)" fill="#222"/>
+      <rect id="사각형_12731-42" data-name="사각형 12731" width="1" height="1040" transform="translate(1628 3356)" fill="#222"/>
+      <rect id="사각형_12731-43" data-name="사각형 12731" width="1" height="1040" transform="translate(1649 3356)" fill="#222"/>
+      <rect id="사각형_12731-44" data-name="사각형 12731" width="1" height="1040" transform="translate(1670 3356)" fill="#222"/>
+      <rect id="사각형_12731-45" data-name="사각형 12731" width="1" height="1040" transform="translate(1691 3356)" fill="#222"/>
+      <rect id="사각형_12731-46" data-name="사각형 12731" width="1" height="1040" transform="translate(1712 3356)" fill="#222"/>
+      <rect id="사각형_12731-47" data-name="사각형 12731" width="1" height="1040" transform="translate(1733 3356)" fill="#222"/>
+      <rect id="사각형_12731-48" data-name="사각형 12731" width="1" height="1040" transform="translate(1754 3356)" fill="#222"/>
+      <rect id="사각형_12731-49" data-name="사각형 12731" width="1" height="1040" transform="translate(1775 3356)" fill="#222"/>
+      <rect id="사각형_12731-50" data-name="사각형 12731" width="1" height="1040" transform="translate(1796 3356)" fill="#222"/>
+      <rect id="사각형_12731-51" data-name="사각형 12731" width="1" height="1040" transform="translate(1817 3356)" fill="#222"/>
+      <rect id="사각형_12731-52" data-name="사각형 12731" width="1" height="1040" transform="translate(1838 3356)" fill="#222"/>
+      <rect id="사각형_12731-53" data-name="사각형 12731" width="1" height="1040" transform="translate(1859 3356)" fill="#222"/>
+      <rect id="사각형_12731-54" data-name="사각형 12731" width="1" height="1040" transform="translate(1880 3356)" fill="#222"/>
+      <rect id="사각형_12732" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3376)" fill="#222"/>
+      <rect id="사각형_12732-2" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3397)" fill="#222"/>
+      <rect id="사각형_12732-3" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3418)" fill="#222"/>
+      <rect id="사각형_12732-4" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3439)" fill="#222"/>
+      <rect id="사각형_12732-5" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3460)" fill="#222"/>
+      <rect id="사각형_12732-6" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3481)" fill="#222"/>
+      <rect id="사각형_12732-7" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3502)" fill="#222"/>
+      <rect id="사각형_12732-8" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3523)" fill="#222"/>
+      <rect id="사각형_12732-9" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3544)" fill="#222"/>
+      <rect id="사각형_12732-10" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3565)" fill="#222"/>
+      <rect id="사각형_12732-11" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3586)" fill="#222"/>
+      <rect id="사각형_12732-12" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3607)" fill="#222"/>
+      <rect id="사각형_12732-13" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3628)" fill="#222"/>
+      <rect id="사각형_12732-14" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3649)" fill="#222"/>
+      <rect id="사각형_12732-15" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3670)" fill="#222"/>
+      <rect id="사각형_12732-16" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3691)" fill="#222"/>
+      <rect id="사각형_12732-17" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3712)" fill="#222"/>
+      <rect id="사각형_12732-18" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3733)" fill="#222"/>
+      <rect id="사각형_12732-19" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3754)" fill="#222"/>
+      <rect id="사각형_12732-20" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3775)" fill="#222"/>
+      <rect id="사각형_12732-21" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3796)" fill="#222"/>
+      <rect id="사각형_12732-22" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3817)" fill="#222"/>
+      <rect id="사각형_12732-23" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3838)" fill="#222"/>
+      <rect id="사각형_12732-24" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3859)" fill="#222"/>
+      <rect id="사각형_12732-25" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3880)" fill="#222"/>
+      <rect id="사각형_12732-26" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3901)" fill="#222"/>
+      <rect id="사각형_12732-27" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3922)" fill="#222"/>
+      <rect id="사각형_12732-28" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3943)" fill="#222"/>
+      <rect id="사각형_12732-29" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3964)" fill="#222"/>
+      <rect id="사각형_12732-30" data-name="사각형 12732" width="1133" height="1" transform="translate(767 3985)" fill="#222"/>
+      <rect id="사각형_12732-31" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4006)" fill="#222"/>
+      <rect id="사각형_12732-32" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4027)" fill="#222"/>
+      <rect id="사각형_12732-33" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4048)" fill="#222"/>
+      <rect id="사각형_12732-34" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4069)" fill="#222"/>
+      <rect id="사각형_12732-35" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4090)" fill="#222"/>
+      <rect id="사각형_12732-36" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4111)" fill="#222"/>
+      <rect id="사각형_12732-37" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4132)" fill="#222"/>
+      <rect id="사각형_12732-38" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4153)" fill="#222"/>
+      <rect id="사각형_12732-39" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4174)" fill="#222"/>
+      <rect id="사각형_12732-40" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4195)" fill="#222"/>
+      <rect id="사각형_12732-41" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4216)" fill="#222"/>
+      <rect id="사각형_12732-42" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4237)" fill="#222"/>
+      <rect id="사각형_12732-43" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4258)" fill="#222"/>
+      <rect id="사각형_12732-44" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4279)" fill="#222"/>
+      <rect id="사각형_12732-45" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4300)" fill="#222"/>
+      <rect id="사각형_12732-46" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4321)" fill="#222"/>
+      <rect id="사각형_12732-47" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4342)" fill="#222"/>
+      <rect id="사각형_12732-48" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4363)" fill="#222"/>
+      <rect id="사각형_12732-49" data-name="사각형 12732" width="1133" height="1" transform="translate(767 4384)" fill="#222"/>
+    </g>
+    <rect id="사각형_12741" data-name="사각형 12741" width="162" height="1040" transform="translate(713 20)" fill="url(#linear-gradient)"/>
+    <rect id="사각형_12811" data-name="사각형 12811" width="162" height="1040" transform="translate(1758 20)" fill="url(#linear-gradient-2)"/>
+    <rect id="사각형_12812" data-name="사각형 12812" width="80" height="1207" transform="translate(713 80) rotate(-90)" fill="url(#linear-gradient-2)"/>
+    <rect id="사각형_12813" data-name="사각형 12813" width="80" height="1207" transform="translate(1920 980) rotate(90)" fill="url(#linear-gradient-4)"/>
+  </g>
+</svg>

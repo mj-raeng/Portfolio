@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g id="ico_assemble" transform="translate(-1056 -462)">
+    <g id="그룹_3273" data-name="그룹 3273" transform="translate(1063.001 467)">
+      <path id="패스_45387" data-name="패스 45387" d="M1099.861,506.621l-19,11.262-19-11.262" transform="translate(-1061.861 -475.244)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_45388" data-name="패스 45388" d="M1080.861,496.117l-19-11.262,19-11.262,19,11.262Z" transform="translate(-1061.861 -473.592)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_47" data-name="선 47" x1="9.836" y1="5.83" transform="translate(18.449 11.276)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_48" data-name="선 48" x1="9.944" y1="5.894" transform="translate(9.056 26.687)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_49" data-name="선 49" y1="5.3" x2="8.941" transform="translate(19.343 27.281)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_50" data-name="선 50" y2="19.343" transform="translate(19 22.909)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <line id="선_51" data-name="선 51" y2="9.763" transform="translate(8.941 26.687)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <line id="선_52" data-name="선 52" y2="10.174" transform="translate(28.284 17.106)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <line id="선_53" data-name="선 53" y2="20.117" transform="translate(0.044 11.304)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_54" data-name="선 54" y2="20.117" transform="translate(37.956 11.304)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_55" data-name="선 55" y1="5.79" x2="9.845" transform="translate(18.439 5.5)" fill="none" stroke="#e60012" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <rect id="사각형_12937" data-name="사각형 12937" width="52" height="52" transform="translate(1056 462)" fill="none"/>
+  </g>
+</svg>

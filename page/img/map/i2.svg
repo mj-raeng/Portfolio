@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}
+        </style>
+    </defs>
+    <g id="ico_time" transform="translate(-360 -514)">
+        <circle id="타원_143" cx="12" cy="12" r="12" class="cls-1" transform="translate(360 514)"/>
+        <g id="watch_later_black_24dp" opacity="0.2" transform="translate(360 514)">
+            <g id="그룹_3153">
+                <path id="사각형_12746" d="M0 0H24V24H0z" class="cls-1"/>
+            </g>
+            <g id="그룹_3156">
+                <g id="그룹_3155">
+                    <g id="그룹_3154">
+                        <path id="패스_5366" d="M12 2a10 10 0 1 0 10 10A10.029 10.029 0 0 0 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7z"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

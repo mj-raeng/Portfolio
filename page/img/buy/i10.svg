@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#555;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="btn_url_on" transform="translate(-833 -703)">
+        <circle id="타원_91" cx="14" cy="14" r="14" fill="#e5e5e5" transform="translate(833 703)"/>
+        <g id="link" transform="translate(840.995 711.005)">
+            <path id="패스_45157" d="M10 8.6a3 3 0 0 0 4.522.324l1.8-1.8a3 3 0 1 0-4.24-4.24l-1.033 1.025" class="cls-2" transform="translate(-5.199 -2.005)"/>
+            <path id="패스_45158" d="M9.194 10.2a3 3 0 0 0-4.522-.324l-1.8 1.8a3 3 0 1 0 4.24 4.24l1.025-1.026" class="cls-2" transform="translate(-1.995 -4.803)"/>
+        </g>
+    </g>
+</svg>

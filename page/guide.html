@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+ <head>
+	<title>guide</title>
+	<meta charset="utf-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style-type:none;}
+		img{border:none;}
+		a:link,a:visited{text-decoration:none;color:#000;}
+		header,nav,section,footer{display:block;}
+
+		/*################## wrap ################*/
+			#wrap{min-width:1440px;overflow:hidden;}
+			#wrap .absolute{width:1px;height:1px;font-size:1px;line-height:0;position:absolute;left:-9999px;overflow:hidden;}
+			#full{position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);}
+
+		/*################## header ################*/
+			#header{width:100%;background-color:transparent;z-index:9999;position:fixed;top:0;}
+			#header_inn{width:100%;position:relative;}
+			#head_mob{display:none;width:100%;}
+
+			#topArea{padding:0 50px 0 3%;height:89px;border-bottom:1px solid #ccc;position:relative;}
+			#topArea li{display:inline-block;height:89px;line-height:89px;margin-left:10px;padding-right:5px;}
+			#topArea a{font-size:24px;font-weight:700;color:#fff;}
+			#topMenu{width:100%;height:100%;}
+			#topMenu .logo{width:7%;height:60px;padding-top:13px;float:left;text-align:center;}
+			#topMenu .logo img{width:64px;}
+			#topMenu:after{content:'';display:block;clear:both;}
+			#nav{width:48%;float:left;}
+			#nav ul{width:100%;height:100%;}
+
+			#uArea{width:45%;float:left;}
+			#uArea .utility{height:100%;}
+			#uArea .utility ul{text-align:right;}
+			#uArea .utility a{display:block;height:100%;font-size:14px;margin-right:10px;}
+			#uArea .utility a i{display:block;width:40px;height:100%;float:left;position:relative;}
+			#uArea .utility i img{display:block;width:26px;height:26px;position:absolute;left:0;top:30px;}
+			#uArea .utility i img:last-child{display:none;}
+
+			#gnb{padding:0 50px 0 3%;height:58px;border-bottom:1px solid #ccc;}
+			#gnb_inn{width:86%;padding-left:7%;float:left;}
+			#gnb .gnb_list{width:100%;}
+			#gnb .gnb_list:after{content:'';display:block;clear:both;}
+			#gnb .bg{width:100%;height:560px;background-color:rgba(255,255,255,1);display:none;
+			position:absolute;left:0;top:148px;z-index:-9999;}
+			#gnb li{display:inline-block;padding-top:20px;padding-right:3px;float:left;}
+			#gnb li a{color:#fff;font-weight:700;padding-top:20px;padding-left:8px;font-size:15px;}
+
+			#gnb .main_menu{padding-left:3px;float:left;height:100%;}
+			#gnb .menu{width:100%;}
+			#gnb .menu:after{content:'';display:block;clear:both;}
+			#gnb .etc_menu{padding-left:27px;float:left;height:100%;}
+			#search{width:7%;float:left;height:100%;text-align:right;}
+			#search a{display:inline-block;width:24px;height:24px;padding-right:14px;padding-top:17px;}
+			#search i{display:inline-block;width:100%;height:100%;}
+			#search img{width:100%;display:block;}
+			#search img:last-child{display:none;}
+
+			#gnb .subArea{display:none;background-color:#fff;width:90%;height:560px;padding-left:10%;
+			position:absolute;top:149px;left:0;z-index:-9999;}
+			#gnb .subArea a{padding-left:0;}
+			#gnb .on{z-index:1;height:500px;}
+			#gnb .subArea a{color:#000;font-size:14px;font-weight:400;}
+			#gnb .s_depth{padding-right:50px;padding-top:20px;transition:all 0.3s linear;}
+			#gnb .s_depth:after{content:'';display:block;clear:both;}
+			
+			#gnb .s_menu{width:55%;float:left;}
+			#gnb .s_tit{width:20%;float:left;}
+			#gnb .s_tit p{width:100%;padding-top:15px;text-indent:5px;}
+			#gnb .s_tit p a{font-weight:700;font-size:20px;}
+			#gnb .s_list{float:left;padding-left:5%;}
+			#gnb .s_list dt{width:100%;padding:15px 0;font-size:20px;font-weight:700;border-bottom:1px solid #eee;}
+			#gnb .s_list dd{padding:10px 0;font-size:14px;letter-spacing:-1px;}
+			#gnb .brand{width:19%;}
+			#gnb .series{width:37%;}
+			#gnb .s_img{width:44%;float:left;}
+			#gnb .s_img ul{width:100%;padding-top:15px;text-align:right;}
+			#gnb .s_img ul:after{content:'';display:block;clear:both;}
+			#gnb .s_img li{width:40%;display:inline-block;padding-top:0;padding-left:3%;float:right;}
+			#gnb .s_img li a{display:block;width:100%;font-size:14px;}
+			#gnb .s_img li a span{display:block;width:100%;}
+			#gnb .s_img li img{width:100%;}
+			#gnb .s_img li a em{display:block;text-align:left;color:#555;font-style:normal;
+			font-size:14px;font-weight:700;letter-spacing:-2px;}
+
+			#gnb .s1 .s_img li{float:right;}
+			#gnb .s1 .brand{width:33%;}
+			#gnb .s1 .series{width:23%;}
+			
+			#gnb .s2 .s_menu{width:73%;}
+			#gnb .s2 .s_tit{width:18%;}
+			#gnb .s2 .brandArea{width:38%;float:left;margin-left:2%;}
+			#gnb .s2 .brandArea h3{width:100%;padding:15px 0;border-bottom:1px solid #eee;}
+			#gnb .s2 .brandArea dl{width:50%;padding:0;float:left;}
+			#gnb .s2 .brandArea dt{font-size:16px;border:none;}
+			#gnb .s2 .s_img{width:26%;}
+			#gnb .s2 .s_img li{width:60%;float:right;}
+			#gnb .s2 .s_img li{float:right;}
+
+			#gnb .s3 .s_menu{width:73%;}
+			#gnb .s3 .s_tit{width:18%;}
+			#gnb .s3 .brandArea{width:53%;height:100%;float:left;margin-left:2%;}
+			#gnb .s3 .brandArea h3{width:100%;font-size:19px;padding:15px 0;border-bottom:1px solid #eee;}
+			#gnb .s3 .brandArea dl{width:50%;padding:0;float:left;}
+			#gnb .s3 .brandArea dd{width:48%;font-size:15px;padding-right:2%;float:left;}
+			#gnb .s3 .brandArea dt{width:100%;font-size:16px;border:none;}
+			#gnb .s3 .brandArea dl:last-child{width:20%;padding-left:5%;}
+			#gnb .s3 .brandArea dl:last-child dd{width:100%;float:none;padding-right:0;}
+			#gnb .s3 .brand{width:16%;}
+			#gnb .s3 .s_img{width:26%;}
+			#gnb .s3 .s_img li{width:60%;float:right;}
+			
+			#gnb .s4 .s_menu{width:73%;}
+			#gnb .s4 .s_tit{width:14%;}
+			#gnb .s4 dl{width:19%;margin-left:2%;float:left;}
+			#gnb .s4 .s_img{width:26%;}
+			#gnb .s4 .s_img li{width:60%;float:right;}
+			#gnb .s4 .s_img li{float:right;}
+			
+			#header .searchArea{position:absolute;left:0;top:149px;width:100%;padding-bottom:50px;background-color:#fff;text-align:left;}
+			#header .search_inn{width:40%;margin:0 auto;}
+			#header .inputBox{width:100%;padding-top:9%;border-bottom:2px solid #000;}
+			#header .inputBox:after{content:'';display:block;clear:both;}
+			#header .inputBox form{width:100%;height:45px;}
+			#header .inputBox input{width:90%;float:left;border:none;margin-bottom:5px;font-size:28px;font-weight:700;}
+			#header .inputBox #connect{display:block;width:36px;height:36px;float:right;}
+			#header .inputBox label{display:block;width:36px;height:36px;float:right;}
+
+			#header .searchArea .searchBox{width:100%;}
+			#header .searchArea .searchBox:after{content:'';display:block;clear:both;}
+			#header .searchBox h4{font-size:24px;padding:50px 0 30px;}
+			#header .searchBox ul li{margin:0;font-size:14px;width:100%;}
+			#header .searchBox li a{display:block;width:100%;color:rgba(0,0,0,1);}
+			#header .searchBox .recently{width:50%;float:left;}
+			#header .searchBox .recently li{color:#666;}
+			#header .searchBox .hotSrh{width:50%;float:left;}
+			#header .searchBox .hotSrh li{width:100%;height:30px;padding:0;padding-bottom:10px;font-weight:700;float:none;}
+			#header .searchBox .hotSrh li span{color:#e60012;}
+
+		/*################## container ################*/
+		#container{width:100%;}
+
+		/*################## intro ################*/
+		#intro{width:100%;}
+		#guide{width:100%;height:100vh;min-height:700px;position:relative;
+		background-image:url("img/guide/bg0.jpg");
+		background-position:center;
+		background-size:cover;
+		background-repeat:no-repeat;}
+
+		#guide .txt0{width:100%;text-align:center;color:#fff;position:absolute;top:40%;}
+		#guide .txt0 .tit{font-style:normal;font-size:20px;font-weight:700;}
+		#guide .txt0 h3{font-size:80px;}
+		#guide .desc{padding-top:30px;font-size:18px;line-height:28px;}
+
+		#gunDesc{width:100%;height:100vh;min-height:700px;position:relative;
+		background-image:url("img/guide/bg1.jpg");
+		background-position:center;
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-color:#111;}
+		#gunDesc .txt1{width:100%;color:#fff;position:absolute;left:20%;bottom:20%;}
+		#gunDesc .img{width:100%;padding-bottom:100px;}
+		#gunDesc .img img{width:718px;}
+		#gunDesc .txt1 h3{font-size:48px;}
+		#gunDesc .txt1 .side_tit{padding:30px 0;font-size:20px;}
+		#gunDesc .txt1 .desc{line-height:24px;}
+
+		#mangageArea{width:100%;}
+		#manage{width:100%;height:800px;background-color:#fff;}
+		#manage .txt2{width:100%;padding-top:100px;color:#000;text-align:center;}
+		#manage .txt2 h3{font-size:42px;}
+		#manage .txt2 .desc{color:#222;padding-top:40px;}
+
+		#manageImg{width:100%;height:1330px;background-color:#141414;position:relative;
+		background-image:url("img/guide/bg2.jpg");
+		background-size:100%;
+		background-repeat:no-repeat;}
+		#manageImg .video{width:900px;position:absolute;left:50%;top:-250px;transform:translatex(-50%);}
+		#manageImg .video video{width:100%;}
+
+		#manageImg .animateArea{width:100%;height:700px;overflow:hidden;}
+		#manageImg .animate{width:500%;position:absolute;top:450px;left:-230%;}
+		#manageImg .animate img{height:80px;float:left;}
+
+		#manageImg .imgAnimate{width:100%;height:800px;position:relative;overflow:hidden;}
+		#manageImg .imgani{width:100%;height:100%;overflow:hidden;}
+		#manageImg .imgani ul{width:500%;position:absolute;bottom:300px;left:-200%;}
+		#manageImg .imgani ul:after{content:'';display:block;clear:both;}
+		#manageImg .imgani li{display:inline-block;width:320px;margin-right:50px;padding:10px;background-color:#fff;vertical-align:top;}
+		#manageImg .imgani li .img{width:320px;}
+		#manageImg .imgani .img img{width:100%;}
+
+		#list{width:100%;background-color:#141414;}
+		#gunList{width:90%;padding-top:100px;margin:0 auto;}
+		#fixList{position:relative;}
+		#fixList .main_room{width:100%;height:805px;overflow:hidden;border:1px solid #666;position:absolute;top:0;
+		background-image:url("img/guide/grid.svg");
+		background-size:100%;
+		background-position:center;position:relative;}
+		#fixList .main_room:after{content:'';display:block;clear:both;}
+		#fixList .main_room .txtCont{width:35%;padding-left:10%;padding-top:300px;float:left;color:#fff;}
+		#fixList .main_room .txtCont h3{font-size:48px;letter-spacing:-1px;}
+		#fixList .main_room .txtCont .desc{padding-top:50px;}
+		#fixList .main_room .gold{color:#fabe00;}
+		#fixList .main_room .blue{color:#00a0e9;}
+		#fixList .main_room .imgCont{width:55%;float:left;}
+		#fixList .main_room .imgCont .img{width:100%;position:relative;z-index:1;}
+		#fixList .main_room .imgCont .img img{width:850px;}
+		#fixList .main_room .imgCont .img img:last-child{position:absolute;left:0;bottom:-500px;}
+
+		#fixList .room{width:90%;height:902px;overflow:hidden;border:1px solid #666;position:absolute;
+		background-image:url("img/guide/grid.svg");
+		background-size:100%;
+		background-position:center;position:relative;}
+		#fixList .room:after{content:'';display:block;clear:both;}
+		#fixList .room .txtBox{width:35%;padding-left:10%;padding-top:100px;float:left;color:#fff;}
+		#fixList .room .txtCont{width:100%;}
+		#fixList .room .txtCont .logo{width:100%;height:80px;line-height:80px;}
+		#fixList .room .txtCont .img{height:80px;float:left;}
+		#fixList .room .txtCont .img img{height:100%;}
+		#fixList .room .txtCont h4{float:left;padding-left:20px;font-size:24px;}
+		#fixList .room .desc{padding-top:10px;}
+		#fixList .room .gunDesc{width:100%;padding-top:30px;height:45px;}
+		#fixList .room .gunDesc li{width:140px;margin-right:30px;float:left;}
+		#fixList .room .gunDesc span{color:#ccc;}
+		#fixList .room .gunDesc p{font-size:18px;}
+		#fixList .room .gunDesc i{font-style:normal;font-size:12px;}
+		#fixList .room .gunList{width:100%;padding-top:10px;clear:both;}
+		#fixList .room .gunList li{width:100%;height:72px;margin-top:20px;}
+		#fixList .room .gunList li a{display:block;width:100%;height:100%;color:#fff;}
+		#fixList .room .gunList a span{display:block;float:left;padding-top:0;}
+		#fixList .room .gunList a .img{width:72px;height:72px;}
+		#fixList .room .gunList .img img{width:100%;}
+		#fixList .room .gunList a .desc{width:430px;padding-left:20px;line-height:36px;height:36px;font-size:12px;}
+		#fixList .room .gunList a .price{font-size:16px;}
+		#fixList .room .gunList a i{font-size:12px;font-style:normal;}
+		#fixList .room .imgCont{width:55%;float:left;}
+		#fixList .room .imgCont .img{width:100%;position:relative;}
+		#fixList .room .imgCont .img img{width:850px;}
+		#fixList .room .imgCont .img img:last-child{position:absolute;left:0;bottom:-500px;}
+		#fixList .scroll{width:90%;height:950px;}
+
+		#recommend{width:100%;height:1300px;background-color:#141414;}
+		#recommend h3{width:100%;text-align:center;font-size:40px;letter-spacing:-1px;color:#fff;}
+		#product{width:100%;height:760px;}
+		#product .rooms{width:22%;float:left;padding-left:10%;color:#fff;}
+		#product .rooms:after{content:'';display:block;clear:both;}
+		#product .rooms .txtBox{width:100%;padding-top:100px;}
+		#product .rooms .txtCont{width:100%;}
+		#product .rooms .txtCont .logo{width:100%;height:80px;line-height:80px;}
+		#product .rooms .txtCont .img{height:80px;float:left;}
+		#product .rooms .txtCont h4{float:left;padding-left:20px;font-size:24px;}
+		#product .rooms .desc{padding-top:10px;}
+		#product .rooms .gunDesc{width:100%;padding-top:30px;height:45px;}
+		#product .rooms .gunDesc li{width:95px;margin-right:30px;float:left;}
+		#product .rooms .gunDesc span{color:#ccc;}
+		#product .rooms .gunDesc p{font-size:18px;}
+		#product .rooms .gunDesc i{font-style:normal;font-size:12px;}
+		#product .rooms .gunList{width:100%;padding-top:10px;clear:both;}
+		#product .rooms .gunList li{width:100%;height:72px;margin-top:20px;}
+		#product .rooms .gunList li a{display:block;width:100%;height:100%;color:#fff;}
+		#product .rooms .gunList a span{display:block;float:left;padding-top:0;}
+		#product .rooms .gunList a .img{width:72px;height:72px;}
+		#product .rooms .gunList .img img{width:100%;}
+		#product .rooms .gunList a .desc{width:300px;padding-left:20px;line-height:36px;height:36px;font-size:12px;}
+		#product .rooms .gunList a .price{font-size:16px;}
+		#product .rooms .gunList a i{font-size:12px;font-style:normal;}
+
+		#product .imgCont{width:36%;float:left;padding-top:100px;}
+		#product .imgCont .img{width:100%;position:relative;text-align:center;}
+		#product .imgCont .img img{width:100%;}
+		#product .imgCont .shadow{position:absolute;left:0;bottom:-350px;}
+
+		#semi_visual{width:100%;}
+		#semi_visual .semi{width:100%;height:320px;background-image:url("img/guide/bg4.jpg");
+		background-size:100%;
+		background-position:center;background-repeat:no-repeat;
+		position:relative;}
+		#semi_visual h3{text-align:left;color:#000;position:absolute;left:400px;top:100px;}
+
+		/*################## footerWrap ################*/
+			#footer{width:100%;border-top:1px solid #2a2a2a;}
+		
+		/*################## footer ################*/
+			#footer_inn{width:100%;font-size:12px;}
+
+			#footer_inn .siteMap{padding:0 5%;background-color:#141414;}
+			#footer_inn .siteMap a{color:#fff;font-size:13px;}
+			#footer_inn .siteMap:after{content:'';display:block;clear:both;}
+
+			#footer_inn .site{width:60%;float:left;}
+			#footer_inn .social{width:40%;height:100%;float:left;}
+			#footer_inn .siteMap ul{height:100%;line-height:89px;}
+			#footer_inn .siteMap li{display:inline;padding-right:2%;}
+			
+			#footer_inn .social ul{width:60%;height:82px;padding-top:7px;text-align:right;
+			float:left;}
+			#footer_inn .social li{display:inline;}
+			#footer_inn .social a img{width:24px;}
+			#footer_inn .real_site{width:40%;padding-top:30px;float:left;text-align:right;}
+			#footer_inn #select{width:80%;padding:7px 16px 7px 10px;border:none;background-color:#141414;
+			color:#fff;border:1px solid #333;}
+
+			#footer_inn .infoArea{padding:30px 5% 100px;overflow:hidden;background-color:#222;
+			color:#ccc;}
+			#footer_inn .info{width:100%;}
+			#footer_inn .info:after{content:'';display:block;clear:both;}
+			#footer_inn .logo_info{width:57%;padding-right:3%;height:100%;float:left;}
+			#footer_inn .logo{width:14%;height:100%;float:left;}
+			#footer_inn .logo img{width:64px;}
+			#footer_inn .com_info .btn{display:none;width:100%;}
+			#footer_inn .com_info .btn span{transition:all 0.4s linear;}
+			#footer_inn .com_info{width:85%;padding-left:1%;line-height:20px;float:left;}
+			#footer_inn .service{width:40%;height:100%;float:left;text-align:right;}
+			#footer_inn .service h3{padding-bottom:20px;font-size:20px;}
+			#footer_inn .service .btnArea{width:100%;padding-top:20px;}
+			#footer_inn .btnArea .btn:after{content:'';display:block;clear:both;}
+			#footer_inn .btn a{display:block;float:right;color:#fff;
+			background-color:#434343;padding:8px 15px;margin-left:15px;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("body").append("<div id='full'></div>");
+			$("#full").hide();
+
+			// header_gnb 메뉴 슬라이딩
+			$("#gnb .menu li .a_menu").mouseenter(function(){
+				$("#full").stop().delay(0).show();
+				$("#gnb .subArea").removeClass("on");
+				$(this).next().addClass("on");
+				$("#header_inn").css({"backgroundColor":"rgba(255,255,255,1)"});
+				$("#header_inn a").css({"color":"rgba(0,0,0,1)"});
+				$("#header i img:first-child").css({"display":"none"});
+				$("#header i img:last-child").css({"display":"block"});
+				$("#gnb .bg").stop().slideDown(300);
+				$("#gnb .subArea").stop().fadeOut(550);
+				$(this).next(".on").stop().fadeIn(550);
+				
+			});
+
+
+			$("#header").mouseleave(function(){
+				$("#gnb .subArea").removeClass("on");
+				$("#header").stop().animate({"backgroundColor":"transparent"},1000,function(){
+					$("#header_inn").css({"backgroundColor":"transparent","transition":"all 0.3s linear"});
+				});
+				$("#header a").stop().animate({"color":"rgba(255,255,255,1)"},1000,function(){
+					$("#header_inn a").css({"color":"rgba(255,255,255,1)","transition":"all 0.3s linear"});
+				});
+				$("#header i img:last-child").stop().animate({"display":"none"},1000,function(){
+					$("#header_inn i img:last-child").css({"display":"none","transition":"all 0.3s linear"});
+				});
+				$("#header i img:first-child").stop().animate({"display":"block"},1000,function(){
+					$("#header_inn i img:first-child").css({"display":"block","transition":"all 0.3s linear"});
+				});
+				$("#gnb .bg").stop().delay(500).slideUp(300);
+				$(".subArea").stop().delay(0).fadeOut(500);
+				$("#full").stop().delay(1000).hide(0);
+			});
+			
+			var search = 0
+			$(".searchArea").hide().slideUp();
+			$("#search i").click(function(){
+				if(search==0){
+					$("#header").css({"backgroundColor":"rgba(255,255,255,1)"});
+					$("#header a").css({"color":"rgba(0,0,0,1)"});
+					$("#header i img:first-child").css({"display":"none"});
+					$("#header i img:last-child").css({"display":"block"});
+					$("#search i img:last-child").attr("src","header/cancel.svg");
+					$(".searchArea").stop().slideDown(500);
+					$("#full").stop().delay(0).show();
+					search = 1;
+				}
+				else{
+					$("#header").stop().animate({"backgroundColor":"transparent"},1000,function(){
+					$("#header").css({"backgroundColor":"transparent","transition":"all 0.3s linear"});
+					});
+					$("#header a").stop().animate({"color":"rgba(255,255,255,1)"},1000,function(){
+						$("#header a").css({"color":"rgba(255,255,255,1)","transition":"all 0.3s linear"});
+					});
+					$("#search i img:last-child").attr("src","header/ico-search-white.png");
+					$("#header i img:last-child").stop().animate({"display":"none"},1000,function(){
+						$("#header i img:last-child").css({"display":"none","transition":"all 0.3s linear"});
+					});
+					$("#header i img:first-child").stop().animate({"display":"block"},1000,function(){
+						$("#header i img:first-child").css({"display":"block","transition":"all 0.3s linear"});
+					});
+					$(".searchArea").stop().slideUp(500);
+					$("#full").stop().delay(1000).hide(0);
+					search=0;
+				}
+			});
+			$(window).scroll(function(){
+				
+				var nowScroll = $(document).scrollTop();
+				console.log(nowScroll);
+
+				if(nowScroll > 300){
+					$("#header_inn").css({"backgroundColor":"rgba(255,255,255,1)"});
+					$("#header_inn a").css({"color":"rgba(0,0,0,1)"});
+					$("#header i img:first-child").css({"display":"none"});
+					$("#header i img:last-child").css({"display":"block"});
+				}
+				else{
+					$("#header_inn").css({"backgroundColor":"transparent"});
+					$("#header_inn a").css({"color":"rgba(255,255,255,1)"});
+					$("#header i img:first-child").css({"display":"block"});
+					$("#header i img:last-child").css({"display":"none"});
+				}
+
+			});
+
+
+			$("#manageImg .animate").animate({"left":"500%"},300000,"linear");
+			$("#manageImg .imgani ul").animate({"left":"200%"},600000,"linear");
+
+			$('#list .main_room').css({"zIndex":"6"});
+			$('#list .room1').css({"zIndex":"5"});
+			$('#list .room2').css({"zIndex":"4"});
+			$('#list .room3').css({"zIndex":"3"});
+			$('#list .room4').css({"zIndex":"2"});
+			$('#list .room5').css({"zIndex":"1"});
+			$('#list .room').css({"display":"none"});
+
+			var room = $("#list .main_room").height();
+			$("#list .s6").css({"height":"300px"});
+			$(window).scroll(function(){			
+		
+				var nowScroll = $(document).scrollTop();
+				console.log(nowScroll);
+				var area0 = $("#list").offset().top;
+				var area1 = $("#list .s1").offset().top;
+				var area2 = $("#list .s2").offset().top;
+				var area3 = $("#list .s3").offset().top;
+				var area4 = $("#list .s4").offset().top;
+				var area5 = $("#list .s5").offset().top;
+				var area6 = $("#list .s6").offset().top;
+				if(nowScroll < area0){
+					$('#list .main_room').css({"display":"block"});
+					$('#list .room').css({"display":"none","position":"static"});
+				}
+				if(nowScroll > area0){
+					$('#list .main_room').css({"display":"none"});
+					$('#list .room').css({"display":"none","top":"50%","transform":"translatey(-50%)"});
+					$('#list .room1').css({"display":"block","position":"fixed"});
+				}
+				if(nowScroll > area1){
+					$('#list .main_room').css({"display":"none"});
+					$('#list .room').css({"display":"none"});
+					$('#list .room2').css({"display":"block","position":"fixed"});
+				}
+				if(nowScroll > area2){
+					$('#list .main_room').css({"display":"none"});
+					$('#list .room').css({"display":"none"});
+					$('#list .room3').css({"display":"block","position":"fixed"});
+				}
+				if(nowScroll > area3){
+					$('#list .main_room').css({"display":"none"});
+					$('#list .room').css({"display":"none"});
+					$('#list .room4').css({"display":"block","position":"fixed"});
+				}
+				if(nowScroll > area4){
+					$('#list .main_room').css({"display":"none"});
+					$('#list .room').css({"display":"none"});
+					$('#list .room5').css({"display":"block","position":"fixed"});
+				}
+				if(nowScroll > area5 && nowScroll < area6){
+					$('#list .main_room').css({"display":"none"});
+					$('#list .room').css({"display":"none","position":"static"});
+				}
+				if(nowScroll > area6){
+					$('#list .room5').css({"display":"none","position":"static"});
+				}
+
+			});
+			var foot = true;
+			$("#footer_inn .com_info .btn").click(function(){
+				if(foot==true){
+					$("#footer_inn .btn span").css({"display":"block","transform":"rotatex(180deg)"});
+					$("#footer_inn .copy").slideDown(500,"linear");
+					foot = false;
+				}
+				else{
+					$("#footer_inn .btn span").css({"display":"block","transform":"rotatex(0deg)"});
+					$("#footer_inn .copy").slideUp(500,"linear");
+					foot = true;
+				}
+			});
+		});
+	</script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<header id="header">
+			<div id="header_inn">
+				<div id="topArea">
+					<h1 class="absolute">
+						반다이몰 코리아
+					</h1>
+					<div id="topMenu">
+						<h2 class="absolute">브랜드 매체 정보</h2>
+						<div class="logo">
+							<a href="../bandai/index.html" title="반다이_코리아">
+								<img src="header/logo.png" alt="로고_이미지0"/>
+							</a>
+						</div>
+						<nav id="nav">
+							<ul>
+								<li>
+									<a href="#" title="마블_링크_바로가기">
+										MARVEL
+									</a>
+								</li>
+								<li>
+									<a href="#" title="tv_링크_바로가기">
+										TV
+									</a>
+								</li>
+								<li>
+									<a href="../page/magazine.html" title="매거진_링크_바로가기">
+										매거진
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건담인포_링크_바로가기">
+										건담인포
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div id="uArea">
+							<div class="utility">
+								<ul>
+									<li>
+										<a href="../page/login.html" title="로그인_바로가기">
+											<i class="icon">
+												<img src="header/login_w.png" alt="아이콘_이미지0"/>
+												<img src="header/login.png" alt="아이콘_이미지0"/>
+											</i>
+											<span>로그인</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="마이페이지_바로가기">
+											<i class="icon">
+												<img class="on" src="header/user_w.png" alt="아이콘_이미지1"/>
+												<img src="header/user.png" alt="아이콘_이미지1"/>
+											</i>
+											<span>마이페이지</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="장바구니_바로가기">
+											<i class="icon">
+												<img class="on" src="header/cart_w.png" alt="아이콘_이미지2"/>
+												<img src="header/cart.png" alt="아이콘_이미지2"/>
+											</i>
+											<span>장바구니</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="gnb">
+					<h2 class="absolute">네비게이션 영역</h2>
+					<div id="gnb_inn">
+						<div class="gnb_list">
+							<div class="main_menu">
+								<div class="bg"></div>
+								<ul class="menu">
+									<li>
+										<a class="a_menu" href="#" title="건프라">
+											건프라
+										</a>
+										<div class="subArea s0">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="../page/shop.html" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="런너구매_바로가기">
+																런너구매
+															</a>
+														</p>
+													</div>
+													<dl class="brand s_list">
+														<dt>브랜드별</dt>
+														<dd>
+															<a href="#none" title="HG_바로가기">
+																HG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="RG_바로가기">
+																RG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="MG_바로가기">
+																MG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="PG_바로가기">
+																PG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="RE_100_바로가기">
+																RE/100
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="메가사이즈 모델_바로가기">
+																메가사이즈 모델
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="SDCS_SDEX_바로가기">
+																SDCS/SDEX
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="SD_바로가기">
+																SD
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="옵션파츠_바로가기">
+																옵션 파츠
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="series s_list">
+														<dt>작품별</dt>
+														<dd>
+															<a href="#none" title="기동전사 건담_바로가기">
+																기동전사 건담
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 역습의 샤아_바로가기">
+																기동전사 건담 역습의 샤아
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 UC_바로가기">
+																기동전사 건담 UC
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 섬광의 하사웨이_바로가기">
+																기동전사 건담 섬광의 하사웨이
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 SEED_바로가기">
+																기동전사 건담 SEED
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 OO_바로가기">
+																기동전사 건담 OO
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="기동전사 건담 철혈의 오펀스_바로가기">
+																기동전사 건담 철혈의 오펀스
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="건담 빌드 다이버스_바로가기">
+																건담 빌드 다이버스
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="삼국창걸전/SD건담 월드 히어로즈_바로가기">
+																삼국창걸전/SD건담 월드 히어로즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="../page/guide.html" title="HG_건담_이미지0">
+																<span><img src="header/sub_menu/guide.png" alt="건담_가이드"/></span>
+																<em>건프라 가이드 바로가기 &gt;</em>
+															</a>
+														</li>
+														<li>
+															<a href="#none" title="HG_건담_이미지0">
+																<span><img src="header/sub_menu/i0.jpg" alt="HG_건담_이미지0"/></span>
+																<em>HG 건담 엑시아 리페어 II &gt;</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="애니프라_바로가기">
+											애니프라
+										</a>
+										<div class="subArea s1">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+													</div>
+													<dl class="brand s_list">
+														<dt>브랜드별</dt>
+														<dd>
+															<a href="#none" title="엔트리 그레이드_바로가기">
+																엔트리 그레이드
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="HG_바로가기">
+																HG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="RG_바로가기">
+																RG
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="Figure-rise 시리즈_바로가기">
+																Figure-rise 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="Figure-rise LABO_바로가기">
+																Figure-rise LABO
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="포켓프라">
+																포켓프라
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="30 MINUTES MISSIONS_바로가기">
+																30 MINUTES MISSIONS
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="series s_list">
+														<dt>작품별</dt>
+														<dd>
+															<a href="#none" title="드래곤볼_바로가기">
+																드래곤볼
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="원피스_바로가기">
+																원피스
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="에반게리온_바로가기">
+																에반게리온
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="다이나믹 캐릭터즈_바로가기">
+																다이나믹 캐릭터즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="가면라이더_바로가기">
+																가면라이더
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="울트라맨_바로가기">
+																울트라맨
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="카카오프렌즈_바로가기">
+																카카오프렌즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="포켓몬스터_바로가기">
+																포켓몬스터
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="피규어라이즈_이미지0">
+																<span><img src="header/sub_menu/a0.jpg" alt="HG_건담_이미지0"/></span>
+																<em>피규어라이즈 스탠다드 초사이어인 3 손오공&gt;</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="../page/figure.html" title="피규어">
+											피규어
+										</a>
+										<div class="subArea s2">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+													</div>
+													<div class="brandArea">
+														<h3>타마시이네이션즈</h3>
+														<dl class="brand s_list">
+															<dt>브랜드별</dt>
+															<dd>
+																<a href="#none" title="ROBOT혼 시리즈_바로가기">
+																	ROBOT혼 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="S.H.Figuarts 시리즈_바로가기">
+																	S.H.Figuarts 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="Figuarts ZERO_바로가기">
+																	Figuarts ZERO
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="피규아트 미니_바로가기">
+																	피규아트 미니
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="초합금 시리즈_바로가기">
+																	초합금 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="NXEDGE STYLE_바로가기">
+																	NXEDGE STYLE
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+														<dl class="brand s_list">
+															<dt>작품별</dt>
+															<dd>
+																<a href="#none" title="MARVEL_바로가기">
+																	MARVEL
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="에반게리온_바로가기">
+																	에반게리온
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="드래곤볼_바로가기">
+																	드래곤볼
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="원피스_바로가기">
+																	원피스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="귀멸의 칼날_바로가기">
+																	귀멸의 칼날
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="세인트세이야_바로가기">
+																	세인트세이야
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+													</div>
+													<div class="brandArea">
+														<h3>반프레스토</h3>
+														<dl class="brand s_list">
+															<dt>브랜드별</dt>
+															<dd>
+																<a href="#none" title="BANPRESTO_바로가기">
+																	BANPRESTO
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="EXQ_바로가기">
+																	EXQ
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="GLITTER&GLAMOURS_바로가기">
+																	GLITTER &amp;GLAMOURS
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="GRANDISTA_바로가기">
+																	GRANDISTA
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="KING OF ARTIST_바로가기">
+																	KING OF ARTIST
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="Q POSKET_바로가기">
+																	Q POSKET
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+														<dl class="brand s_list">
+															<dt>작품별</dt>
+															<dd>
+																<a href="#none" title="드래곤볼_바로가기">
+																	드래곤볼
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="원피스_바로가기">
+																	원피스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="귀멸의 칼날_바로가기">
+																	귀멸의 칼날
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="나루토_바로가기">
+																	나루토
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="나의 히어로 아카데미아_바로가기">
+																	나의 히어로 아카데미아
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="피규어라이즈_이미지0">
+																<span><img src="header/sub_menu/f0.jpg" alt="피규아트_나루토_이미지"/></span>
+																<em>S.H.피규아트 우즈마키 나루토</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="토이">
+											토이
+										</a>
+										<div class="subArea s3">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="예약_바로가기">
+																예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="인기_바로가기">
+																인기
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="전체상품_바로가기">
+																전체상품
+															</a>
+														</p>
+													</div>
+													<div class="brandArea">
+														<h3>작품별</h3>
+														<dl class="brand s_list">
+															<dt>캐릭터토이</dt>
+															<dd>
+																<a href="#none" title="파워레인저 돈브라더즈_바로가기">
+																	파워레인저 돈브라더즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="파워레인저 젠카이저_바로가기">
+																	파워레인저 젠카이저
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="파워레인저 애니멀포스_바로가기">
+																	파워레인저 애니멀포스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 리바이스_바로가기">
+																	가면라이더 리바이스
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 이그제이드_바로가기">
+																	가면라이더 이그제이드
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 세이버_바로가기">
+																	가면라이더 세이버
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="파워레인저 시리즈_바로가기">
+																	파워레인저 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="가면라이더 시리즈_바로가기">
+																	가면라이더 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="디지몬 시리즈_바로가기">
+																	디지몬 시리즈
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="다마고치_바로가기">
+																	다마고치
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="그외_바로가기">
+																	그 외
+																</a>
+															</dd>
+														</dl>
+														<dl class="brand s_list">
+															<dt>하비토이</dt>
+															<dd>
+																<a href="#none" title="나노블록_바로가기">
+																	나노블록
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="해체퍼즐_바로가기">
+																	해체퍼즐
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="믹스워치_바로가기">
+																	믹스워치
+																</a>
+															</dd>
+															<dd>
+																<a href="#none" title="오델로_바로가기">
+																	오델로
+																</a>
+															</dd>
+														</dl>
+													</div>
+													<dl class="brand s_list">
+														<dt>카테고리별</dt>
+														<dd>
+															<a href="#none" title="나노블록_바로가기">
+																로봇
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="해체퍼즐_바로가기">
+																변신
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="믹스워치_바로가기">
+																인형
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="오델로_바로가기">
+																퍼즐 &amp; 보드게임
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="악세서리_바로가기">
+																악세서리
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="라이프_바로가기">
+																라이프
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<!--<dl class="brand s_list">
+														<dt>나이대별</dt>
+														<dd>
+															<a href="#none" title="0~2세">
+																0 ~ 2세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="3~5세">
+																3 ~ 5세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="6~8세">
+																6 ~ 8세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="9~13세">
+																9 ~ 13세
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="14세이상">
+																14세 이상
+															</a>
+														</dd>
+													</dl>-->
+												</div>					
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="DX 성검 소드라이버">
+																<span><img src="header/sub_menu/t0.jpg" alt="DX 성검 소드라이버_이미지"/></span>
+																<em>DX 성검 소드라이버</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="a_menu" href="#" title="기타">
+											기타
+										</a>
+										<div class="subArea s4">
+											<div class="s_depth">
+												<div class="s_menu">
+													<div class="s_tit">
+														<p>
+															<a href="#none" title="캔디예약_바로가기">
+																캔디예약
+															</a>
+														</p>
+														<p>
+															<a href="#none" title="캡슐예약_바로가기">
+																캡슐예약
+															</a>
+														</p>
+													</div>
+													<dl class="brand s_list">
+														<dt>공구/서적</dt>
+														<dd>
+															<a href="#none" title="프라모델 제작 공구_바로가기">
+																프라모델 제작 공구
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="건담데칼_바로가기">
+																건담데칼
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="프라모델 서적_바로가기">
+																프라모델 서적
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="코믹 소설_바로가기">
+																코믹 소설
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="brand s_list">
+														<dt>캔디</dt>
+														<dd>
+															<a href="#none" title="포켓몬 스케일 월드_바로가기">
+																포켓몬 스케일 월드
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="쿠너츠_바로가기">
+																쿠너츠
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="슈퍼 미니프라_바로가기">
+																슈퍼 미니프라
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="컨버지 시리즈_바로가기">
+																컨버지 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="애드버지 시리즈_바로가기">
+																애드버지 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="G프레임 시리즈_바로가기">
+																G프레임 시리즈
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+													<dl class="brand s_list">
+														<dt>캡슐</dt>
+														<dd>
+															<a href="#none" title="MOBILE SUIT ENSEMBLE_바로가기">
+																MOBILE SUIT ENSEMBLE
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="가샤폰 전사_바로가기">
+																가샤폰 전사
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="허그코트_바로가기">
+																허그코트
+															</a>
+														</dd>
+														<dd>
+															<a href="#none" title="그 외_바로가기">
+																그 외
+															</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="s_img">
+													<ul>
+														<li>
+															<a href="#none" title="DX 성검 소드라이버">
+																<span><img src="header/sub_menu/e0.jpg" alt="DX 성검 소드라이버_이미지"/></span>
+																<em>컵캐릭 디즈니 프랜즈3 &gt;</em>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="프리미엄반다이">
+											프리미엄반다이
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="etc_menu">
+								<ul>
+									<li>
+										<a href="../page/brand.html" title="브랜드_바로가기">
+											브랜드
+										</a>
+									</li>
+									<li>
+										<a href="../page/404.html" title="기획전_이벤트_바로가기">
+											기획전/이벤트
+										</a>
+									</li>
+									<li>
+										<a href="#" title="멤버십_쿠폰_바로가기">
+											멤버십/쿠폰
+										</a>
+									</li>
+									<li>
+										<a href="../page/map.html" title="건담베이스_바로가기">
+											건담베이스
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="search">
+						<a href="#none" title="검색창">
+							<i>
+								<img src="header/ico-search-white.svg" alt="아이콘_이미지"/>
+								<img src="header/ico-search-white.png" alt="아이콘_이미지"/>
+							</i>
+						</a>
+						<!--<div class="searchArea">
+							<div class="search_inn">
+								<div class="inputBox">
+									<form action="https://www.bnkrmall.co.kr/goods/search.do?" method="get">
+										<input id="srh" type="search" name="srh" title="검색창" placeholder="검색어를 입력해주세요."/>
+										<input id="connect" title="버튼" type="image" src="header/ico-search-white.png" alt="아이콘_이미지"/><img src="header/ico-search-white.png" alt="아이콘_이미지"/>
+									</form>
+								</div>
+								<div class="searchBox">
+									<div class="recently">
+										<h4>최근검색어</h4>
+										<ul>
+											<li>최근 검색어가 없습니다.</li>
+										</ul>
+									</div>
+									<div class="hotSrh">
+										<h4>인기검색어</h4>
+										<ul>
+											<li><a href="#none" title="링크_0"><span>1.</span> RG</a></li>
+											<li><a href="#none" title="링크_1"><span>2.</span> 메탈빌드</a></li>
+											<li><a href="#none" title="링크_2"><span>3.</span> 포켓몬</a></li>
+											<li><a href="#none" title="링크_3"><span>4.</span> 가면라이더</a></li>
+											<li><a href="#none" title="링크_4"><span>5.</span> MGEX</a></li>
+											<li><a href="#none" title="링크_5"><span>6.</span> 디지몬</a></li>
+											<li><a href="#none" title="링크_6"><span>7.</span> MG</a></li>
+											<li><a href="#none" title="링크_7"><span>8.</span> 하이뉴</a></li>
+											<li><a href="#none" title="링크_8"><span>9.</span> 언리쉬드</a></li>
+											<li><a href="#none" title="링크_9"><span>10.</span> 건담</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div id="head_mob">
+				<div id="m_top">
+					<div id="m_menu">
+						<div class="logo">
+							<a href="#" title="반다이_코리아">
+								<img src="header/logo.png" alt="로고_이미지0"/>
+							</a>
+						</div>
+						<div class="mArea">
+							<ul>
+								<li id="m_login">
+									<div class="login">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/login_w.png" alt="아이콘_이미지0"/>
+												<img src="header/login.png" alt="아이콘_이미지0"/>
+											</i>
+										</a>
+									</div>
+								</li>
+								<li id="m_page">
+									<div class="mypage">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/user_w.png" alt="아이콘_이미지1"/>
+												<img src="header/user.png" alt="아이콘_이미지1"/>
+											</i>
+										</a>
+									</div>
+								</li>
+								<li id="m_shop">
+									<div class="shop">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/cart_w.png" alt="아이콘_이미지2"/>
+												<img src="header/cart.png" alt="아이콘_이미지2"/>
+											</i>
+										</a>
+									</div>
+								</li>
+								<li id="m_search">
+									<div class="search">
+										<a href="#" title="검색창">
+											<i>
+												<img src="header/ico-search-white.svg" alt="아이콘_이미지"/>
+												<img src="header/ico-search-white.png" alt="아이콘_이미지"/>
+											</i>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="m_gnb">
+					<div id="m_inn">
+						<div class="main">
+							<ul>
+								<li>
+									<a href="#" title="홈">
+										홈
+									</a>
+								</li>
+								<li>
+									<a href="#" title="신제품">
+										신제품
+									</a>
+								</li>
+								<li>
+									<a href="#" title="TV">
+										TV
+									</a>
+								</li>
+								<li>
+									<a href="#" title="매거진">
+										매거진
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건담인포">
+										건담인포
+									</a>
+								</li>
+								<li>
+									<a href="#" title="프리미엄반다이">
+										프리미엄반다이
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건프라">
+										건프라
+									</a>
+								</li>
+								<li>
+									<a href="#" title="애니프라">
+										애니프라
+									</a>
+								</li>
+								<li>
+									<a href="#" title="피규어">
+										피규어
+									</a>
+								</li>
+								<li>
+									<a href="#" title="토이">
+										토이
+									</a>
+								</li>
+								<li>
+									<a href="#" title="기타">
+										기타
+									</a>
+								</li>
+								<li>
+									<a href="#" title="브랜드">
+										브랜드
+									</a>
+								</li>
+								<li>
+									<a href="#" title="기획전_이벤트">
+										기획전/이벤트
+									</a>
+								</li>
+								<li>
+									<a href="#" title="멤버십_쿠폰">
+										멤버십/쿠폰
+									</a>
+								</li>
+								<li>
+									<a href="#" title="건담베이스">
+										건담베이스
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="searchArea">
+				<div class="search_inn">
+					<div class="inputBox">
+						<form action="https://www.bnkrmall.co.kr/goods/search.do?" method="get">
+							<input id="srh" type="search" name="srh" title="검색창" placeholder="검색어를 입력해주세요."/>
+							<input id="connect" title="버튼" type="image" src="header/ico-search-white.png" alt="아이콘_이미지"/>
+						</form>
+					</div>
+					<div class="searchBox">
+						<div class="recently">
+							<h4>최근검색어</h4>
+							<ul>
+								<li>최근 검색어가 없습니다.</li>
+							</ul>
+						</div>
+						<div class="hotSrh">
+							<h4>인기검색어</h4>
+							<ul>
+								<li><a href="#none" title="링크_0"><span>1.</span> RG</a></li>
+								<li><a href="#none" title="링크_1"><span>2.</span> 메탈빌드</a></li>
+								<li><a href="#none" title="링크_2"><span>3.</span> 포켓몬</a></li>
+								<li><a href="#none" title="링크_3"><span>4.</span> 가면라이더</a></li>
+								<li><a href="#none" title="링크_4"><span>5.</span> MGEX</a></li>
+								<li><a href="#none" title="링크_5"><span>6.</span> 디지몬</a></li>
+								<li><a href="#none" title="링크_6"><span>7.</span> MG</a></li>
+								<li><a href="#none" title="링크_7"><span>8.</span> 하이뉴</a></li>
+								<li><a href="#none" title="링크_8"><span>9.</span> 언리쉬드</a></li>
+								<li><a href="#none" title="링크_9"><span>10.</span> 건담</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="container">
+			<section id="intro">
+				<h2 class="absolute">건프라 소개 영역</h2>
+				<div id="guide">
+					<div class="textArea txt0">
+						<em class="tit">건프라 가이드</em>
+						<h3>GUNPLA GUIDE</h3>
+						<p class="desc">
+							건프라에 도전하기 어려웠던 초보부터 한 단계 업그레이드가 필요한 고수까지!<br/>
+							건프라의 시리즈를 살펴보고, 나에게 어울리는 건프라를 찾아보세요.
+						</p>
+					</div>
+				</div>
+				<div id="gunDesc">
+					<div class="textArea txt1">
+						<p class="img">
+							<img src="img/guide/tit0.png" alt="텍스트_이미지0"/>
+						</p>
+						<h3>건프라란?</h3>
+						<p class="side_tit">
+							건담 + 프라모델 = 건프라
+						</p>
+						<p class="desc">
+							“기동전사 건담” 시리즈에 등장하는<br/>
+							모빌슈트 “건담”과 “프라모델”의 합성어입니다.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section id="manageArea">
+				<h2 class="absolute">건프라 관리영역</h2>
+				<div id="manage">
+					<div class="textArea txt2">
+						<h3>
+							건프라 품질은<br/>
+							이렇게 관리됩니다.
+						</h3>
+						<p class="desc">
+							건프라는 1980년에 탄생한 [1/144건담] 이후, 약 40년간 4억 개가 넘게 판매되어 왔습니다.<br/>
+							품질 향상을 위한 장인 정신과 시장을 향한 즉각적인 반응성을 보다 확실하게 하기 위하여<br/>
+							현재 건프라는 “취미의 마을 시즈오카”에 있는 “반다이 하비센터”에서 기획, 개발부터 생산까지<br/>
+							일본에서 모든 과정을 거쳐 생산되고 있습니다.
+						</p>
+					</div>
+				</div>
+				<div id="manageImg">
+					<div class="video">
+						<video id="movies" controls autoplay onmouseover="videoPlays();" onmouseout="videoStops();">
+							<source src="img/guide/gunpla.mp4"/>
+						</video>
+					</div>
+					<div class="animateArea">
+						<div class="animate">
+							<img src="img/guide/tit1.png" alt="텍스트_이미지1"/><img src="img/guide/tit2.png" alt="텍스트_이미지2"/><img src="img/guide/tit3.png" alt="텍스트_이미지3"/><img src="img/guide/tit4.png" alt="텍스트_이미지4"/><img src="img/guide/tit5.png" alt="텍스트_이미지5"/>
+						</div>
+					</div>
+					<div class="imgAnimate">
+						<div class="imgani">
+							<ul>
+								<li>
+									<p class="img">
+										<img src="img/guide/a0.jpg" alt="제작_이미지0"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a1.jpg" alt="제작_이미지1"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a2.jpg" alt="제작_이미지2"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a3.jpg" alt="제작_이미지3"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a4.jpg" alt="제작_이미지4"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a5.jpg" alt="제작_이미지5"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a6.jpg" alt="제작_이미지6"/>
+									</p>
+								</li>
+								<li>
+									<p class="img">
+										<img src="img/guide/a0.jpg" alt="제작_이미지0"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a1.jpg" alt="제작_이미지1"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a2.jpg" alt="제작_이미지2"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a3.jpg" alt="제작_이미지3"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a4.jpg" alt="제작_이미지4"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a5.jpg" alt="제작_이미지5"/>
+									</p>
+								</li>	
+								<li>
+									<p class="img">
+										<img src="img/guide/a6.jpg" alt="제작_이미지6"/>
+									</p>
+								</li>	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="list">
+				<h2 class="absolute">건프라 브랜드 소개</h2>
+				<div id="gunList">
+					<div id="fixList">
+						<div class="main_room">
+							<div class="txtCont">
+								<h3>
+									처음 시작하는 <span class="gold">초보</span>부터<br/>
+									도전을 원하는 <span class="blue">고수</span>까지
+								</h3>
+								<p class="desc">
+									건프라는 높은 제작 기술을 요하는 모델부터<br/>
+									쉽게 만들 수 있는 모델까지 다양한 시리즈가 존재합니다.<br/>
+									나에게 어울리는 건프라를 찾아보세요!
+								</p>
+							</div>
+							<div class="imgCont">
+								<p class="img">
+									<img src="img/guide/gundam0.png" alt="건담_이미지0"/>
+									<img src="img/guide/shadow.png" alt="그림자_이미지"/>
+								</p>
+							</div>
+						</div>
+						<div class="scroll s0">
+						</div>
+						<div class="room room1">
+							<div class="txtBox">
+								<div class="txtCont">
+									<div class="logo">
+										<p class="img"><img src="img/guide/l0.png" alt="브랜드_로고0"/></p>
+										<h4>SD/BB전사</h4>
+									</div>
+									<p class="desc">
+										멋짐과 귀여움이 만드는 절묘한 밸런스!<br/>
+										SD건담에서만 경험 가능한 부담 없는 즐거움을 누려보세요.
+									</p>
+								</div>
+								<ul class="gunDesc">
+									<li>
+										<span>사이즈</span>
+										<p>
+											약 8<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>파츠 수</span>
+										<p>
+											약 8<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>가격</span>
+										<p>
+											6,000 - 12,000<i>원</i>
+										</p>
+									</li>
+								</ul>
+								<ul class="gunList">
+									<li>
+										<a href="#none" title="상품_구매링크0">
+											<span class="img">
+												<img src="img/guide/l0_0.jpg" alt="브랜드_상품0"/>
+											</span>
+											<span class="gunName desc">
+												[SD] 건담월드 히어로즈 오공 임펄스 건담
+											</span>
+											<span class="price desc">
+												7,200<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크1">
+											<span class="img">
+												<img src="img/guide/l0_1.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[SDCS] 유니콘 건담3호기 페넥스(내러티브Ver.)
+											</span>
+											<span class="price desc">
+												14,400<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크2">
+											<span class="img">
+												<img src="img/guide/l0_2.jpg" alt="브랜드_상품2"/>
+											</span>
+											<span class="gunName desc">
+												[SDEX] 뉴 건담
+											</span>
+											<span class="price desc">
+												7,200<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크3">
+											<span class="img">
+												<img src="img/guide/l0_3.jpg" alt="브랜드_상품3"/>
+											</span>
+											<span class="gunName desc">
+												[BB] 366 윙 건담(EW)
+											</span>
+											<span class="price desc">
+												9,600<i>원</i>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="imgCont">
+								<p class="img">
+									<img src="img/guide/gundam1.png" alt="건담_이미지1"/>
+									<img src="img/guide/shadow.png" alt="그림자_이미지"/>
+								</p>
+							</div>
+						</div>
+						<div class="scroll s1">
+						</div>
+						<div class="room room2">
+							<div class="txtBox">
+								<div class="txtCont">
+									<div class="logo">
+										<p class="img"><img src="img/guide/l1.png" alt="브랜드_로고1"/></p>
+										<h4>하이 그레이드</h4>
+									</div>
+									<p class="desc">
+										콜렉팅을 위한 다양한 라인업!<br/>
+										만들기도 쉽고 모으는 재미가 있는 HG시리즈에 입문해보세요.
+									</p>
+								</div>							
+								<ul class="gunDesc">
+									<li>
+										<span>사이즈</span>
+										<p>
+											약 13<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>파츠 수</span>
+										<p>
+											약 150<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>가격</span>
+										<p>
+											12,000 - 24,000<i>원</i>
+										</p>
+									</li>
+								</ul>
+								<ul class="gunList">
+									<li>
+										<a href="#none" title="상품_구매링크0">
+											<span class="img">
+												<img src="img/guide/l1_0.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[HGUC] 크시 건담
+											</span>
+											<span class="price desc">
+												50,400<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크1">
+											<span class="img">
+												<img src="img/guide/l1_1.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[HGBD:R] 유라벤 건담
+											</span>
+											<span class="price desc">
+												19,200<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크2">
+											<span class="img">
+												<img src="img/guide/l1_2.jpg" alt="브랜드_상품2"/>
+											</span>
+											<span class="gunName desc">
+												[HG] 건담 디 오리진 Ver.
+											</span>
+											<span class="price desc">
+												27,600<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크3">
+											<span class="img">
+												<img src="img/guide/l1_3.jpg" alt="브랜드_상품3"/>
+											</span>
+											<span class="gunName desc">
+												[HG] 건담 발바토스 루프스 렉스
+											</span>
+											<span class="price desc">
+												16,800<i>원</i>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="imgCont">
+								<p class="img">
+									<img src="img/guide/gundam2.png" alt="건담_이미지2"/>
+									<img src="img/guide/shadow.png" alt="그림자_이미지"/>
+								</p>
+							</div>
+						</div>
+						<div class="scroll s2">
+						</div>
+						<div class="room room3">
+							<div class="txtBox">
+								<div class="txtCont">
+									<div class="logo">
+										<p class="img"><img src="img/guide/l2.png" alt="브랜드_로고2"/></p>
+										<h4>리얼 그레이드</h4>
+									</div>
+									<p class="desc">
+										풍부한 컬러 파츠와 액션, 가동 장치까지!<br/>
+										조립을 즐길 줄 아는 사람들을 위한 ‘진짜’ 모빌슈트를 만나보세요.
+									</p>
+								</div>
+								<ul class="gunDesc ">
+									<li>
+										<span>사이즈</span>
+										<p>
+											약 13<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>파츠 수</span>
+										<p>
+											약 250<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>가격</span>
+										<p>
+											30,000 - 36,000<i>원</i>
+										</p>
+									</li>
+								</ul>
+								<ul class="gunList">
+									<li>
+										<a href="#none" title="상품_구매링크0">
+											<span class="img">
+												<img src="img/guide/l3_0.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[RG] 건담 어스트레이 골드 프레임 아마츠 미나
+											</span>
+											<span class="price desc">
+												36,000<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크1">
+											<span class="img">
+												<img src="img/guide/l3_1.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[RG] 뉴 건담
+											</span>
+											<span class="price desc">
+												50,400<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크2">
+											<span class="img">
+												<img src="img/guide/l3_2.jpg" alt="브랜드_상품2"/>
+											</span>
+											<span class="gunName desc">
+												[RG] 스트라이크 프리덤 건담
+											</span>
+											<span class="price desc">
+												36,600<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크3">
+											<span class="img">
+												<img src="img/guide/l3_3.jpg" alt="브랜드_상품3"/>
+											</span>
+											<span class="gunName desc">
+												[RG] 풀 아머 유니콘 건담
+											</span>
+											<span class="price desc">
+												64,800<i>원</i>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="imgCont">
+								<p class="img">
+									<img src="img/guide/gundam3.png" alt="건담_이미지3"/>
+									<img src="img/guide/shadow.png" alt="그림자_이미지"/>
+								</p>
+							</div>
+						</div>
+						<div class="scroll s3">
+						</div>
+						<div class="room room4">
+							<div class="txtBox">
+								<div class="txtCont">
+									<div class="logo">
+										<p class="img"><img src="img/guide/l3.png" alt="브랜드_로고3"/></p>
+										<h4>마스터 그레이드</h4>
+									</div>
+									<p class="desc">
+										1:100스케일에 담겨 있는 최고의 디테일!<br/>
+										높은 가동성과 다양한 연결 파츠가 구현하는 최고의 프로포션을 느껴보세요.
+									</p>
+								</div>
+								<ul class="gunDesc">
+									<li>
+										<span>사이즈</span>
+										<p>
+											약 18<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>파츠 수</span>
+										<p>
+											약 260<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>가격</span>
+										<p>
+											36,000 - 60,000<i>원</i>
+										</p>
+									</li>
+								</ul>
+								<ul class="gunList">
+									<li>
+										<a href="#none" title="상품_구매링크0">
+											<span class="img">
+												<img src="img/guide/l4_0.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[MG] 건담 발바토스
+											</span>
+											<span class="price desc">
+												54,000<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크1">
+											<span class="img">
+												<img src="img/guide/l4_1.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[MG] 사자비 Ver.Ka
+											</span>
+											<span class="price desc">
+												108,000<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크2">
+											<span class="img">
+												<img src="img/guide/l4_2.jpg" alt="브랜드_상품2"/>
+											</span>
+											<span class="gunName desc">
+												[MG] 스트라이크 루즈 오오토리 장비 VER.RM
+											</span>
+											<span class="price desc">
+												50,400<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크3">
+											<span class="img">
+												<img src="img/guide/l4_3.jpg" alt="브랜드_상품3"/>
+											</span>
+											<span class="gunName desc">
+												[MG] 00 퀀터 풀 세이버
+											</span>
+											<span class="price desc">
+												66,000<i>원</i>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="imgCont">
+								<p class="img">
+									<img src="img/guide/gundam4.png" alt="건담_이미지4"/>
+									<img src="img/guide/shadow.png" alt="그림자_이미지"/>
+								</p>
+							</div>
+						</div>
+						<div class="scroll s4">
+						</div>
+						<div class="room room5">
+							<div class="txtBox">
+								<div class="txtCont">
+									<div class="logo">
+										<p class="img"><img src="img/guide/l4.png" alt="브랜드_로고4"/></p>
+										<h4>퍼펙트 그레이드</h4>
+									</div>
+									<p class="desc">
+										최신의 기술이 만들어 낸 궁극의 건프라!<br/>
+										최고를 경험하고 싶다면 꼭 도전해야 하는 마지막 관문입니다.
+									</p>
+								</div>
+								<ul class="gunDesc">
+									<li>
+										<span>사이즈</span>
+										<p>
+											약 30<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>파츠 수</span>
+										<p>
+											약 510<i>cm</i>
+										</p>
+									</li>
+									<li>
+										<span>가격</span>
+										<p>
+											144,000 - 300,000<i>원</i>
+										</p>
+									</li>
+								</ul>
+								<ul class="gunList">
+									<li>
+										<a href="#none" title="상품_구매링크0">
+											<span class="img">
+												<img src="img/guide/l4_0.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[PG] UNLEASHED 건담
+											</span>
+											<span class="price desc">
+												300,000<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크1">
+											<span class="img">
+												<img src="img/guide/l4_1.jpg" alt="브랜드_상품1"/>
+											</span>
+											<span class="gunName desc">
+												[PG] 건담 엑시아 (LIGHTING MODEL)
+											</span>
+											<span class="price desc">
+												384,000<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크2">
+											<span class="img">
+												<img src="img/guide/l4_2.jpg" alt="브랜드_상품2"/>
+											</span>
+											<span class="gunName desc">
+												[PG] 1/60 유니콘 건담
+											</span>
+											<span class="price desc">
+												240,000<i>원</i>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none" title="상품_구매링크3">
+											<span class="img">
+												<img src="img/guide/l4_3.jpg" alt="브랜드_상품3"/>
+											</span>
+											<span class="gunName desc">
+												[PG] 1/60 더블오라이저
+											</span>
+											<span class="price desc">
+												300,000<i>원</i>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="imgCont">
+								<p class="img">
+									<img src="img/guide/gundam5.png" alt="건담_이미지5"/>
+									<img src="img/guide/shadow.png" alt="그림자_이미지"/>
+								</p>
+							</div>
+						</div>
+						<div class="scroll s5">
+						</div>
+						<div class="scroll s6">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="recommend">
+				<h2 class="absolute">건프라 그 외 추천</h2>
+				<h3>그 외 추천 시리즈</h3>
+				<div id="product">
+					<div class="rooms room6">
+						<div class="txtBox">
+							<div class="txtCont">
+								<div class="logo">
+									<p class="img"><img src="img/guide/l5.png" alt="브랜드_로고5"/></p>
+									<h4>1/48 스케일</h4>
+								</div>
+								<p class="desc">
+									건프라 팬들을 위한 메가사이즈 모델.<br/>
+									크지만 만들기 쉬운 건프라!
+								</p>
+							</div>
+							<ul class="gunDesc">
+								<li>
+									<span>사이즈</span>
+									<p>
+										약 38<i>cm</i>
+									</p>
+								</li>
+								<li>
+									<span>파츠 수</span>
+									<p>
+										약 220<i>cm</i>
+									</p>
+								</li>
+								<li>
+									<span>가격</span>
+									<p>
+										65,000 - 120,000<i>원</i>
+									</p>
+								</li>
+							</ul>
+							<ul class="gunList">
+								<li>
+									<a href="#none" title="상품_구매링크0">
+										<span class="img">
+											<img src="img/guide/l5_0.jpg" alt="브랜드_상품1"/>
+										</span>
+										<span class="gunName desc">
+											[메가사이즈] 1/48 유니콘 건담 디스트로이 모드
+										</span>
+										<span class="price desc">
+											120,000<i>원</i>
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="상품_구매링크1">
+										<span class="img">
+											<img src="img/guide/l5_1.jpg" alt="브랜드_상품1"/>
+										</span>
+										<span class="gunName desc">
+											[메가사이즈] 1/48 RX-78-2 건담
+										</span>
+										<span class="price desc">
+											93,600<i>원</i>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="imgCont">
+						<p class="img">
+							<img src="img/guide/bg4.png" alt="건담_이미지5"/>
+							<img class="shadow" src="img/guide/bg4_shadow.png" alt="그림자"/>
+						</p>
+					</div>
+					<div class="rooms room7 right">
+						<div class="txtBox">
+							<div class="txtCont">
+								<div class="logo">
+									<p class="img"><img src="img/guide/l6.png" alt="브랜드_로고6"/></p>
+									<h4>1/100스케일</h4>
+								</div>
+								<p class="desc">
+									정밀한 외관 디테일의 정점.<br/>
+									마스터 그레이드와 동일한 퀄리티의 건프라!
+								</p>
+							</div>
+							<ul class="gunDesc">
+								<li>
+									<span>사이즈</span>
+									<p>
+										약 18-30<i>cm</i>
+									</p>
+								</li>
+								<li>
+									<span>파츠 수</span>
+									<p>
+										약 280<i>cm</i>
+									</p>
+								</li>
+								<li>
+									<span>가격</span>
+									<p>
+										42,000 - 96,000<i>원</i>
+									</p>
+								</li>
+							</ul>
+							<ul class="gunList">
+								<li>
+									<a href="#none" title="상품_구매링크0">
+										<span class="img">
+											<img src="img/guide/l6_0.jpg" alt="브랜드_상품1"/>
+										</span>
+										<span class="gunName desc">
+											RE 건담 GP04 가베라
+										</span>
+										<span class="price desc">
+											42,000<i>원</i>
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="상품_구매링크1">
+										<span class="img">
+											<img src="img/guide/l6_1.jpg" alt="브랜드_상품1"/>
+										</span>
+										<span class="gunName desc">
+											풀 메카닉스 건담 바알
+										</span>
+										<span class="price desc">
+											38,400<i>원</i>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="semi_visual">
+					<div class="semi">
+						<h3>
+							건프라 상품<br/>
+							구경하러 가기
+						</h3>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer id="footer">
+			<div id="footer_inn">
+				<div class="siteMap">
+					<h2 class="absolute">중요사항 및 소셜미디어</h2>
+					<div class="site">
+						<ul>
+							<li>
+								<a href="#" title="공지사항">
+									공지사항
+								</a>
+							</li>
+							<li>
+								<a href="#" title="회사소개">
+									회사소개
+								</a>
+							</li>
+							<li>
+								<a href="#" title="인재채용">
+									인재채용
+								</a>
+							</li>
+							<li>
+								<a href="#" title="매장안내">
+									매장안내
+								</a>
+							</li>
+							<li>
+								<a href="#" title="이용약관">
+									이용약관
+								</a>
+							</li>
+							<li>
+								<a href="#" title="개인정보처리방침">
+									개인정보처리방침
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="social">
+						<ul>
+							<li>
+								<a href="#" title="페이스북">
+									<img src="header/i0.svg" alt="아이콘_이미지0"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="유튜브">
+									<img src="header/i1.svg" alt="아이콘_이미지1"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="인스타그램">
+									<img src="header/i2.svg" alt="아이콘_이미지2"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="트위터">
+									<img src="header/i3.svg" alt="아이콘_이미지3"/>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="카카오플러스">
+									<img src="header/i4.png" alt="아이콘_이미지1"/>
+								</a>
+							</li>
+							<!-- select 리스트
+							<li class="select">
+								Related Sites
+							</li>
+							-->
+						</ul>
+						<div class="real_site">
+							<select id="select">
+								<option value="Related Sites">Related Sites</option>
+								<option value="반다이남코코리아 회사소개">반다이남코코리아 회사소개</option>
+								<option value="반다이남코코리아 맴버십 APP(iOS)">반다이남코코리아 맴버십 APP(iOS)</option>
+								<option value="반다이남코코리아 맴버십 APP(Android)">반다이남코코리아 맴버십 APP(Android)</option>
+								<option value="건담인포">건담인포</option>
+								<option value="건담베이스 코리아 공식카페">건담베이스 코리아 공식카페</option>
+								<option value="건담베이스 매장안내">건담베이스 매장안내</option>
+								<option value="반다이남코코리아 네이버 브랜드스토어">반다이남코코리아 네이버 브랜드스토어 </option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="infoArea">
+					<h2 class="absolute">저작권 및 회사정보</h2>
+					<div class="info">
+						<div class="logo_info">
+							<div class="logo">
+								<a href="#" title="반다이몰_홈페이지">
+									<img src="header/logo.png" alt="로고_이미지"/>
+								</a>
+							</div>
+							<div class="com_info">
+								<p class="btn">
+									<span>▼</span>
+								</p>
+								<p class="copy">
+									법인명: 반다이남코코리아주식회사 | 주소: (04516) 서울 중구 서소문로 89 (순화동, 순화빌딩) 5층<br/>
+									대표이사: 야마미치후미아키 | 사업자등록번호: 106-81-86950 | 통신판매업신고: 제2010-서울중구-1720호<br/>
+									이메일문의: ascenter@bandainamcoasia.com | 반다이남코코리아몰: mall@bandainamcoasia.com<br/>
+									반다이남코코리아몰의 모든 콘텐츠는 무단 도용 시 법적인 제재를 받을 수 있습니다.<br/><br/>
+									Bandainamcokorea ALL RIGHTS RESERVED.	
+								</p>
+								<!--
+								클릭하면 아래 copyright 스크롤 내려가는 기능
+								-->
+							</div>
+						</div>
+						<div class="service">
+							<h3>고객센터 : 1544-4607</h3>
+							<p class="desc">
+								전화문의 - 평일 9:00 ~ 18:00 / 점심시간 12:30 ~ 13:30 ( 토,일및법정공휴일휴무 )
+							</p>
+							<div class="btnArea">
+								<div class="btn">
+									<a href="#" title="고객센터">
+										고객센터 바로가기
+									</a>
+									<a href="#" title="1:1문의">
+										1:1 문의 바로가기
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+ </body>
+</html>

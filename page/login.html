@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>login</title>
+	<meta charset="utf-8"/>
+	<style>
+		*{margin:0;padding:0;}
+		a:link,a:visited{text-decoration:none;color:#000;}
+		body{margin:0;padding:0;background-image:url("img/login/bg.jpg");
+		background-size:100%;}
+		li{list-style-type:none;}
+
+		#wrap{width:100%;}
+
+		#container{width:100%;}
+
+		#loginArea{width:100%;}
+		#loginArea h2{width:1px;height:1px;position:absolute;left:-9999px;overflow:hidden;
+		font-size:1px;line-height:0;}
+		
+		#loginBox{width:1400px;height:700px;margin:7% auto 0;
+		box-shadow:10px 10px 50px rgba(0,0,0,0.5);}
+
+		#login{width:700px;height:100%;background-color:#f6f6f6;float:left;}
+		#logoDesc{width:100%;padding-top:50px;text-align:center;}
+		#logoDesc h4{font-size:30px;padding-top:10px;}
+		#logoDesc .desc{font-size:13px;color:#555;padding-top:10px;}
+		#login form{width:360px;margin:20px auto 0;text-align:center;}
+		#login fieldset{border:none;}
+		#login legend{display:none;}
+		#login .f_login{width:100%;}
+		#login .id_pw p{width:360px;height:48px;margin-top:10px;}
+		#login .id_pw input{border:none;text-indent:10px;width:100%;height:100%;
+		border:1px solid #e7e7e7;}
+
+		#login .look{width:100%;padding-top:15px;overflow:hidden;}
+		#login .look p{width:50%;float:left;font-size:12px;text-align:left;}
+		#login .check label{padding-left:5px;}
+		#login .look .find{text-align:right;}
+		#login .find i{font-style:normal;color:#ccc;}
+
+		#login .btnArea{width:100%;padding-top:15px;overflow:hidden;}
+		#login .btnArea div{width:170px;height:40px;float:left;}
+		#login .btnArea input{border:none;width:100%;height:100%;background-color:#e60012;
+		font-weight:700;color:#fff;cursor:pointer;}
+
+		#login .submit{margin-right:20px;}
+		#login .signUp{background-color:#e60012;font-weight:700;color:#fff;}
+		#login .signUp a{display:block;width:100%;height:100%;color:#fff;line-height:40px;
+		font-size:14px;}
+
+		#login .sns{width:100%;padding-top:40px;}
+		#login h5{width:100%;text-align:center;font-size:15px;color:#222;}
+		#login .sns ul{width:270px;overflow:hidden;margin:0 auto;padding-top:20px;}
+		#login .sns li{display:inline;padding-left:30px;}
+
+
+		#visual{width:700px;height:100%;background-color:blue;float:left;
+		background-size:240%;background-position:center;
+		background-repeat:no-repeat;
+		animation:login 10s infinite alternate; background-image:url("img/login/m0.jpg"); 
+		background-size:230%;}
+		#visual h3{width:1px;height:1px;position:absolute;left:-9999px;overflow:hidden;
+		font-size:1px;line-height:0;}
+
+		@keyframes login{
+			0%{background-image:url("img/login/m0.jpg");}
+			50%{background-image:url("img/login/m1.jpg");}
+			100%{background-image:url("img/login/m2.jpg");}
+		}
+
+	</style>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="container">
+			<section id="loginArea">
+				<h2>로그인 화면</h2>
+				<div id="loginBox">
+					<div id="login">
+						<div id="logoDesc">
+							<h3><a href="../bandai/index.html" title="로고"><img src="img/login/logo.png" alt="로고"/></a></h3>
+							<h4>로그인</h4>
+							<p class="desc">
+								반다이남코코리아몰의 다양한 서비스와 혜택을 누리세요!
+							</p>
+						</div>
+						<form action="#" method="post">
+							<fieldset>
+								<legend>로그인 페이지</legend>
+								<div class="f_login">
+									<div class="id_pw">
+										<p class="id">
+											<label for="userid"></label>
+											<input id="userid" type="text" name="userid"
+											placeholder="아이디를 입력해주세요" required/>
+										</p>
+										<p class="pw">
+											<label for="userpw"></label>
+											<input id="userpw" type="password" name="userpw"
+											placeholder="비밀번호를 입력해주세요" required/>
+										</p>
+									</div>
+									<div class="look">
+										<p class="check"><input id="check" type="checkbox" name="check"/><label for="check">자동 로그인</label></p>
+										<p class="find">
+											<a href="#" title="아이디_찾기">
+												아이디 찾기
+											</a>
+											<i>|</i>
+											<a href="#" title="비밀번호_찾기">
+												비밀번호 찾기
+											</a>
+										</p>
+									</div>
+									<div class="btnArea">
+										<div class="submit">
+											<input id="submit" type="submit" title="로그인" value="로그인">
+										</div>
+										<div class="signUp">
+											<a href="signUp.html" title="회원가입">
+												회원가입
+											</a>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+						<div class="sns">
+							<h5 class="desc">
+								SNS계정으로 로그인하기
+							</h5>
+							<ul>
+								<li>
+									<a href="#" title="카카오">
+										<img src="img/login/kakao.svg" alt="카카오_아이콘"/>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="페이스북">
+										<img src="img/login/facebook.svg" alt="페이스북_아이콘"/>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="구글">
+										<img src="img/login/google.svg" alt="구글_아이콘"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="visual">
+						<h3>광고 영역</h3>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+ </body>
+</html>
