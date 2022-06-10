@@ -14,7 +14,7 @@
   </p>
 </div>
 
-## 프로젝트 명
+## 1. 프로젝트 명
 
 <p align="center"><a href="http://rlaghwns.dothome.co.kr/bandai/bandai/index.html" title="홈페이지_링크" align="center"><img src="/gites/main.PNG" alt="메인_이미지"/></a></p>
 
@@ -22,19 +22,19 @@
 <br/>
 
 
-## 반다이몰 코리아를 선정하고 제작한 이유
+## 2. 해당 페이지를 선정하고 제작한 이유
 
 * 최초에 Hazzys를 제작하던 도중 장난감 홈페이지 혹은 매니악한 주제에 대해선 어떻게 접근해야 할까? 라는 호기심
 * 반응형 디자인이 상품이 나열되어 있던 점을 고려해 기존의 홈페이지 디자인을 참고한 새로운 반응형 구조에 대한 도전
 <br/>
 
-## 프로젝트 기간 및 참여 인원
+## 3. 프로젝트 기간 및 참여 인원
 
 * 2022.2.22 ~ 현재
 * 1명
 <br/>
 
-## 사용 프로그램
+## 4. 사용 프로그램
 
 포트폴리오를 제작하면서 사용한 프로그램입니다.
 
@@ -45,7 +45,7 @@
 * php , mysql
 <br/>
 
-## 프로젝트 URL
+## 5. 프로젝트 URL
  
  - 메인페이지  : <a href="http://rlaghwns.dothome.co.kr/bandai/bandai/index.html" title="포트폴리오_홈페이지0">http://rlaghwns.dothome.co.kr/bandai/badai/index.html</a>
   - 건담이 제작되는 과정의 로드맵 페이지(scrollTop) : <a href="http://rlaghwns.dothome.co.kr/bandai/page/guide.html" title="포트폴리오_홈페이지1">http://rlaghwns.dothome.co.kr/bandai/page/guide.html</a>
@@ -60,7 +60,7 @@
 
 <br/>
 
-## 프로젝트 제작 목표
+## 6. 프로젝트 제작 목표
 
 - [x] 기본적인 웹 표준과 웹 접근성을 갖춘 마크업
 - [x] 플러그인과 부트스트랩 템플릿에 의존하지 않은 자바스크립트 구현
