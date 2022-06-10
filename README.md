@@ -1,8 +1,4 @@
-
-<div id="top"></div>
-
-<!-- PROJECT LOGO -->
-
+<br/>
 <div align="center">
   <a href="http://rlaghwns.dothome.co.kr/bandai/bandai/index.html" title="홈페이지_링크" align="center"><img src="/gites/logo.png" alt="로고_이미지" width="80px" height="80px"/></a>
   <h3 align="center">프로젝트-반다이몰 코리아</h3>
